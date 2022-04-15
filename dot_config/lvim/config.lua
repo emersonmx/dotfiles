@@ -9,12 +9,26 @@ an executable
 -- THESE ARE EXAMPLE CONFIGS FEEL FREE TO CHANGE TO WHATEVER YOU WANT
 
 -- general
+vim.opt.number = false
+vim.opt.colorcolumn = "80,120"
+vim.opt.showtabline = 1
+
 lvim.log.level = "warn"
 lvim.format_on_save = true
 lvim.colorscheme = "onedarker"
 
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = ","
+lvim.localleader = "\\"
+
+vim.api.nvim_set_keymap('', ';', ':', { noremap = true })
+vim.api.nvim_set_keymap('', ':', ';', { noremap = true })
+
+lvim.keys.normal_mode["<C-h>"] = false
+lvim.keys.normal_mode["<C-j>"] = false
+lvim.keys.normal_mode["<C-k>"] = false
+lvim.keys.normal_mode["<C-l>"] = false
+
 -- add your own keymapping
 -- lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 -- unmap a default keymapping
@@ -142,13 +156,32 @@ lvim.builtin.treesitter.highlight.enabled = true
 -- }
 
 -- Additional Plugins
--- lvim.plugins = {
---     {"folke/tokyonight.nvim"},
---     {
---       "folke/trouble.nvim",
---       cmd = "TroubleToggle",
---     },
--- }
+lvim.plugins = {
+  {
+    "tpope/vim-surround",
+    keys = { "c", "d", "y" }
+  },
+  {
+    "tpope/vim-fugitive",
+    cmd = {
+      "G",
+      "Git",
+      "Gdiffsplit",
+      "Gread",
+      "Gwrite",
+      "Ggrep",
+      "GMove",
+      "GDelete",
+      "GBrowse",
+      "GRemove",
+      "GRename",
+      "Glgrep",
+      "Gedit"
+    },
+    ft = { "fugitive" }
+  },
+}
+lvim.builtin.bufferline.active = false
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
 -- lvim.autocommands.custom_groups = {
