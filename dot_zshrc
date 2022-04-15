@@ -1,12 +1,13 @@
-# Base16 Themes
-[[ ! -d $HOME/.config/base16-shell ]] \
-    && git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
+autoload -Uz compinit
+[[ -n ${ZDOTDIR}/.zcompdump(#qN.mh+24) ]] && compinit || compinit -C
 
-source $HOME/.config/base16-shell/base16-shell.plugin.zsh
-
-# Tmux
-[[ -z "$TMUX" ]] \
-    && exec tmux new-session -A -s home
+# OMZSH
+[[ ! -d $HOME/.config/zsh/ohmyzsh ]] \
+    && git clone https://github.com/ohmyzsh/ohmyzsh.git $HOME/.config/zsh/ohmyzsh
+for f in $(find $HOME/.config/zsh/ohmyzsh/lib -iname "*.zsh" | sort -u)
+do
+    source "$f"
+done
 
 # vi-mode
 function zvm_config() {
@@ -15,6 +16,10 @@ function zvm_config() {
     ZVM_VI_HIGHLIGHT_BACKGROUND=#264f78
 }
 source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+
+# Tmux
+[[ -z "$TMUX" ]] \
+    && exec tmux new-session -A -s home
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -32,7 +37,6 @@ source /opt/asdf-vm/asdf.sh
 # zsh-plugins
 [[ ! -d $HOME/.config/zsh/zsh-plugins ]] \
     && git clone https://github.com/emersonmx/zsh-plugins.git $HOME/.config/zsh/zsh-plugins
-
 source $HOME/.config/zsh/zsh-plugins/chezmoi/chezmoi.zsh
 source $HOME/.config/zsh/zsh-plugins/python/python.zsh
 source $HOME/.config/zsh/zsh-plugins/tmuxp/tmuxp.zsh
