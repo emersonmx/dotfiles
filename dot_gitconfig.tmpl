@@ -1,0 +1,58 @@
+[user]
+	name = {{ .user.display_name }}
+	email = {{ .user.email }}
+[core]
+	editor = nvim
+	excludesfile = ~/.config/git/gitignore_global
+[push]
+	default = simple
+[diff]
+	tool = nvimdiff2
+[difftool "nvimdiff2"]
+	cmd = nvim -d $LOCAL $REMOTE
+[commit]
+	verbose = true
+[merge]
+	tool = nfugitive
+[mergetool "nfugitive"]
+	cmd = nvim -f -c "Gdiff" "$MERGED"
+[init]
+	templatedir = ~/.config/git/template
+	defaultBranch = main
+[alias]
+	ctags = !.git/hooks/ctags
+	up = pull --rebase --autostash
+[github]
+	user = emersonmx
+[gui]
+	tabsize = 4
+	spellingdictionary = pt_BR
+	historybrowser = gitk
+	editor = ~/.local/share/scripts/vim.sh
+	fontdiff = -family \"DejaVu Sans Mono\" -size 9 -weight normal -slant roman -underline 0 -overstrike 0
+	wmstate = normal
+	geometry = 1366x712+0+0 490 306
+[guitool "rm"]
+	cmd = rm -f \"$FILENAME\"
+	noconsole = yes
+[guitool "edit"]
+	cmd = ~/.local/share/scripts/vim.sh \"$FILENAME\"
+	noconsole = yes
+[credential]
+	helper = /usr/lib/git-core/git-credential-libsecret
+[color]
+	ui = true
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+[color "diff"]
+	meta = 11
+	frag = magenta bold
+	commit = yellow bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+[url "https://"]
+	insteadOf = git://
