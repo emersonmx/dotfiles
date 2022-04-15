@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if [[ "$#" != 0 ]] && [[ "$#" != 1 ]]
+then
+    git push origin "${*}"
+else
+    ref=$(git symbolic-ref --quiet HEAD 2> /dev/null)
+    [[ "$#" == 0 ]] && b="$(echo ${ref#refs/heads/})"
+    git push origin "${b:=$1}"
+fi
+

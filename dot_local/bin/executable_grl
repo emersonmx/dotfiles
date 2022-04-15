@@ -1,0 +1,3 @@
+#!/bin/sh
+
+git reflog --format=format:'%<|(10)%gd %C(auto)%h | %<(80,trunc)%s | %C(blue)%ci%C(reset) | %an <%ae>'
