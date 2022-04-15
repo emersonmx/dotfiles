@@ -17,6 +17,9 @@ lvim.log.level = "warn"
 lvim.format_on_save = true
 lvim.colorscheme = "onedarker"
 
+vim.g.tmux_navigator_no_mappings = 1
+vim.g.tmux_navigator_disable_when_zoomed = 1
+
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = ","
 lvim.localleader = "\\"
@@ -28,6 +31,12 @@ lvim.keys.normal_mode["<C-h>"] = false
 lvim.keys.normal_mode["<C-j>"] = false
 lvim.keys.normal_mode["<C-k>"] = false
 lvim.keys.normal_mode["<C-l>"] = false
+
+lvim.keys.normal_mode["<A-h>"] = ":TmuxNavigateLeft<cr>"
+lvim.keys.normal_mode["<A-j>"] = ":TmuxNavigateDown<cr>"
+lvim.keys.normal_mode["<A-k>"] = ":TmuxNavigateUp<cr>"
+lvim.keys.normal_mode["<A-l>"] = ":TmuxNavigateRight<cr>"
+lvim.keys.normal_mode["<A-p>"] = ":TmuxNavigatePrevious<cr>"
 
 -- add your own keymapping
 -- lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
@@ -157,6 +166,7 @@ lvim.builtin.treesitter.highlight.enabled = true
 
 -- Additional Plugins
 lvim.plugins = {
+  { "christoomey/vim-tmux-navigator" },
   {
     "tpope/vim-surround",
     keys = { "c", "d", "y" }
