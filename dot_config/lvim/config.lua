@@ -20,12 +20,18 @@ lvim.colorscheme = "onedarker"
 vim.g.tmux_navigator_no_mappings = 1
 vim.g.tmux_navigator_disable_when_zoomed = 1
 
+vim.g.lf_map_keys = 0
+vim.g.lf_replace_netrw = 1
+
+vim.g["asterisk#keeppos"] = 1
+
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = ","
 lvim.localleader = "\\"
 
-vim.api.nvim_set_keymap('', ';', ':', { noremap = true })
-vim.api.nvim_set_keymap('', ':', ';', { noremap = true })
+vim.api.nvim_set_keymap("", ";", ":", { noremap = true })
+vim.api.nvim_set_keymap("", ":", ";", { noremap = true })
+vim.api.nvim_set_keymap("c", "w!!", "w suda://%", {})
 
 lvim.keys.normal_mode["<C-h>"] = false
 lvim.keys.normal_mode["<C-j>"] = false
@@ -37,6 +43,28 @@ lvim.keys.normal_mode["<A-j>"] = ":TmuxNavigateDown<cr>"
 lvim.keys.normal_mode["<A-k>"] = ":TmuxNavigateUp<cr>"
 lvim.keys.normal_mode["<A-l>"] = ":TmuxNavigateRight<cr>"
 lvim.keys.normal_mode["<A-p>"] = ":TmuxNavigatePrevious<cr>"
+
+lvim.keys.normal_mode["*"] = "<Plug>(asterisk-z*)"
+lvim.keys.normal_mode["#"] = "<Plug>(asterisk-z#)"
+lvim.keys.normal_mode["g*"] = "<Plug>(asterisk-gz*)"
+lvim.keys.normal_mode["g#"] = "<Plug>(asterisk-gz#)"
+
+lvim.keys.normal_mode["<space>"] = "za"
+
+lvim.keys.normal_mode["<leader>zz"] = ":BetterZoom<cr>"
+lvim.keys.normal_mode["<leader>za"] = ":BetterZoomToggle<cr>"
+lvim.keys.normal_mode["<leader>ze"] = "<C-w>="
+lvim.keys.normal_mode["<leader>zw"] = "<C-w>T"
+
+lvim.keys.normal_mode["<leader>o"] = ":only<cr>"
+
+for i = 1, 9 do
+    lvim.keys.normal_mode["<leader>" .. i] = i .. "gt"
+end
+lvim.keys.normal_mode["<leader>tq"] = ":tabclose<cr>"
+
+lvim.keys.normal_mode["-"] = ":LfCurrentFile<cr>"
+lvim.keys.normal_mode["_"] = ":LfWorkingDirectory<cr>"
 
 -- add your own keymapping
 -- lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
@@ -81,28 +109,29 @@ lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
 lvim.builtin.notify.active = true
 lvim.builtin.terminal.active = true
-lvim.builtin.nvimtree.setup.view.side = "left"
-lvim.builtin.nvimtree.show_icons.git = 0
+lvim.builtin.bufferline.active = false
+lvim.builtin.nvimtree.active = false
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
-  "bash",
-  "c",
-  "javascript",
-  "json",
-  "lua",
-  "python",
-  "typescript",
-  "tsx",
-  "css",
-  "rust",
-  "java",
-  "yaml",
+    "bash",
+    "c",
+    "javascript",
+    "json",
+    "lua",
+    "python",
+    "typescript",
+    "tsx",
+    "css",
+    "rust",
+    "java",
+    "yaml",
 }
 
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enabled = true
 
+lvim.builtin.which_key.mappings["e"] = nil
 -- generic LSP settings
 
 -- ---@usage disable automatic installation of servers
@@ -166,32 +195,57 @@ lvim.builtin.treesitter.highlight.enabled = true
 
 -- Additional Plugins
 lvim.plugins = {
-  { "christoomey/vim-tmux-navigator" },
-  {
-    "tpope/vim-surround",
-    keys = { "c", "d", "y" }
-  },
-  {
-    "tpope/vim-fugitive",
-    cmd = {
-      "G",
-      "Git",
-      "Gdiffsplit",
-      "Gread",
-      "Gwrite",
-      "Ggrep",
-      "GMove",
-      "GDelete",
-      "GBrowse",
-      "GRemove",
-      "GRename",
-      "Glgrep",
-      "Gedit"
+    { "christoomey/vim-tmux-navigator" },
+    { "tommcdo/vim-exchange" },
+    { "tpope/vim-dispatch" },
+    { "tpope/vim-eunuch" },
+    { "tpope/vim-repeat" },
+    { "tpope/vim-unimpaired" },
+    { "haya14busa/vim-asterisk" },
+    { "godlygeek/tabular" },
+    { "ptzz/lf.vim" },
+    { "voldikss/vim-floaterm" },
+    { "editorconfig/editorconfig-vim" },
+    { "emersonmx/vim-better-zoom" },
+    { "lambdalisue/suda.vim" },
+    { "kana/vim-textobj-user" },
+    { "kana/vim-textobj-line" },
+    { "kana/vim-textobj-indent" },
+    {
+        "tpope/vim-surround",
+        keys = { "S", "c", "d", "y" }
     },
-    ft = { "fugitive" }
-  },
+    {
+        "tpope/vim-fugitive",
+        cmd = {
+            "G",
+            "Git",
+            "Gdiffsplit",
+            "Gread",
+            "Gwrite",
+            "Ggrep",
+            "GMove",
+            "GDelete",
+            "GBrowse",
+            "GRemove",
+            "GRename",
+            "Glgrep",
+            "Gedit"
+        },
+        ft = { "fugitive" }
+    },
+    {
+        "phaazon/hop.nvim",
+        event = "BufRead",
+        config = function()
+            require("hop").setup()
+            local set_keymap = vim.api.nvim_set_keymap
+            set_keymap("", "<leader>m", "<cmd>HopChar2<cr>", { silent = true })
+            set_keymap("", "<leader>j", "<cmd>HopLineAC<cr>", { silent = true })
+            set_keymap("", "<leader>k", "<cmd>HopLineBC<cr>", { silent = true })
+        end,
+    },
 }
-lvim.builtin.bufferline.active = false
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
 -- lvim.autocommands.custom_groups = {
