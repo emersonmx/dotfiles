@@ -37,6 +37,10 @@ lvim.keys.normal_mode["<C-h>"] = false
 lvim.keys.normal_mode["<C-j>"] = false
 lvim.keys.normal_mode["<C-k>"] = false
 lvim.keys.normal_mode["<C-l>"] = false
+lvim.keys.normal_mode["H"] = false
+lvim.keys.visual_mode["J"] = false
+lvim.keys.visual_mode["K"] = false
+lvim.keys.normal_mode["L"] = false
 
 lvim.keys.normal_mode["<A-h>"] = ":TmuxNavigateLeft<cr>"
 lvim.keys.normal_mode["<A-j>"] = ":TmuxNavigateDown<cr>"
