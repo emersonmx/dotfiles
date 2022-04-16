@@ -1,21 +1,6 @@
 {{- $fullName := promptString "Full Name" -}}
-{{- $displayName := promptString "Display Name" -}}
 {{- $email := promptString "Email" -}}
 data:
   user:
     full_name: {{ $fullName }}
-    display_name: {{ $displayName }}
     email: {{ $email }}
-  alacritty:
-    window:
-      startup_mode: Fullscreen
-    font:
-      family: MesloLGLDZ Nerd Font
-      size: 11.5
-  tmuxp:
-    cookiecutters:
-      start_directory: ~/code/cookiecutters
-    docs:
-      start_directory: ~/code/docs
-    sandbox:
-      start_directory: ~/code/sandbox
