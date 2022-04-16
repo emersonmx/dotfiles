@@ -1,6 +1,9 @@
 export USER_LOCAL=$HOME/.local
+{{ if eq .chezmoi.osRelease.id "ubuntu" }}
+export ASDF_DIR=$USER_LOCAL/share/asdf
+export ASDF_DATA_DIR=$ASDF_DIR
 
 export FZF_DEFAULT_OPTS="--reverse"
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --no-ignore-vcs'
-
+{{ end }}
 path=($USER_LOCAL/bin $path)

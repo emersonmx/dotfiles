@@ -13,7 +13,11 @@ then
     source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+{{ if eq .chezmoi.osRelease.id "ubuntu" -}}
+source $HOME/.config/zsh/powerlevel10k/powerlevel10k.zsh-theme
+{{- else -}}
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+{{- end }}
 
 # vi-mode
 function zvm_config() {
@@ -21,41 +25,66 @@ function zvm_config() {
     ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
     ZVM_VI_HIGHLIGHT_BACKGROUND=#264f78
 }
+{{ if eq .chezmoi.osRelease.id "ubuntu" -}}
+source $HOME/.config/zsh/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+{{- else -}}
 source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+{{- end }}
 
 # ASDF
+{{ if eq .chezmoi.osRelease.id "ubuntu" -}}
+source $HOME/.local/share/asdf/asdf.sh
+{{- else -}}
 source /opt/asdf-vm/asdf.sh
+{{- end }}
 
 # direnv
 eval "$(direnv hook zsh)"
 
 # fzf
+{{ if eq .chezmoi.osRelease.id "ubuntu" -}}
+source /usr/share/doc/fzf/examples/key-bindings.zsh
+source /usr/share/doc/fzf/examples/completion.zsh
+{{- else -}}
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
+{{- end }}
 
 # OMZSH
-for f in $(find /usr/share/oh-my-zsh/lib/ -iname "*.zsh" | sort -u)
+{{ $ohmyzsh_path := "/usr/share/oh-my-zsh" -}}
+{{ if eq .chezmoi.osRelease.id "ubuntu" -}}
+{{ $ohmyzsh_path = "$HOME/.config/zsh/ohmyzsh" -}}
+{{ end -}}
+for f in $(find {{ $ohmyzsh_path }}/lib/ -iname "*.zsh" | sort -u)
 do
     source "$f"
 done
-source /usr/share/oh-my-zsh/plugins/archlinux/archlinux.plugin.zsh
-source /usr/share/oh-my-zsh/plugins/extract/extract.plugin.zsh
-source /usr/share/oh-my-zsh/plugins/git/git.plugin.zsh
-source /usr/share/oh-my-zsh/plugins/git-extras/git-extras.plugin.zsh
-source /usr/share/oh-my-zsh/plugins/gitignore/gitignore.plugin.zsh
-source /usr/share/oh-my-zsh/plugins/python/python.plugin.zsh
-source /usr/share/oh-my-zsh/plugins/pip/pip.plugin.zsh
-source /usr/share/oh-my-zsh/plugins/docker/docker.plugin.zsh
-source /usr/share/oh-my-zsh/plugins/docker-compose/docker-compose.plugin.zsh
+source {{ $ohmyzsh_path }}/plugins/archlinux/archlinux.plugin.zsh
+source {{ $ohmyzsh_path }}/plugins/extract/extract.plugin.zsh
+source {{ $ohmyzsh_path }}/plugins/git/git.plugin.zsh
+source {{ $ohmyzsh_path }}/plugins/git-extras/git-extras.plugin.zsh
+source {{ $ohmyzsh_path }}/plugins/gitignore/gitignore.plugin.zsh
+source {{ $ohmyzsh_path }}/plugins/python/python.plugin.zsh
+source {{ $ohmyzsh_path }}/plugins/pip/pip.plugin.zsh
+source {{ $ohmyzsh_path }}/plugins/docker/docker.plugin.zsh
+source {{ $ohmyzsh_path }}/plugins/docker-compose/docker-compose.plugin.zsh
 
 # zsh-users
+{{ if eq .chezmoi.osRelease.id "ubuntu" -}}
+source $HOME/.config/zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
+{{- else -}}
 source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+{{- end }}
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 bindkey "$terminfo[kcuu1]" history-substring-search-up
 bindkey "$terminfo[kcud1]" history-substring-search-down
 
+{{ if eq .chezmoi.osRelease.id "ubuntu" -}}
+source $HOME/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+{{- else -}}
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+{{- end }}
 
 [[ ! -d $HOME/.config/zsh/zsh-interactive-cd ]] \
     && git clone https://github.com/changyuheng/zsh-interactive-cd.git $HOME/.config/zsh/zsh-interactive-cd
