@@ -1,0 +1,11 @@
+#!/bin/bash
+
+while IFS= read -r line
+do
+    sleep 0.1
+    echo "$line"
+done < <( cat << EOF
+Emerson Max de Medeiros Silva
+emersonmx@gmail.com
+EOF
+) | chezmoi init
