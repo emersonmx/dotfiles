@@ -13,6 +13,12 @@ vim.opt.number = false
 vim.opt.colorcolumn = "80,120"
 vim.opt.showtabline = 1
 
+vim.g.loaded_python_provider = 0
+vim.g.python_host_prog = 'python2'
+vim.g.python3_host_prog = 'python3'
+vim.g.loaded_ruby_provider = 0
+vim.g.loaded_perl_provider = 0
+
 if vim.fn.has "wsl" == 1 then
     vim.g.clipboard = {
         copy = {
