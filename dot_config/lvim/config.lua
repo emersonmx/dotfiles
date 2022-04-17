@@ -48,10 +48,10 @@ lvim.keys.normal_mode["<A-k>"] = ":TmuxNavigateUp<cr>"
 lvim.keys.normal_mode["<A-l>"] = ":TmuxNavigateRight<cr>"
 lvim.keys.normal_mode["<A-p>"] = ":TmuxNavigatePrevious<cr>"
 
-lvim.keys.normal_mode["*"] = "<Plug>(asterisk-z*)"
-lvim.keys.normal_mode["#"] = "<Plug>(asterisk-z#)"
-lvim.keys.normal_mode["g*"] = "<Plug>(asterisk-gz*)"
-lvim.keys.normal_mode["g#"] = "<Plug>(asterisk-gz#)"
+vim.api.nvim_set_keymap('', '*', '<Plug>(asterisk-z*)', {})
+vim.api.nvim_set_keymap('', '#', '<Plug>(asterisk-z#)', {})
+vim.api.nvim_set_keymap('', 'g*', '<Plug>(asterisk-gz*)', {})
+vim.api.nvim_set_keymap('', 'g#', '<Plug>(asterisk-gz#)', {})
 
 lvim.keys.normal_mode["<space>"] = "za"
 
