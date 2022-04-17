@@ -13,6 +13,19 @@ vim.opt.number = false
 vim.opt.colorcolumn = "80,120"
 vim.opt.showtabline = 1
 
+if vim.fn.has "wsl" == 1 then
+    vim.g.clipboard = {
+        copy = {
+            ["+"] = "win32yank.exe -i --crlf",
+            ["*"] = "win32yank.exe -i --crlf",
+        },
+        paste = {
+            ["+"] = "win32yank.exe -o --lf",
+            ["*"] = "win32yank.exe -o --lf",
+        },
+    }
+end
+
 lvim.log.level = "warn"
 lvim.format_on_save = true
 lvim.colorscheme = "onedarker"
@@ -204,9 +217,6 @@ lvim.plugins = {
     { "emersonmx/vim-better-zoom" },
     { "godlygeek/tabular" },
     { "haya14busa/vim-asterisk" },
-    { "kana/vim-textobj-indent" },
-    { "kana/vim-textobj-line" },
-    { "kana/vim-textobj-user" },
     { "lambdalisue/suda.vim" },
     { "ptzz/lf.vim" },
     { "tommcdo/vim-exchange" },
