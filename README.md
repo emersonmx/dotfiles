@@ -100,7 +100,8 @@ cargo install \
     sccache \
     tealdeer \
     cargo-update \
-    exa
+    exa \
+    ripgrep
 
 bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
 
