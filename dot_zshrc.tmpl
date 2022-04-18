@@ -5,6 +5,9 @@ autoload -Uz compinit
 [[ -z "$TMUX" ]] \
     && exec tmux new-session -A -s home
 
+# direnv setup
+emulate zsh -c "$(direnv export zsh)"
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -38,8 +41,8 @@ source $HOME/.local/share/asdf/asdf.sh
 source /opt/asdf-vm/asdf.sh
 {{- end }}
 
-# direnv
-eval "$(direnv hook zsh)"
+# direnv hook
+emulate zsh -c "$(direnv hook zsh)"
 
 # fzf
 {{ if eq .chezmoi.osRelease.id "ubuntu" -}}
