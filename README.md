@@ -36,7 +36,6 @@ sudo apt-get install \
     libxxhash-dev \
     neovim \
     nodejs \
-    npm \
     pkg-config \
     python-dev \
     python3-dev \
@@ -66,13 +65,13 @@ mkdir -p $HOME/.local/{bin,share}
 
 mkdir -p $HOME/.config/zsh
 git clone https://github.com/asdf-vm/asdf.git $HOME/.local/share/asdf
-git clone https://github.com/changyuheng/zsh-interactive-cd.git $HOME/.config/zsh/zsh-interactive-cd.git
-git clone https://github.com/emersonmx/zsh-plugins.git $HOME/.config/zsh/zsh-plugins.git
-git clone https://github.com/jeffreytse/zsh-vi-mode.git $HOME/.config/zsh/zsh-vi-mode.git
-git clone https://github.com/ohmyzsh/ohmyzsh.git $HOME/.config/zsh/ohmyzsh.git
-git clone https://github.com/romkatv/powerlevel10k.git $HOME/.config/zsh/powerlevel10k.git
-git clone https://github.com/zsh-users/zsh-autosuggestions.git $HOME/.config/zsh/zsh-autosuggestions.git
-git clone https://github.com/zsh-users/zsh-history-substring-search.git $HOME/.config/zsh/zsh-history-substring-search.git
+git clone https://github.com/changyuheng/zsh-interactive-cd.git $HOME/.config/zsh/zsh-interactive-cd
+git clone https://github.com/emersonmx/zsh-plugins.git $HOME/.config/zsh/zsh-plugins
+git clone https://github.com/jeffreytse/zsh-vi-mode.git $HOME/.config/zsh/zsh-vi-mode
+git clone https://github.com/ohmyzsh/ohmyzsh.git $HOME/.config/zsh/ohmyzsh
+git clone https://github.com/romkatv/powerlevel10k.git $HOME/.config/zsh/powerlevel10k
+git clone https://github.com/zsh-users/zsh-autosuggestions.git $HOME/.config/zsh/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-history-substring-search.git $HOME/.config/zsh/zsh-history-substring-search
 
 asdf plugin add golang
 asdf plugin add nodejs
