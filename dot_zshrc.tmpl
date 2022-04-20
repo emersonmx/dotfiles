@@ -1,3 +1,11 @@
+# ASDF
+{{ if eq .chezmoi.osRelease.id "ubuntu" -}}
+source $HOME/.local/share/asdf/asdf.sh
+fpath=($HOME/.local/share/asdf/completions $fpath)
+{{- else -}}
+source /opt/asdf-vm/asdf.sh
+{{- end }}
+
 autoload -Uz compinit
 [[ -n ${ZDOTDIR}/.zcompdump(#qN.mh+24) ]] && compinit || compinit -C
 
@@ -32,13 +40,6 @@ function zvm_config() {
 source $HOME/.config/zsh/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 {{- else -}}
 source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
-{{- end }}
-
-# ASDF
-{{ if eq .chezmoi.osRelease.id "ubuntu" -}}
-source $HOME/.local/share/asdf/asdf.sh
-{{- else -}}
-source /opt/asdf-vm/asdf.sh
 {{- end }}
 
 # direnv hook
