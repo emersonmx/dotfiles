@@ -261,7 +261,7 @@ lvim.plugins = {
         config = function()
             require("hop").setup()
             local set_keymap = vim.api.nvim_set_keymap
-            set_keymap("", "<leader>m", "<cmd>HopChar2<cr>", { silent = true })
+            set_keymap("", "<leader>m", "<cmd>HopChar1<cr>", { silent = true })
             set_keymap("", "<leader>j", "<cmd>HopLineAC<cr>", { silent = true })
             set_keymap("", "<leader>k", "<cmd>HopLineBC<cr>", { silent = true })
         end,
