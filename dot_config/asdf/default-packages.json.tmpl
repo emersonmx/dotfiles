@@ -1,0 +1,67 @@
+{
+    "golang": [
+        "github.com/cweill/gotests/gotests@latest",
+        "github.com/fatih/gomodifytags@latest",
+        "github.com/haya14busa/goplay/cmd/goplay@latest",
+        "github.com/josharian/impl@latest",
+        "github.com/kisielk/errcheck@latest",
+        "github.com/mattn/efm-langserver@latest",
+        "golang.org/x/lint/golint@latest",
+        "golang.org/x/tools/...@latest",
+        "golang.org/x/tools/gopls@latest",
+        "mvdan.cc/gofumpt@latest",
+        "mvdan.cc/sh/v3/cmd/shfmt@latest"
+    ],
+    "lua": [
+        [
+            "--server=https://luarocks.org/dev",
+            "luaformatter"
+        ]
+    ],
+    "nodejs": [
+        "dockerfile-language-server-nodejs",
+        "neovim",
+        "semver",
+        "yarn"
+    ],
+    "python": [
+        "add-trailing-comma",
+        "aiohttp[speedups]",
+        "bandit",
+        "black",
+        "cookiecutter",
+        "flake8",
+        "flake8-print",
+        "gdtoolkit",
+        "invoke",
+        "ipdb",
+        "isort",
+        "mypy",
+        "pep8-naming",
+        "pip",
+        "poetry",
+        "pre-commit",
+        "pudb",
+        "pydantic[email,dotenv]",
+        "pynvim",
+        "requests",
+        "rope",
+        "tmuxp",
+        "types-all",
+        "vim-vint",
+        "virtualenv",
+        "vulture"
+    ],
+    "rust": [
+{{- if eq .chezmoi.osRelease.id "ubuntu" }}
+        "bat",
+        "cargo-watch",
+        "exa",
+        "fd-find",
+        "ripgrep",
+        "tealdeer"
+{{- else }}
+        "cargo-watch"
+{{- end }}
+    ]
+}
