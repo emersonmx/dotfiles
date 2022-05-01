@@ -1,3 +1,11 @@
+# ASDF
+{{ if eq .chezmoi.osRelease.id "ubuntu" -}}
+source $HOME/.local/share/asdf/asdf.sh
+fpath=($HOME/.local/share/asdf/completions $fpath)
+{{- else -}}
+source /opt/asdf-vm/asdf.sh
+{{- end }}
+
 autoload -Uz compinit
 [[ -n ${ZDOTDIR}/.zcompdump(#qN.mh+24) ]] && compinit || compinit -C
 
