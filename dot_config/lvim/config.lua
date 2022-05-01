@@ -134,6 +134,7 @@ lvim.builtin.notify.active = true
 lvim.builtin.terminal.active = true
 lvim.builtin.bufferline.active = false
 lvim.builtin.nvimtree.active = false
+lvim.builtin.friendly_snippets.active = false
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
