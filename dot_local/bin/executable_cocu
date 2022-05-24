@@ -1,0 +1,36 @@
+#!/usr/bin/env python
+
+import sys
+from pathlib import Path
+from subprocess import run
+
+
+def main() -> int:
+    try:
+        _, template, *args = sys.argv
+    except ValueError:
+        print(f"Usage: {sys.argv[0]} <template> [args]")
+        return 1
+
+    cookiecutters_url = "https://github.com/emersonmx/cookiecutters"
+    current_dir = Path(".").absolute()
+    parent_dir = current_dir.parent
+
+    run(
+        [
+            "cookiecutter",
+            "--no-input",
+            "--overwrite-if-exists",
+            f"--output-dir={parent_dir}",
+            cookiecutters_url,
+            f"--directory={template}",
+            f"path={current_dir}",
+            *args,
+        ]
+    )
+
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
