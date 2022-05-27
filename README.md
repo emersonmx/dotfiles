@@ -37,11 +37,11 @@ sudo apt-get install \
     neovim \
     nodejs \
     pkg-config \
-    python-dev \
     python3-dev \
     python3-pip \
     software-properties-common \
     subversion \
+    xdg-utils \
     yarn \
     zip \
     zlib1g-dev \
@@ -58,8 +58,6 @@ BINDIR=$HOME/.local/bin sh -c "$(curl -fsLS chezmoi.io/get)"
 chezmoi init gh_personal:emersonmx/dotfiles.git
 
 ln -sf /usr/bin/fdfind $HOME/.local/bin/fd
-
-env CGO_ENABLED=0 go install -ldflags="-s -w" github.com/gokcehan/lf@latest
 
 mkdir -p $HOME/.local/{bin,share}
 
@@ -78,6 +76,11 @@ asdf plugin add nodejs
 asdf plugin add python
 asdf plugin add rust
 
+asdf install golang latest
+asdf install nodejs latest
+asdf install python latest
+asdf install rust latest
+
 asdf global golang latest
 asdf global nodejs latest
 asdf global python latest
@@ -88,18 +91,21 @@ asdf reshim nodejs latest
 asdf reshim python latest
 asdf reshim rust latest
 
+env CGO_ENABLED=0 go install -ldflags="-s -w" github.com/gokcehan/lf@latest
+
 rm -rf /tmp/mold
 git clone https://github.com/rui314/mold.git /tmp/mold
 pushd /tmp
-git checkout v1.2.0
+git checkout v1.2.1
 make -j$(nproc) CXX=clang++
 sudo make install
 popd
 
 cargo install \
+    bat \
+    fd-find \
     sccache \
     tealdeer \
-    cargo-update \
     exa \
     ripgrep
 
