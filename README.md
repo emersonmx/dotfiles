@@ -14,6 +14,7 @@ sudo apt-get install \
     build-essential \
     clang \
     cmake \
+    coreutils \
     curl \
     dirmngr \
     fd-find \
@@ -47,6 +48,7 @@ sudo apt-get install \
     neovim \
     nodejs \
     pkg-config \
+    python3 \
     python3-dev \
     python3-pip \
     software-properties-common \
@@ -60,13 +62,6 @@ sudo apt-get install \
     zip \
     zlib1g-dev \
     zsh
-
-sudo update-alternatives --install /usr/bin/vi vi /usr/bin/nvim 60
-sudo update-alternatives --config vi
-sudo update-alternatives --install /usr/bin/vim vim /usr/bin/nvim 60
-sudo update-alternatives --config vim
-sudo update-alternatives --install /usr/bin/editor editor /usr/bin/nvim 60
-sudo update-alternatives --config editor
 
 BINDIR=$HOME/.local/bin sh -c "$(curl -fsLS chezmoi.io/get)"
 chezmoi init gh_personal:emersonmx/dotfiles.git
