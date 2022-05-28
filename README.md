@@ -27,13 +27,23 @@ sudo apt-get install \
     iotop \
     jq \
     libasound2-dev \
+    libbz2-dev \
+    libffi-dev \
+    liblzma-dev \
+    libncursesw5-dev \
+    libreadline-dev \
+    libsqlite3-dev \
     libssl-dev \
     libstdc++-10-dev \
     libudev-dev \
     libwayland-dev \
     libx11-dev \
     libxkbcommon-dev \
+    libxml2-dev \
+    libxmlsec1-dev \
     libxxhash-dev \
+    llvm \
+    make \
     neovim \
     nodejs \
     pkg-config \
@@ -42,7 +52,10 @@ sudo apt-get install \
     software-properties-common \
     sqlite3 \
     subversion \
+    tk-dev \
+    wget \
     xdg-utils \
+    xz-utils \
     yarn \
     zip \
     zlib1g-dev \
