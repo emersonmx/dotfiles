@@ -40,6 +40,7 @@ sudo apt-get install \
     python3-dev \
     python3-pip \
     software-properties-common \
+    sqlite3 \
     subversion \
     xdg-utils \
     yarn \
