@@ -17,6 +17,7 @@ sudo apt-get install \
     coreutils \
     curl \
     dirmngr \
+    exa \
     fd-find \
     fzf \
     g++ \
@@ -51,6 +52,7 @@ sudo apt-get install \
     python3 \
     python3-dev \
     python3-pip \
+    ripgrep \
     software-properties-common \
     sqlite3 \
     subversion \
@@ -111,12 +113,8 @@ sudo make install
 popd
 
 cargo install \
-    bat \
-    fd-find \
     sccache \
-    tealdeer \
-    exa \
-    ripgrep
+    tealdeer
 
 bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
 

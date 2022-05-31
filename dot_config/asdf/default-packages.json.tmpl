@@ -48,11 +48,7 @@
     ],
     "rust": [
 {{- if eq .chezmoi.osRelease.id "ubuntu" }}
-        "bat",
         "cargo-watch",
-        "exa",
-        "fd-find",
-        "ripgrep",
         "tealdeer"
 {{- else }}
         "cargo-watch"
