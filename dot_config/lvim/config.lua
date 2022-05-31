@@ -20,16 +20,16 @@ vim.g.loaded_ruby_provider = 0
 vim.g.loaded_perl_provider = 0
 
 if vim.fn.has "wsl" == 1 then
-  vim.g.clipboard = {
-    copy = {
-      ["+"] = "win32yank.exe -i --crlf",
-      ["*"] = "win32yank.exe -i --crlf",
-    },
-    paste = {
-      ["+"] = "win32yank.exe -o --lf",
-      ["*"] = "win32yank.exe -o --lf",
-    },
-  }
+    vim.g.clipboard = {
+        copy = {
+            ["+"] = "win32yank.exe -i --crlf",
+            ["*"] = "win32yank.exe -i --crlf",
+        },
+        paste = {
+            ["+"] = "win32yank.exe -o --lf",
+            ["*"] = "win32yank.exe -o --lf",
+        },
+    }
 end
 
 lvim.log.level = "warn"
@@ -82,7 +82,7 @@ lvim.keys.normal_mode["<leader>zw"] = "<C-w>T"
 lvim.keys.normal_mode["<leader>o"] = ":only<cr>"
 
 for i = 1, 9 do
-  lvim.keys.normal_mode["<leader>" .. i] = i .. "gt"
+    lvim.keys.normal_mode["<leader>" .. i] = i .. "gt"
 end
 lvim.keys.normal_mode["<leader>tq"] = ":tabclose<cr>"
 
@@ -138,18 +138,18 @@ lvim.builtin.luasnip.sources.friendly_snippets = false
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
-  "bash",
-  "c",
-  "javascript",
-  "json",
-  "lua",
-  "python",
-  "typescript",
-  "tsx",
-  "css",
-  "rust",
-  "java",
-  "yaml",
+    "bash",
+    "c",
+    "javascript",
+    "json",
+    "lua",
+    "python",
+    "typescript",
+    "tsx",
+    "css",
+    "rust",
+    "java",
+    "yaml",
 }
 
 lvim.builtin.treesitter.ignore_install = { "haskell" }
@@ -184,89 +184,69 @@ lvim.builtin.which_key.mappings["e"] = nil
 -- end
 
 -- -- set a formatter, this will override the language server formatting capabilities (if it exists)
--- local formatters = require "lvim.lsp.null-ls.formatters"
--- formatters.setup {
---   { command = "black", filetypes = { "python" } },
---   { command = "isort", filetypes = { "python" } },
---   {
---     -- each formatter accepts a list of options identical to https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md#Configuration
---     command = "prettier",
---     ---@usage arguments to pass to the formatter
---     -- these cannot contain whitespaces, options such as `--line-width 80` become either `{'--line-width', '80'}` or `{'--line-width=80'}`
---     extra_args = { "--print-with", "100" },
---     ---@usage specify which filetypes to enable. By default a providers will attach to all the filetypes it supports.
---     filetypes = { "typescript", "typescriptreact" },
---   },
--- }
+local formatters = require "lvim.lsp.null-ls.formatters"
+formatters.setup {
+    { command = "black", filetypes = { "python" } },
+    { command = "isort", filetypes = { "python" } },
+}
 
 -- -- set additional linters
--- local linters = require "lvim.lsp.null-ls.linters"
--- linters.setup {
---   { command = "flake8", filetypes = { "python" } },
---   {
---     -- each linter accepts a list of options identical to https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md#Configuration
---     command = "shellcheck",
---     ---@usage arguments to pass to the formatter
---     -- these cannot contain whitespaces, options such as `--line-width 80` become either `{'--line-width', '80'}` or `{'--line-width=80'}`
---     extra_args = { "--severity", "warning" },
---   },
---   {
---     command = "codespell",
---     ---@usage specify which filetypes to enable. By default a providers will attach to all the filetypes it supports.
---     filetypes = { "javascript", "python" },
---   },
--- }
+local linters = require "lvim.lsp.null-ls.linters"
+linters.setup {
+    { command = "flake8", filetypes = { "python" } },
+    { command = "mypy", filetypes = { "python" } },
+}
 
 -- Additional Plugins
 lvim.plugins = {
-  { "christoomey/vim-tmux-navigator" },
-  { "editorconfig/editorconfig-vim" },
-  { "emersonmx/vim-better-zoom" },
-  { "godlygeek/tabular" },
-  { "haya14busa/vim-asterisk" },
-  { "lambdalisue/suda.vim" },
-  { "ptzz/lf.vim" },
-  { "tommcdo/vim-exchange" },
-  { "tpope/vim-abolish" },
-  { "tpope/vim-dispatch" },
-  { "tpope/vim-eunuch" },
-  { "tpope/vim-repeat" },
-  { "tpope/vim-unimpaired" },
-  { "voldikss/vim-floaterm" },
-  {
-    "tpope/vim-surround",
-    keys = { "S", "c", "d", "y" }
-  },
-  {
-    "tpope/vim-fugitive",
-    cmd = {
-      "G",
-      "Git",
-      "Gdiffsplit",
-      "Gread",
-      "Gwrite",
-      "Ggrep",
-      "GMove",
-      "GDelete",
-      "GBrowse",
-      "GRemove",
-      "GRename",
-      "Glgrep",
-      "Gedit"
+    { "christoomey/vim-tmux-navigator" },
+    { "editorconfig/editorconfig-vim" },
+    { "emersonmx/vim-better-zoom" },
+    { "godlygeek/tabular" },
+    { "haya14busa/vim-asterisk" },
+    { "lambdalisue/suda.vim" },
+    { "ptzz/lf.vim" },
+    { "tommcdo/vim-exchange" },
+    { "tpope/vim-abolish" },
+    { "tpope/vim-dispatch" },
+    { "tpope/vim-eunuch" },
+    { "tpope/vim-repeat" },
+    { "tpope/vim-unimpaired" },
+    { "voldikss/vim-floaterm" },
+    {
+        "tpope/vim-surround",
+        keys = { "S", "c", "d", "y" }
     },
-    ft = { "fugitive" }
-  },
-  {
-    "phaazon/hop.nvim",
-    event = "BufRead",
-    config = function()
-      require("hop").setup()
-      local set_keymap = vim.api.nvim_set_keymap
-      set_keymap("", "<leader>m", "<cmd>HopChar1<cr>", { silent = true })
-      set_keymap("", "<leader>j", "<cmd>HopLineAC<cr>", { silent = true })
-      set_keymap("", "<leader>k", "<cmd>HopLineBC<cr>", { silent = true })
-    end,
-  },
+    {
+        "tpope/vim-fugitive",
+        cmd = {
+            "G",
+            "Git",
+            "Gdiffsplit",
+            "Gread",
+            "Gwrite",
+            "Ggrep",
+            "GMove",
+            "GDelete",
+            "GBrowse",
+            "GRemove",
+            "GRename",
+            "Glgrep",
+            "Gedit"
+        },
+        ft = { "fugitive" }
+    },
+    {
+        "phaazon/hop.nvim",
+        event = "BufRead",
+        config = function()
+            require("hop").setup()
+            local set_keymap = vim.api.nvim_set_keymap
+            set_keymap("", "<leader>m", "<cmd>HopChar1<cr>", { silent = true })
+            set_keymap("", "<leader>j", "<cmd>HopLineAC<cr>", { silent = true })
+            set_keymap("", "<leader>k", "<cmd>HopLineBC<cr>", { silent = true })
+        end,
+    },
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
