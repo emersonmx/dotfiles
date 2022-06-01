@@ -60,6 +60,7 @@ lvim.keys.normal_mode["H"] = false
 lvim.keys.visual_mode["J"] = false
 lvim.keys.visual_mode["K"] = false
 lvim.keys.normal_mode["L"] = false
+lvim.keys.normal_mode["h"] = false
 
 lvim.keys.normal_mode["<A-h>"] = ":TmuxNavigateLeft<cr>"
 lvim.keys.normal_mode["<A-j>"] = ":TmuxNavigateDown<cr>"
@@ -81,9 +82,6 @@ lvim.keys.normal_mode["<leader>zw"] = "<C-w>T"
 
 lvim.keys.normal_mode["<leader>o"] = ":only<cr>"
 
-for i = 1, 9 do
-    lvim.keys.normal_mode["<leader>" .. i] = i .. "gt"
-end
 lvim.keys.normal_mode["<leader>tq"] = ":tabclose<cr>"
 
 lvim.keys.normal_mode["-"] = ":LfCurrentFile<cr>"
@@ -98,21 +96,21 @@ lvim.keys.normal_mode["_"] = ":LfWorkingDirectory<cr>"
 
 -- Change Telescope navigation to use j and k for navigation and n and p for history in both input and normal mode.
 -- we use protected-mode (pcall) just in case the plugin wasn't loaded yet.
--- local _, actions = pcall(require, "telescope.actions")
--- lvim.builtin.telescope.defaults.mappings = {
---   -- for input mode
---   i = {
---     ["<C-j>"] = actions.move_selection_next,
---     ["<C-k>"] = actions.move_selection_previous,
---     ["<C-n>"] = actions.cycle_history_next,
---     ["<C-p>"] = actions.cycle_history_prev,
---   },
---   -- for normal mode
---   n = {
---     ["<C-j>"] = actions.move_selection_next,
---     ["<C-k>"] = actions.move_selection_previous,
---   },
--- }
+local _, actions = pcall(require, "telescope.actions")
+lvim.builtin.telescope.defaults.mappings = {
+    -- for input mode
+    i = {
+        ["<C-j>"] = actions.move_selection_next,
+        ["<C-k>"] = actions.move_selection_previous,
+        ["<C-n>"] = actions.cycle_history_next,
+        ["<C-p>"] = actions.cycle_history_prev,
+    },
+    -- for normal mode
+    n = {
+        ["<C-j>"] = actions.move_selection_next,
+        ["<C-k>"] = actions.move_selection_previous,
+    },
+}
 
 -- Use which-key to add extra bindings with the leader-key prefix
 -- lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
@@ -156,7 +154,9 @@ lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enabled = true
 
 lvim.builtin.which_key.mappings["e"] = nil
+
 -- generic LSP settings
+lvim.lsp.diagnostics.virtual_text = false
 
 -- ---@usage disable automatic installation of servers
 -- lvim.lsp.automatic_servers_installation = false
