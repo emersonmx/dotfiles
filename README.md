@@ -143,6 +143,7 @@ sudo pacman-key --populate
 sudo vim /etc/pacman.conf
 sudo vim /etc/pacman.d/mirrorlist
 sudo vim /etc/locale.gen
+sudo vim /etc/locale.conf
 sudo locale-gen
 
 sudo pacman -Syu
