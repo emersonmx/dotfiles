@@ -128,9 +128,35 @@ sudo mv /tmp/win32yank.exe /usr/local/bin/
 ### Arch
 
 ```sh
+# as root
+passwd # root pass
+
+echo "%wheel ALL=(ALL) ALL" > /etc/sudoers.d/wheel
+useradd -m -G wheel -s /bin/bash {username}
+passwd {username}
+exit
+
+# as user
+sudo pacman-key --init
+sudo pacman-key --populate
+
+sudo vim /etc/pacman.conf
+sudo vim /etc/pacman.d/mirrorlist
+sudo vim /etc/locale.gen
+sudo locale-gen
+
+sudo pacman -Syu
+sudo pacman -S archlinux-keyring
+sudo pacman -S base base-devel
+
+cd /tmp
+curl -LO https://aur.archlinux.org/cgit/aur.git/snapshot/yay-bin.tar.gz
+tar xvf yay-bin.tar.gz
+cd yay-bin
+makepkg -si
+
 yay -S \
     asdf-vm \
-    base-devel \
     bash-completion \
     bat \
     chezmoi \
@@ -151,6 +177,8 @@ yay -S \
     man-pages \
     mlocate \
     mold \
+    neovim \
+    nodejs \
     npm \
     oh-my-zsh-git \
     pacman-contrib \
@@ -172,7 +200,6 @@ yay -S \
     xclip \
     xdotool \
     yarn \
-    yay-bin \
     zip \
     zsh \
     zsh-autosuggestions \
