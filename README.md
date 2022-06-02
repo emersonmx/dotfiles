@@ -195,6 +195,8 @@ yay -S \
     tk \
     tmux \
     tmuxp \
+    ttf-dejavu \
+    ttf-meslo-nerd-font-powerlevel10k \
     unzip \
     util-linux \
     wmctrl \
