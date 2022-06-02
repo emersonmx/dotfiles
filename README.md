@@ -116,7 +116,7 @@ cargo install \
     sccache \
     tealdeer
 
-bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
+LV_BRANCH=rolling bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/rolling/utils/installer/install.sh)
 
 # WSL
 curl -sLo/tmp/win32yank.zip https://github.com/equalsraf/win32yank/releases/download/v0.0.4/win32yank-x64.zip
@@ -158,11 +158,12 @@ makepkg -si
 
 yay -S \
     asdf-vm \
-    bash-completion \
     bat \
     chezmoi \
     clang \
     cmake \
+    coreutils \
+    curl \
     direnv \
     exa \
     fd \
@@ -173,35 +174,39 @@ yay -S \
     iotop \
     jq \
     lf-bin \
-    man \
     man-db \
     man-pages \
-    mlocate \
+    man-pages-pt_br \
     mold \
     neovim \
     nodejs \
     npm \
     oh-my-zsh-git \
+    openssh \
+    openssl \
     pacman-contrib \
     python \
+    python-pip \
     reflector \
     ripgrep \
     rsync \
     sccache \
+    sqlite \
     subversion \
     tealdeer \
-    texinfo \
     tk \
     tmux \
     tmuxp \
-    unixodbc \
     unzip \
     util-linux \
     wmctrl \
     xclip \
+    xdg-utils \
     xdotool \
+    xz \
     yarn \
     zip \
+    zlib \
     zsh \
     zsh-autosuggestions \
     zsh-completions \
