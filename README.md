@@ -146,9 +146,7 @@ sudo vim /etc/locale.gen
 sudo vim /etc/locale.conf
 sudo locale-gen
 
-sudo pacman -Syu
-sudo pacman -S archlinux-keyring
-sudo pacman -S base base-devel
+sudo pacman -Syu archlinux-keyring base base-devel
 
 cd /tmp
 curl -LO https://aur.archlinux.org/cgit/aur.git/snapshot/yay-bin.tar.gz
