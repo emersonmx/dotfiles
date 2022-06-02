@@ -209,6 +209,6 @@ yay -S \
     zsh-autosuggestions \
     zsh-completions \
     zsh-history-substring-search \
-    zsh-theme-powerlevel10k \
+    zsh-theme-powerlevel10k-git \
     zsh-vi-mode
 ```
