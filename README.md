@@ -167,6 +167,7 @@ yay -S \
     fd \
     fzf \
     git \
+    helm \
     htop \
     httpie \
     iotop \
@@ -177,14 +178,17 @@ yay -S \
     man-pages-pt_br \
     mold \
     neovim \
+    ninja \
     nodejs \
     npm \
     oh-my-zsh-git \
     openssh \
     openssl \
     pacman-contrib \
+    pulseaudio-alsa \
     python \
     python-pip \
+    rancher-k3d-bin \
     reflector \
     ripgrep \
     rsync \
@@ -192,6 +196,7 @@ yay -S \
     sqlite \
     subversion \
     tealdeer \
+    terraform \
     tk \
     tmux \
     tmuxp \
@@ -199,6 +204,7 @@ yay -S \
     ttf-meslo-nerd-font-powerlevel10k \
     unzip \
     util-linux \
+    vulkan-swrast \
     wmctrl \
     xclip \
     xdg-utils \
@@ -212,5 +218,6 @@ yay -S \
     zsh-completions \
     zsh-history-substring-search \
     zsh-theme-powerlevel10k-git \
-    zsh-vi-mode
+    zsh-vi-mode \
+    && :
 ```
