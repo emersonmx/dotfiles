@@ -176,6 +176,7 @@ yay -S \
     man-db \
     man-pages \
     man-pages-pt_br \
+    mingw-w64-gcc \
     mold \
     neovim \
     ninja \
