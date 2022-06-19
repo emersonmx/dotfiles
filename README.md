@@ -205,6 +205,7 @@ yay -S \
     ttf-meslo-nerd-font-powerlevel10k \
     unzip \
     util-linux \
+    vi \
     vulkan-swrast \
     wmctrl \
     xclip \
