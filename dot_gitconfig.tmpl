@@ -2,20 +2,20 @@
 	name = {{ .user.full_name }}
 	email = {{ .user.email }}
 [core]
-	editor = nvim
+	editor = vim
 	excludesfile = ~/.config/git/gitignore_global
 [push]
 	default = simple
 [diff]
-	tool = nvimdiff2
-[difftool "nvimdiff2"]
-	cmd = nvim -d $LOCAL $REMOTE
+	tool = vimdiff2
+[difftool "vimdiff2"]
+	cmd = vim -d $LOCAL $REMOTE
 [commit]
 	verbose = true
 [merge]
 	tool = nfugitive
 [mergetool "nfugitive"]
-	cmd = nvim -f -c "Gdiff" "$MERGED"
+	cmd = vim -f -c "Gdiff" "$MERGED"
 [init]
 	templatedir = ~/.config/git/template
 	defaultBranch = main
