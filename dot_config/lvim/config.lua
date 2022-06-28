@@ -87,6 +87,9 @@ lvim.keys.normal_mode["<leader>tq"] = ":tabclose<cr>"
 lvim.keys.normal_mode["-"] = ":LfCurrentFile<cr>"
 lvim.keys.normal_mode["_"] = ":LfWorkingDirectory<cr>"
 
+lvim.keys.insert_mode["kj"] = false
+lvim.keys.insert_mode["jj"] = false
+
 -- add your own keymapping
 -- lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 -- unmap a default keymapping
