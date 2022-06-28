@@ -1,20 +1,60 @@
-#!/bin/bash
-set -euo pipefail
-IFS=$'\n\t'
+#!/usr/bin/env python
+# flake8: noqa: T201
 
-MYREPOS_CONFIG_DIR=${MYREPOS_CONFIG_DIR:-$HOME/.config/myrepos}
-repos_filepath="$MYREPOS_CONFIG_DIR/repos"
+import sys
+from functools import cache
+from os import environ as env
+from pathlib import Path
+from subprocess import run
 
-mkdir -p "$MYREPOS_CONFIG_DIR"
 
-repos=
-[[ -f $repos_filepath ]] && repos=$(cat $repos_filepath)
+def main() -> int:
+    for repo in get_repos():
+        if directory_exists(repo):
+            run_command_into_repo(repo)
+        else:
+            print(f"{repo} not found")
+    return 0
 
-for repo in $repos
-do
-    [[ -d "$repo" ]] && (
-        cd "$repo"
-        echo "$repo"
-        $@
-    ) || echo "$repo not found"
-done
+
+@cache
+def get_repos() -> list[str]:
+    repos_path = get_repos_path()
+    with open(repos_path) as f:
+        repos = f.read()
+    return repos.splitlines()
+
+
+def get_repos_path() -> str:
+    config_dir = Path(get_config_dir()) / "repos"
+    return str(config_dir.absolute())
+
+
+def get_config_dir() -> str:
+    return env.get("MYREPOS_CONFIG_DIR", get_default_config_dir())
+
+
+def get_default_config_dir() -> str:
+    homedir = Path(env["HOME"])
+    default_dir = homedir / ".config" / "myrepos"
+    return str(default_dir.absolute())
+
+
+def directory_exists(path: str) -> bool:
+    return Path(path).exists()
+
+
+def run_command_into_repo(repo_path: str) -> None:
+    print(repo_path)
+    command = get_command()
+    run(command, cwd=repo_path)
+
+
+@cache
+def get_command() -> list[str]:
+    _, *command = sys.argv
+    return command or ["true"]
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
