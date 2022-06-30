@@ -1,6 +1,6 @@
+{{ if eq .chezmoi.osRelease.id "ubuntu" -}}
 #!/bin/zsh
 
-{{ if eq .chezmoi.osRelease.id "ubuntu" -}}
 nvim_bin="$HOME/.local/bin/nvim.appimage"
 if [[ ! -f "$nvim_bin" ]]
 then
@@ -10,8 +10,7 @@ then
         https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
     chmod u+x "$nvim_bin"
 fi
-{{- else -}}
-nvim_bin=/usr/bin/nvim
-{{- end }}
 
 "$nvim_bin" "$@"
+{{- else -}}
+{{- end }}
