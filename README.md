@@ -164,6 +164,7 @@ yay -S \
     coreutils \
     curl \
     direnv \
+    entr \
     exa \
     fd \
     fzf \
