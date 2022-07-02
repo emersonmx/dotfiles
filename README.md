@@ -156,7 +156,6 @@ cd yay-bin
 makepkg -si
 
 yay -S \
-    asdf-vm \
     bat \
     chezmoi \
     clang \
