@@ -1,0 +1,27 @@
+#!/usr/bin/env python
+# flake8: noqa: T201
+import os
+import sys
+
+from pynvim import attach  # type: ignore
+
+
+def main() -> int:
+    if len(sys.argv) != 4:
+        print("Usage: {nvim_open} <path> <line> <column>")
+        return 1
+
+    listen_address = os.environ.get(
+        "NVIM_LISTEN_ADDRESS",
+        "/tmp/nvimsocket",
+    )
+    nvim = attach("socket", path=listen_address)
+
+    _, path, line, column = sys.argv
+    nvim.command(f"edit {path}")
+    nvim.call("cursor", line, column)
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
