@@ -193,6 +193,7 @@ local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup {
     { command = "black", filetypes = { "python" } },
     { command = "isort", filetypes = { "python" } },
+    { command = "gdformat", filetypes = { "gd", "gdscript", "gdscript3" } },
 }
 
 -- -- set additional linters
