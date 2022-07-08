@@ -7,7 +7,7 @@
         ],
         "description": "Adds shebang line for default python interpreter."
     },
-    "if __name__ == \"__main__\"": {
+    "if __name__ == '__main__'": {
         "prefix": "ifmain",
         "body": [
             "def ${1:main}() -> int:",
@@ -15,12 +15,12 @@
             "\treturn 0",
             "",
             "",
-            "if __name__ == \"__main__\":",
+            "if __name__ == '__main__':",
             "\traise SystemExit($1())"
         ],
         "description": "Create implicitly all the code at the top level using the __name__ special variable."
     },
-    "async if __name__ == \"__main__\"": {
+    "async if __name__ == '__main__'": {
         "prefix": "aifmain",
         "body": [
             "import asyncio",
@@ -31,7 +31,7 @@
             "\treturn 0",
             "",
             "",
-            "if __name__ == \"__main__\":",
+            "if __name__ == '__main__':",
             "\traise SystemExit(asyncio.run($1()))"
         ],
         "description": "Create implicitly all the code at the top level using the __name__ special variable."
@@ -172,7 +172,7 @@
     },
     "f-string": {
         "prefix": "fs",
-        "body": "f\"$0\"",
+        "body": "f'$0'",
         "description": "Shortend snippet to f-string."
     },
     "print": {
@@ -182,7 +182,7 @@
     },
     "printf": {
         "prefix": "prf",
-        "body": "print(f\"$0\")",
+        "body": "print(f'$0')",
         "description": "Shortend snippet to print function with f-string."
     },
     "type check ignore": {
