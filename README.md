@@ -157,6 +157,7 @@ makepkg -si
 
 yay -S \
     bat \
+    bottom \
     chezmoi \
     clang \
     cmake \
@@ -187,6 +188,7 @@ yay -S \
     openssh \
     openssl \
     pacman-contrib \
+    procs \
     pulseaudio-alsa \
     python \
     python-pip \
@@ -195,6 +197,7 @@ yay -S \
     ripgrep \
     rsync \
     sccache \
+    sd \
     sqlite \
     subversion \
     tealdeer \
