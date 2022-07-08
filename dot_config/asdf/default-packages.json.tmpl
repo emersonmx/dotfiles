@@ -49,7 +49,10 @@
     ],
     "rust": [
 {{- if eq .chezmoi.osRelease.id "ubuntu" }}
+        "bottom",
         "cargo-watch",
+        "procs",
+        "sd",
         "tealdeer"
 {{- else }}
         "cargo-watch"
