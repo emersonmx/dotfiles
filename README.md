@@ -175,6 +175,7 @@ yay -S \
     iotop \
     jq \
     lf-bin \
+    lld \
     man-db \
     man-pages \
     man-pages-pt_br \
