@@ -191,8 +191,8 @@ require("lvim.lsp.manager").setup("gdscript", {})
 -- -- set a formatter, this will override the language server formatting capabilities (if it exists)
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup {
-    { command = "black", filetypes = { "python" } },
     { command = "isort", filetypes = { "python" } },
+    { command = "black", filetypes = { "python" } },
     { command = "gdformat", filetypes = { "gd", "gdscript", "gdscript3" } },
 }
 
