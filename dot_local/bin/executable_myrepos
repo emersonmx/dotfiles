@@ -2,10 +2,11 @@
 # flake8: noqa: T201
 
 import sys
-from functools import cache
+from functools import lru_cache
 from os import environ as env
 from pathlib import Path
 from subprocess import run
+from typing import List
 
 
 def main() -> int:
@@ -17,8 +18,8 @@ def main() -> int:
     return 0
 
 
-@cache
-def get_repos() -> list[str]:
+@lru_cache(maxsize=None)
+def get_repos() -> List[str]:
     repos_path = get_repos_path()
     with open(repos_path) as f:
         repos = f.read()
@@ -50,8 +51,8 @@ def run_command_into_repo(repo_path: str) -> None:
     run(command, cwd=repo_path)
 
 
-@cache
-def get_command() -> list[str]:
+@lru_cache(maxsize=None)
+def get_command() -> List[str]:
     _, *command = sys.argv
     return command or ["true"]
 
