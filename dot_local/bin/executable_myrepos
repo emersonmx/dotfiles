@@ -1,12 +1,13 @@
 #!/usr/bin/env python
 # flake8: noqa: T201
 
+from __future__ import annotations
+
 import sys
 from functools import lru_cache
 from os import environ as env
 from pathlib import Path
 from subprocess import run
-from typing import List
 
 
 def main() -> int:
@@ -19,7 +20,7 @@ def main() -> int:
 
 
 @lru_cache(maxsize=None)
-def get_repos() -> List[str]:
+def get_repos() -> list[str]:
     repos_path = get_repos_path()
     with open(repos_path) as f:
         repos = f.read()
@@ -52,7 +53,7 @@ def run_command_into_repo(repo_path: str) -> None:
 
 
 @lru_cache(maxsize=None)
-def get_command() -> List[str]:
+def get_command() -> list[str]:
     _, *command = sys.argv
     return command or ["true"]
 
