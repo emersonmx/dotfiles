@@ -12,6 +12,7 @@ an executable
 vim.opt.number = false
 vim.opt.colorcolumn = "80,120"
 vim.opt.showtabline = 1
+vim.opt.tabstop = 4
 
 vim.g.loaded_python_provider = 0
 vim.g.python_host_prog = 'python2'
