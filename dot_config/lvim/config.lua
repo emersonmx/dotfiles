@@ -213,7 +213,6 @@ lvim.plugins = {
     { "haya14busa/vim-asterisk" },
     { "lambdalisue/suda.vim" },
     { "ptzz/lf.vim" },
-    { "tommcdo/vim-exchange" },
     { "tpope/vim-abolish" },
     { "tpope/vim-dispatch" },
     { "tpope/vim-eunuch" },
