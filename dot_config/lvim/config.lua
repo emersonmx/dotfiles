@@ -10,7 +10,7 @@ an executable
 
 -- general
 vim.opt.number = false
-vim.opt.colorcolumn = "80,120"
+vim.opt.colorcolumn = "81,121"
 vim.opt.showtabline = 1
 vim.opt.tabstop = 4
 
@@ -142,15 +142,17 @@ lvim.builtin.luasnip.sources.friendly_snippets = false
 lvim.builtin.treesitter.ensure_installed = {
     "bash",
     "c",
+    "cmake",
+    "css",
+    "java",
     "javascript",
     "json",
     "lua",
+    "markdown",
     "python",
-    "typescript",
-    "tsx",
-    "css",
     "rust",
-    "java",
+    "tsx",
+    "typescript",
     "yaml",
 }
 
