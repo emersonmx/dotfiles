@@ -1,0 +1,76 @@
+#!/usr/bin/env python
+
+import argparse
+import subprocess
+from email.policy import default
+from functools import partial
+from pathlib import Path
+
+run = partial(subprocess.run, check=True)
+
+
+def cookiecutter(
+    template: str,
+    template_repo: str,
+    path: Path,
+    show_input: bool,
+    verbose: bool,
+) -> None:
+    args = [f"path={path}"]
+
+    options: set[str] = set(
+        [
+            "--no-input",
+            "--overwrite-if-exists",
+        ]
+    )
+    if show_input:
+        options.discard("--no-input")
+    if verbose:
+        options.add("--verbose")
+
+    run(
+        [
+            "cookiecutter",
+            *options,
+            "--directory",
+            template,
+            template_repo,
+            *args,
+        ]
+    )
+
+
+def main() -> int:
+    default_template_repo = "https://github.com/emersonmx/cookiecutters.git"
+    parser = argparse.ArgumentParser(
+        description="Install Cookiecutter templates",
+    )
+    parser.add_argument("templates", nargs="+", help="templates to install")
+    parser.add_argument(
+        "--repository",
+        default=default_template_repo,
+        help=f"Cookiecutter repository URL. Default: {default_template_repo}",
+    )
+    parser.add_argument(
+        "--path",
+        default=Path().absolute(),
+        help="Path to install templates. Default: current directory.",
+    )
+    parser.add_argument("--show-input", default=False, action="store_true")
+    parser.add_argument("--verbose", default=False, action="store_true")
+    args = parser.parse_args()
+
+    for template in args.templates:
+        cookiecutter(
+            template,
+            template_repo=args.repository,
+            path=args.path,
+            show_input=args.show_input,
+            verbose=args.verbose,
+        )
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
