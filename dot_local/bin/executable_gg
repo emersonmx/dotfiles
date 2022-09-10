@@ -1,3 +1,0 @@
-#!/bin/sh
-
-vim -c 'e _ | Git | bd _'
