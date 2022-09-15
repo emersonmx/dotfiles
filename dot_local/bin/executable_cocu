@@ -48,7 +48,7 @@ def main() -> int:
         description="Install Cookiecutter templates",
     )
     parser.add_argument("templates", nargs="+", help="templates to install")
-    parser.add_argument("--context", nargs="+", help="context")
+    parser.add_argument("--context", default=[], nargs="+", help="context")
     parser.add_argument(
         "--repository",
         default=default_template_repo,
