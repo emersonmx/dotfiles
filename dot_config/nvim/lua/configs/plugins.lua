@@ -21,6 +21,7 @@ return require('packer').startup(
         use 'tpope/vim-fugitive'
         use 'tpope/vim-surround'
         use 'tpope/vim-unimpaired'
+        use 'tpope/vim-abolish'
         use 'tpope/vim-repeat'
         use {
             "windwp/nvim-autopairs",
