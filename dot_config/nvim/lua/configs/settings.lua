@@ -18,3 +18,8 @@ vim.opt.swapfile = false
 vim.opt.writebackup = false
 vim.opt.autowrite = true
 vim.opt.hidden = true
+
+require('onedark').setup({
+    style = 'darker'
+})
+require('onedark').load()

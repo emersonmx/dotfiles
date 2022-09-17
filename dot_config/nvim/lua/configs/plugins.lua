@@ -15,6 +15,7 @@ return require('packer').startup(
     function(use)
         use 'wbthomason/packer.nvim'
         use 'tpope/vim-sensible'
+        use 'navarasu/onedark.nvim'
         use 'ntpeters/vim-better-whitespace'
         use 'christoomey/vim-tmux-navigator'
         use 'tpope/vim-fugitive'
