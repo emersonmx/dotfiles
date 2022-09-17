@@ -22,6 +22,12 @@ return require('packer').startup(
         use 'tpope/vim-surround'
         use 'tpope/vim-unimpaired'
         use 'tpope/vim-repeat'
+        use {
+            "windwp/nvim-autopairs",
+            config = function()
+                require("nvim-autopairs").setup({})
+            end
+        }
         use 'lambdalisue/suda.vim'
         use 'voldikss/vim-floaterm'
         use 'ptzz/lf.vim'
