@@ -8,8 +8,6 @@ set_keymap('n', '<leader>o', ':only<cr>', {silent = true, noremap = true})
 set_keymap('n', '<leader>q', ':q<cr>', {silent = true, noremap = true})
 set_keymap('n', '<Space>', 'za', {noremap = true})
 
-set_keymap('', 'Y', '0y$', {})
-
 -- better whitespace
 vim.g.better_whitespace_enabled = 1
 vim.g.strip_whitespace_on_save = 1
