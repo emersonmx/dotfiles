@@ -23,6 +23,7 @@ return require('packer').startup(
         use 'tpope/vim-unimpaired'
         use 'tpope/vim-abolish'
         use 'tpope/vim-repeat'
+        use 'tpope/vim-eunuch'
         use {
             "windwp/nvim-autopairs",
             config = function()
