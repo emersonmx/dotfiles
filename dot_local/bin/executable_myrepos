@@ -22,24 +22,24 @@ def main() -> int:
 @lru_cache(maxsize=None)
 def get_repos() -> list[str]:
     repos_path = get_repos_path()
-    with open(repos_path) as f:
+    with repos_path.open(mode="r") as f:
         repos = f.read()
     return repos.splitlines()
 
 
-def get_repos_path() -> str:
+def get_repos_path() -> Path:
     config_dir = Path(get_config_dir()) / "repos"
-    return str(config_dir.absolute())
+    return config_dir.absolute()
 
 
 def get_config_dir() -> str:
     return env.get("MYREPOS_CONFIG_DIR", get_default_config_dir())
 
 
-def get_default_config_dir() -> str:
+def get_default_config_dir() -> Path:
     homedir = Path(env["HOME"])
     default_dir = homedir / ".config" / "myrepos"
-    return str(default_dir.absolute())
+    return default_dir.absolute()
 
 
 def directory_exists(path: str) -> bool:
