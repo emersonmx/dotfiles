@@ -1,13 +1,16 @@
+# Tmux
+if [[ -z "$TMUX" ]]
+then
+    exec tmux new-session -A -s home
+    exit 0
+fi
+
 # ASDF
 source $HOME/.local/share/asdf/asdf.sh
 fpath=($HOME/.local/share/asdf/completions $fpath)
 
 autoload -Uz compinit
 [[ -n ${ZDOTDIR}/.zcompdump(#qN.mh+24) ]] && compinit || compinit -C
-
-# Tmux
-[[ -z "$TMUX" ]] \
-    && exec tmux new-session -A -s home
 
 # direnv export
 (( ${+commands[direnv]} )) && emulate zsh -c "$(direnv export zsh)"
