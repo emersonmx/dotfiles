@@ -12,6 +12,9 @@ fpath=($HOME/.local/share/asdf/completions $fpath)
 autoload -Uz compinit
 [[ -n ${ZDOTDIR}/.zcompdump(#qN.mh+24) ]] && compinit || compinit -C
 
+# direnv export
+(( ${+commands[direnv]} )) && emulate zsh -c "$(direnv export zsh)"
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -26,8 +29,6 @@ source $HOME/.config/zsh/powerlevel10k/powerlevel10k.zsh-theme
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 {{- end }}
 
-eval "$(direnv hook zsh)"
-
 # vi-mode
 function zvm_config() {
     ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
@@ -39,6 +40,9 @@ source $HOME/.config/zsh/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 {{- else -}}
 source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 {{- end }}
+
+# direnv hook
+(( ${+commands[direnv]} )) && emulate zsh -c "$(direnv hook zsh)"
 
 # fzf
 {{ if eq .chezmoi.osRelease.id "ubuntu" -}}
