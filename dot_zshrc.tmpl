@@ -1,9 +1,5 @@
 # Tmux
-if [[ -z "$TMUX" ]]
-then
-    exec tmux new-session -A -s home
-    exit 0
-fi
+# Run: tmux new-session -A -s home
 
 # ASDF
 source $HOME/.local/share/asdf/asdf.sh
