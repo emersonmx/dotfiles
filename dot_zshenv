@@ -6,3 +6,5 @@ export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --no-ignore-vcs'
 export COOKIECUTTER_CONFIG="$HOME/.config/cookiecutter/config.yaml"
 export LESS="-RF"
 export EDITOR="vim"
+
+path+=($HOME_LOCAL/bin)

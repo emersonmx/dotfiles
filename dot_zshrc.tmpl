@@ -56,6 +56,8 @@ source /usr/share/fzf/completion.zsh
 {{ end -}}
 for f in $(find {{ $ohmyzsh_path }}/lib/ -iname "*.zsh" | sort -u)
 do
+    # Ignore plugin that output text
+    [[ "$f" =~ "termsupport.zsh" ]] && continue
     source "$f"
 done
 source {{ $ohmyzsh_path }}/plugins/archlinux/archlinux.plugin.zsh
