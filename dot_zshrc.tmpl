@@ -54,12 +54,19 @@ source /usr/share/fzf/completion.zsh
 {{ if eq .chezmoi.osRelease.id "ubuntu" -}}
 {{ $ohmyzsh_path = "$HOME/.config/zsh/ohmyzsh" -}}
 {{ end -}}
-for f in $(find {{ $ohmyzsh_path }}/lib/ -iname "*.zsh" | sort -u)
-do
-    # Ignore plugin that output text
-    [[ "$f" =~ "termsupport.zsh" ]] && continue
-    source "$f"
-done
+source {{ $ohmyzsh_path }}/lib/clipboard.zsh
+source {{ $ohmyzsh_path }}/lib/compfix.zsh
+source {{ $ohmyzsh_path }}/lib/completion.zsh
+source {{ $ohmyzsh_path }}/lib/directories.zsh
+source {{ $ohmyzsh_path }}/lib/functions.zsh
+source {{ $ohmyzsh_path }}/lib/git.zsh
+source {{ $ohmyzsh_path }}/lib/grep.zsh
+source {{ $ohmyzsh_path }}/lib/history.zsh
+source {{ $ohmyzsh_path }}/lib/key-bindings.zsh
+source {{ $ohmyzsh_path }}/lib/misc.zsh
+source {{ $ohmyzsh_path }}/lib/prompt_info_functions.zsh
+source {{ $ohmyzsh_path }}/lib/theme-and-appearance.zsh
+source {{ $ohmyzsh_path }}/lib/vcs_info.zsh
 source {{ $ohmyzsh_path }}/plugins/archlinux/archlinux.plugin.zsh
 source {{ $ohmyzsh_path }}/plugins/extract/extract.plugin.zsh
 source {{ $ohmyzsh_path }}/plugins/git/git.plugin.zsh
