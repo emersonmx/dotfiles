@@ -4,6 +4,7 @@ lsp.preset('recommended')
 
 lsp.ensure_installed({
     'eslint',
+    'gopls',
     'pyright',
     'rust_analyzer',
     'sumneko_lua',

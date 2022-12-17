@@ -1,6 +1,5 @@
-function ColorMyPencils(color)
-    color = color or 'onedark'
-    vim.cmd.colorscheme(color)
-end
-
-ColorMyPencils()
+local theme = require('onedark')
+theme.setup({
+    style = 'darker'
+})
+theme.load()
