@@ -8,10 +8,10 @@ return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
     use({
-        'ellisonleao/gruvbox.nvim',
-        as = 'gruvbox',
+        'joshdick/onedark.vim',
+        as = 'onedark',
         config = function()
-            vim.cmd('colorscheme gruvbox')
+            vim.cmd('colorscheme onedark')
         end
     })
 
