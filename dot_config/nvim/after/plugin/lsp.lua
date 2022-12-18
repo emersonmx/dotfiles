@@ -41,9 +41,9 @@ lsp.on_attach(function(client, bufnr)
         return
     end
 
-    vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, opts)
+    vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, opts)
+    vim.keymap.set({ 'n', 'v' }, '<leader>cf', vim.cmd.LspZeroFormat, opts)
     vim.keymap.set('n', '<leader>cn', vim.lsp.buf.rename, opts)
-    vim.keymap.set('n', '<leader>cf', vim.cmd.LspZeroFormat, opts)
     vim.keymap.set('n', 'gs', vim.lsp.buf.workspace_symbol, opts)
 end)
 
