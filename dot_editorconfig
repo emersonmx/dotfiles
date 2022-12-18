@@ -12,6 +12,9 @@ max_line_length = 80
 [*.go]
 indent_style = tab
 
+[*.lua]
+quote_style = single
+
 [*.proto]
 indent_size = 2
 
