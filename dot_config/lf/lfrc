@@ -1,5 +1,2 @@
-map ; :read
-map : :find-next
-
 cmd mkfile %$HOME/.config/lf/scripts/mkfile "$@"
 cmd mkdir %$HOME/.config/lf/scripts/mkdir "$@"
