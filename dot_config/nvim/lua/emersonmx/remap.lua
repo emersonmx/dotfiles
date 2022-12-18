@@ -1,5 +1,3 @@
-vim.keymap.set('', ';', ':')
-vim.keymap.set('', ':', ';')
 vim.keymap.set('i', 'jk', '<Esc>')
 
 vim.keymap.set('n', 'J', 'mzJ`z')
