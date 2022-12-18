@@ -10,8 +10,7 @@ return require('packer').startup(function(use)
     use 'navarasu/onedark.nvim'
 
 
-    use {
-        'nvim-telescope/telescope.nvim', tag = '0.1.0',
+    use { 'nvim-telescope/telescope.nvim', tag = '0.1.0',
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
 
@@ -28,14 +27,23 @@ return require('packer').startup(function(use)
             require('nvim-autopairs').setup({})
         end
     }
-    use 'ntpeters/vim-better-whitespace'
+    -- use 'ntpeters/vim-better-whitespace'
     use 'tpope/vim-repeat'
     use 'tpope/vim-abolish'
     use 'christoomey/vim-tmux-navigator'
     use 'tpope/vim-eunuch'
     use 'lambdalisue/suda.vim'
 
-    use { 'ptzz/lf.vim', requires = { { 'voldikss/vim-floaterm' } } }
+    use {
+        'lmburns/lf.nvim',
+        requires = {
+            { 'akinsho/toggleterm.nvim' },
+            { 'nvim-lua/plenary.nvim' },
+        },
+        config = function()
+            vim.g.lf_netrw = true
+        end
+    }
 
     use {
         'VonHeikemen/lsp-zero.nvim',
