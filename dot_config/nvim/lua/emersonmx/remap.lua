@@ -14,5 +14,5 @@ vim.keymap.set('n', '<leader>n', function ()
     vim.opt.relativenumber = not value
 end)
 
-vim.keymap.set({ 'n', 'v' }, '<leader>y', [['+y]])
-vim.keymap.set('n', '<leader>Y', [['+Y]])
+vim.keymap.set({ 'n', 'v' }, '<leader>y', [["+y]])
+vim.keymap.set('n', '<leader>Y', [["+Y]])

@@ -1,0 +1,12 @@
+{
+    "return <result>": {
+        "prefix": "re",
+        "body": "return $0",
+        "description": "Shortend snippet to return something."
+    },
+    "just return": {
+        "prefix": "ree",
+        "body": "return$0",
+        "description": "Shortend snippet to return."
+    }
+}
