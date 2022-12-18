@@ -27,10 +27,8 @@ return require('packer').startup(function(use)
             require('nvim-autopairs').setup({})
         end
     }
-    -- use 'ntpeters/vim-better-whitespace'
     use 'tpope/vim-repeat'
     use 'tpope/vim-abolish'
-    use 'christoomey/vim-tmux-navigator'
     use 'tpope/vim-eunuch'
     use 'lambdalisue/suda.vim'
 
