@@ -3,7 +3,7 @@ require('lf').setup({
     border = 'rounded',
 })
 
-vim.keymap.set('n', '-', vim.cmd.Lf)
-vim.keymap.set('n', '_', function()
+vim.keymap.set('n', '<leader>ll', vim.cmd.Lf)
+vim.keymap.set('n', '<leader>lf', function()
     vim.cmd.Lf('.')
 end)
