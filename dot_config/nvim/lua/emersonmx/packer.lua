@@ -55,4 +55,6 @@ return require('packer').startup(function(use)
         'jose-elias-alvarez/null-ls.nvim',
         requires = { 'nvim-lua/plenary.nvim' },
     }
+
+    use 'folke/zen-mode.nvim'
 end)
