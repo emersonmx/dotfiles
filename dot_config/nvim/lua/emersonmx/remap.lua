@@ -1,5 +1,3 @@
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
-
 vim.keymap.set('i', 'jk', '<Esc>')
 
 vim.keymap.set('n', 'J', 'mzJ`z')
@@ -16,3 +14,5 @@ end)
 
 vim.keymap.set({ 'n', 'v' }, '<leader>y', [["+y]])
 vim.keymap.set('n', '<leader>Y', [["+Y]])
+
+vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
