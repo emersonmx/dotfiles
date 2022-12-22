@@ -5,7 +5,6 @@ vim.opt.expandtab = true
 vim.opt.smartindent = true
 
 vim.opt.wrap = false
-vim.opt.textwidth = 0
 vim.opt.colorcolumn = '81'
 
 vim.opt.swapfile = false
