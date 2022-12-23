@@ -9,6 +9,8 @@ return require('packer').startup(function(use)
 
     use 'navarasu/onedark.nvim'
 
+    use 'nvim-lua/plenary.nvim'
+
     use 'tpope/vim-surround'
     use 'tpope/vim-unimpaired'
     use {
@@ -23,11 +25,10 @@ return require('packer').startup(function(use)
     use 'lambdalisue/suda.vim'
     use 'gpanders/editorconfig.nvim'
 
-    use { 'nvim-telescope/telescope.nvim', tag = '0.1.0',
-        requires = { { 'nvim-lua/plenary.nvim' } }
-    }
+    use { 'nvim-telescope/telescope.nvim', tag = '0.1.0' }
     use 'tpope/vim-fugitive'
     use 'mbbill/undotree'
+    use 'folke/zen-mode.nvim'
 
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
     use 'nvim-treesitter/playground'
@@ -38,6 +39,7 @@ return require('packer').startup(function(use)
             { 'neovim/nvim-lspconfig' },
             { 'williamboman/mason.nvim' },
             { 'williamboman/mason-lspconfig.nvim' },
+            { 'jose-elias-alvarez/null-ls.nvim' },
 
             -- Autocompletion
             { 'hrsh7th/nvim-cmp' },
@@ -51,10 +53,4 @@ return require('packer').startup(function(use)
             { 'L3MON4D3/LuaSnip' },
         }
     }
-    use {
-        'jose-elias-alvarez/null-ls.nvim',
-        requires = { 'nvim-lua/plenary.nvim' },
-    }
-
-    use 'folke/zen-mode.nvim'
 end)
