@@ -29,6 +29,7 @@ return require('packer').startup(function(use)
     use 'tpope/vim-fugitive'
     use 'mbbill/undotree'
     use 'folke/zen-mode.nvim'
+    use 'numToStr/Navigator.nvim'
 
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
     use 'nvim-treesitter/playground'
