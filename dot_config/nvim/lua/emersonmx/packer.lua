@@ -27,6 +27,7 @@ return require('packer').startup(function(use)
 
     use { 'nvim-telescope/telescope.nvim', tag = '0.1.0' }
     use 'tpope/vim-fugitive'
+    use 'lewis6991/gitsigns.nvim'
     use 'mbbill/undotree'
     use 'folke/zen-mode.nvim'
     use 'numToStr/Navigator.nvim'
