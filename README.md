@@ -107,7 +107,7 @@ for l in golang nodejs python rust lua
 do
     asdf plugin add "$l"
     asdf install "$l" latest
-    asdf global "$l" latest
+    asdf global "$l" latest system
     asdf reshim "$l" latest
 done
 
