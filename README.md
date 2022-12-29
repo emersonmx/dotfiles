@@ -1,8 +1,6 @@
 # dotfiles
 
-## Install
-
-### Ubuntu
+## Ubuntu
 
 ```sh
 sudo apt-get update
@@ -70,39 +68,6 @@ BINDIR=$HOME/.local/bin sh -c "$(curl -fsLS chezmoi.io/get)"
 chezmoi init gh_personal:emersonmx/dotfiles.git
 
 ln -sf /usr/bin/fdfind $HOME/.local/bin/fd
-
-mkdir -p $HOME/.local/{bin,share}
-
-mkdir -p $HOME/.config/zsh
-git clone https://github.com/asdf-vm/asdf.git $HOME/.local/share/asdf
-git clone https://github.com/changyuheng/zsh-interactive-cd.git $HOME/.config/zsh/zsh-interactive-cd
-git clone https://github.com/emersonmx/zsh-plugins.git $HOME/.config/zsh/zsh-plugins
-git clone https://github.com/jeffreytse/zsh-vi-mode.git $HOME/.config/zsh/zsh-vi-mode
-git clone https://github.com/ohmyzsh/ohmyzsh.git $HOME/.config/zsh/ohmyzsh
-git clone https://github.com/romkatv/powerlevel10k.git $HOME/.config/zsh/powerlevel10k
-git clone https://github.com/zsh-users/zsh-autosuggestions.git $HOME/.config/zsh/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-history-substring-search.git $HOME/.config/zsh/zsh-history-substring-search
-
-asdf plugin add golang
-asdf plugin add nodejs
-asdf plugin add python
-asdf plugin add rust
-
-asdf install golang latest
-asdf install nodejs latest
-asdf install python latest
-asdf install rust latest
-
-asdf global golang latest
-asdf global nodejs latest
-asdf global python latest
-asdf global rust latest
-
-asdf reshim golang latest
-asdf reshim nodejs latest
-asdf reshim python latest
-asdf reshim rust latest
-
 env CGO_ENABLED=0 go install -ldflags="-s -w" github.com/gokcehan/lf@latest
 
 rm -rf /tmp/mold
@@ -112,14 +77,46 @@ git checkout v1.2.1
 make -j$(nproc) CXX=clang++
 sudo make install
 popd
+```
 
-cargo install \
-    sccache \
-    tealdeer
+## Setup `.local`
 
-LV_BRANCH=rolling bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/rolling/utils/installer/install.sh)
+```sh
+mkdir -p $HOME/.local/{bin,share}
+```
 
-# WSL
+## ZSH
+
+```sh
+mkdir -p $HOME/.config/zsh
+git clone https://github.com/changyuheng/zsh-interactive-cd.git $HOME/.config/zsh/zsh-interactive-cd
+git clone https://github.com/emersonmx/zsh-plugins.git $HOME/.config/zsh/zsh-plugins
+git clone https://github.com/jeffreytse/zsh-vi-mode.git $HOME/.config/zsh/zsh-vi-mode
+git clone https://github.com/ohmyzsh/ohmyzsh.git $HOME/.config/zsh/ohmyzsh
+git clone https://github.com/romkatv/powerlevel10k.git $HOME/.config/zsh/powerlevel10k
+git clone https://github.com/zsh-users/zsh-autosuggestions.git $HOME/.config/zsh/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-history-substring-search.git $HOME/.config/zsh/zsh-history-substring-search
+```
+
+## asdf
+
+```sh
+git clone https://github.com/asdf-vm/asdf.git $HOME/.local/share/asdf
+
+for l in golang nodejs python rust lua
+do
+    asdf plugin add "$l"
+    asdf install "$l" latest
+    asdf global "$l" latest
+    asdf reshim "$l" latest
+done
+
+# run asdf.py [https://github.com/emersonmx/scripts/blob/main/arch/updater/asdf.py]
+```
+
+## WSL
+
+```sh
 curl -sLo/tmp/win32yank.zip https://github.com/equalsraf/win32yank/releases/download/v0.0.4/win32yank-x64.zip
 unzip -p /tmp/win32yank.zip win32yank.exe > /tmp/win32yank.exe
 chmod +x /tmp/win32yank.exe
