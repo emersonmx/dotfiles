@@ -8,6 +8,7 @@ lsp.ensure_installed({
     'pyright',
     'rust_analyzer',
     'sumneko_lua',
+    'taplo',
     'tsserver',
 })
 
