@@ -7,8 +7,8 @@ vim.keymap.set('n', 'n', 'nzzzv')
 vim.keymap.set('n', 'N', 'Nzzzv')
 
 vim.keymap.set('n', '<leader>n', function()
-    local value = vim.opt.nu:get() or vim.opt.relativenumber:get()
-    vim.opt.nu = not value
+    local value = vim.opt.number:get() or vim.opt.relativenumber:get()
+    vim.opt.number = not value
     vim.opt.relativenumber = not value
 end)
 
