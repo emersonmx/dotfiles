@@ -37,11 +37,6 @@ lsp.set_preferences({
 lsp.on_attach(function(client, bufnr)
     local opts = { buffer = bufnr, remap = false }
 
-    if client.name == 'eslint' then
-        vim.cmd.LspStop('eslint')
-        return
-    end
-
     vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, opts)
     vim.keymap.set({ 'n', 'v' }, '<leader>cf', vim.lsp.buf.format, opts)
     vim.keymap.set('n', '<leader>cn', vim.lsp.buf.rename, opts)

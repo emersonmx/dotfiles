@@ -3,11 +3,11 @@
         "snippets": [
             {
                 "language": "go",
-                "path": "./go.json"
+                "path": "snippets/go.json"
             },
             {
                 "language": "python",
-                "path": "./python.json"
+                "path": "snippets/python.json"
             }
         ]
     }
