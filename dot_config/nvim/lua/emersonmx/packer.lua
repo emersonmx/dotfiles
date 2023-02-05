@@ -36,6 +36,7 @@ return require('packer').startup(function(use)
     use 'nvim-treesitter/playground'
     use {
         'VonHeikemen/lsp-zero.nvim',
+        branch = 'v1.x',
         requires = {
             -- LSP Support
             { 'neovim/nvim-lspconfig' },
@@ -50,6 +51,9 @@ return require('packer').startup(function(use)
             { 'saadparwaiz1/cmp_luasnip' },
             { 'hrsh7th/cmp-nvim-lsp' },
             { 'hrsh7th/cmp-nvim-lua' },
+
+            -- Debug Support
+            { 'mfussenegger/nvim-dap' },
 
             -- Snippets
             { 'L3MON4D3/LuaSnip' },
