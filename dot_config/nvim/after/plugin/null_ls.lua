@@ -9,6 +9,7 @@ null_ls.setup({
         formatting.taplo,
         formatting.isort,
         formatting.black,
+        formatting.prettier,
         diagnostics.mypy,
         diagnostics.flake8,
     }
