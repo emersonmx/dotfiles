@@ -7,7 +7,6 @@ lsp.ensure_installed({
     'gopls',
     'pyright',
     'rust_analyzer',
-    'sumneko_lua',
     'taplo',
     'tsserver',
 })
