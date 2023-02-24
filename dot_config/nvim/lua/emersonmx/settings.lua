@@ -32,6 +32,8 @@ vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0
 vim.g.netrw_list_hide = [[\(^\|\s\s\)\zs\.\S\+]]
 
+vim.g.python3_host_prog = os.getenv('HOME') .. '/.config/nvim/.venv/bin/python'
+
 if vim.fn.has 'wsl' == 1 then
     vim.g.clipboard = {
         copy = {
