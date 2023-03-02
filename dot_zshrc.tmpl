@@ -3,6 +3,10 @@
 
 # ASDF
 source $HOME/.local/share/asdf/asdf.sh
+
+# completions
+ZSH_CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/oh-my-zsh"
+fpath=($ZSH_CACHE_DIR/completions $fpath)
 fpath=($HOME/.local/share/asdf/completions $fpath)
 
 autoload -Uz compinit
@@ -71,6 +75,7 @@ source {{ $ohmyzsh_path }}/plugins/archlinux/archlinux.plugin.zsh
 source {{ $ohmyzsh_path }}/plugins/extract/extract.plugin.zsh
 source {{ $ohmyzsh_path }}/plugins/git/git.plugin.zsh
 source {{ $ohmyzsh_path }}/plugins/gitignore/gitignore.plugin.zsh
+source {{ $ohmyzsh_path }}/plugins/gh/gh.plugin.zsh
 source {{ $ohmyzsh_path }}/plugins/python/python.plugin.zsh
 source {{ $ohmyzsh_path }}/plugins/pip/pip.plugin.zsh
 source {{ $ohmyzsh_path }}/plugins/docker/docker.plugin.zsh
