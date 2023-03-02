@@ -6,11 +6,11 @@ local diagnostics = null_ls.builtins.diagnostics
 null_ls.setup({
     sources = {
         code_actions.gitsigns,
-        formatting.taplo,
-        formatting.isort,
-        formatting.black,
-        formatting.prettier,
-        diagnostics.mypy,
         diagnostics.flake8,
+        diagnostics.mypy,
+        formatting.black,
+        formatting.isort,
+        formatting.prettier,
+        formatting.taplo,
     }
 })
