@@ -66,6 +66,7 @@ sudo apt-get install \
 
 BINDIR=$HOME/.local/bin sh -c "$(curl -fsLS chezmoi.io/get)"
 chezmoi init gh_personal:emersonmx/dotfiles.git
+chezmoi apply
 
 ln -sf /usr/bin/fdfind $HOME/.local/bin/fd
 env CGO_ENABLED=0 go install -ldflags="-s -w" github.com/gokcehan/lf@latest
