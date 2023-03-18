@@ -120,15 +120,21 @@ Host *
 
 ## ZSH
 
+[Changing your default shell](https://wiki.archlinux.org/title/Command-line_shell#Changing_your_default_shell)
+
 ```sh
 mkdir -p $HOME/.config/zsh
-git clone https://github.com/changyuheng/zsh-interactive-cd.git $HOME/.config/zsh/zsh-interactive-cd
-git clone https://github.com/emersonmx/zsh-plugins.git $HOME/.config/zsh/zsh-plugins
+
+# Ubuntu
 git clone https://github.com/jeffreytse/zsh-vi-mode.git $HOME/.config/zsh/zsh-vi-mode
-git clone https://github.com/ohmyzsh/ohmyzsh.git $HOME/.config/zsh/ohmyzsh
 git clone https://github.com/romkatv/powerlevel10k.git $HOME/.config/zsh/powerlevel10k
 git clone https://github.com/zsh-users/zsh-autosuggestions.git $HOME/.config/zsh/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-history-substring-search.git $HOME/.config/zsh/zsh-history-substring-search
+
+# Ubuntu and Arch
+git clone https://github.com/ohmyzsh/ohmyzsh.git $HOME/.config/zsh/ohmyzsh
+git clone https://github.com/emersonmx/zsh-plugins.git $HOME/.config/zsh/zsh-plugins
+git clone https://github.com/changyuheng/zsh-interactive-cd.git $HOME/.config/zsh/zsh-interactive-cd
 ```
 
 ## asdf
