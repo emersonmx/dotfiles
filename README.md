@@ -142,14 +142,6 @@ git clone https://github.com/changyuheng/zsh-interactive-cd.git $HOME/.config/zs
 ```sh
 git clone https://github.com/asdf-vm/asdf.git $HOME/.local/share/asdf
 
-for l in golang nodejs python rust lua
-do
-    asdf plugin add "$l"
-    asdf install "$l" latest
-    asdf global "$l" latest system
-    asdf reshim "$l" latest
-done
-
 # run asdf.py [https://github.com/emersonmx/scripts/blob/main/arch/updater/asdf.py]
 ```
 
