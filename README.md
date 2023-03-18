@@ -85,6 +85,38 @@ popd
 mkdir -p $HOME/.local/{bin,share}
 ```
 
+## Setup `.ssh`
+
+```sh
+mkdir ~/.ssh
+mkdir ~/.ssh/sockets
+chmod 700 -R ~/.ssh
+touch ~/.ssh/config
+chmod 600 -R ~/.ssh/config
+touch ~/.ssh/example{,.pub}
+chmod 600 -R ~/.ssh/example*
+```
+
+### Config
+
+```sh
+Host * !bitbucket
+    ControlMaster auto
+    ControlPersist yes
+    Compression yes
+    ServerAliveInterval 120
+
+Host example
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/example
+    ControlPath ~/.ssh/sockets/example
+    IdentitiesOnly yes
+
+Host *
+    ControlPath ~/.ssh/sockets/socket-%C
+```
+
 ## ZSH
 
 ```sh
