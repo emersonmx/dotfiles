@@ -5,6 +5,7 @@ lsp.preset('recommended')
 lsp.ensure_installed({
     'eslint',
     'gopls',
+    'lua_ls',
     'pyright',
     'rust_analyzer',
     'taplo',
