@@ -3,7 +3,7 @@ local code_actions = null_ls.builtins.code_actions
 local formatting = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
 
-venv_bin = ".venv/bin"
+local venv_bin = ".venv/bin"
 
 null_ls.setup({
     sources = {
