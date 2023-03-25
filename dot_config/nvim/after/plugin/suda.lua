@@ -1,1 +1,1 @@
-vim.keymap.set('c', 'w!!', 'w suda://%', {})
+vim.keymap.set("c", "w!!", "w suda://%", {})
