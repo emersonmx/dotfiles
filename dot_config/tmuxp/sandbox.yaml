@@ -1,0 +1,10 @@
+session_name: sandbox
+start_directory: ~/code/sandbox
+windows:
+  - window_name: editor
+    focus: true
+    panes:
+      -
+  - window_name: exit
+    panes:
+      - exit

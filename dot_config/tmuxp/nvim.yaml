@@ -1,0 +1,10 @@
+session_name: nvim
+start_directory: ~/.config/nvim
+windows:
+  - window_name: editor
+    focus: true
+    panes:
+      -
+  - window_name: exit
+    panes:
+      - exit
