@@ -8,10 +8,11 @@ local venv_bin = ".venv/bin"
 null_ls.setup({
     sources = {
         code_actions.gitsigns,
-        diagnostics.flake8.with({ prefer_local = venv_bin }),
+        diagnostics.ruff.with({ prefer_local = venv_bin }),
         diagnostics.mypy.with({ prefer_local = venv_bin }),
-        formatting.black.with({ prefer_local = venv_bin }),
+        formatting.ruff.with({ prefer_local = venv_bin }),
         formatting.isort.with({ prefer_local = venv_bin }),
+        formatting.black.with({ prefer_local = venv_bin }),
         formatting.prettier,
         formatting.taplo,
     }
