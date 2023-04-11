@@ -7,7 +7,7 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim \
     $HOME/.local/share/nvim/site/pack/packer/start/packer.nvim
 
 nvim \
-    -c "so $SCRIPT_DIR/lua/emersonmx/packer.lua" \
+    -u $SCRIPT_DIR/lua/emersonmx/packer.lua \
     -c PackerSync
 
 
