@@ -11,7 +11,6 @@ null_ls.setup({
         diagnostics.ruff.with({ prefer_local = venv_bin }),
         diagnostics.mypy.with({ prefer_local = venv_bin }),
         formatting.ruff.with({ prefer_local = venv_bin }),
-        formatting.isort.with({ prefer_local = venv_bin }),
         formatting.black.with({ prefer_local = venv_bin }),
         formatting.prettier,
         formatting.taplo,

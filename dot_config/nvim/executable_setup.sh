@@ -22,7 +22,6 @@ $SCRIPT_DIR/.venv/bin/python -m pip install \
     flake8-print \
     ipdb \
     ipython \
-    isort \
     mypy \
     pep8-naming \
     pynvim \
