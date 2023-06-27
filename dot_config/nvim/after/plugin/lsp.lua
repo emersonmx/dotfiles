@@ -3,13 +3,23 @@ local lsp = require("lsp-zero")
 lsp.preset("recommended")
 
 lsp.ensure_installed({
+    "bashls",
+    "docker_compose_language_service",
+    "dockerls",
+    "emmet_ls",
     "eslint",
+    "golangci_lint_ls",
     "gopls",
+    "html",
+    "jsonls",
     "lua_ls",
     "pyright",
+    "ruff_lsp",
     "rust_analyzer",
+    "stylelint_lsp",
     "taplo",
     "tsserver",
+    "yamlls",
 })
 
 local cmp = require("cmp")
