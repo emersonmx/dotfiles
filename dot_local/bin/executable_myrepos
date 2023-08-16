@@ -1,0 +1,10 @@
+#!/bin/bash
+
+MYREPOS_CONFIG="$HOME/.config/myrepos"
+
+if [[ ! -f "$MYREPOS_CONFIG" ]]; then
+    touch "$MYREPOS_CONFIG"
+    echo "$MYREPOS_CONFIG was created!"
+fi
+
+cat "$MYREPOS_CONFIG"
