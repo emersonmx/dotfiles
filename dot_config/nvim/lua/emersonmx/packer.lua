@@ -63,6 +63,7 @@ return require("packer").startup(function(use)
 
             -- Debug Support
             { "mfussenegger/nvim-dap" },
+            { "rcarriga/nvim-dap-ui" },
 
             -- Snippets
             { "L3MON4D3/LuaSnip" },
