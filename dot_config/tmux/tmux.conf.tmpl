@@ -54,7 +54,7 @@ set -g prefix C-a
 bind r source-file $HOME/.config/tmux/tmux.conf \; display 'local tmux config loaded'
 
 # Show file manager
-bind -n M-F splitw -c "#{pane_current_path}" lf
+bind -n M-F split-window -c "#{pane_current_path}" lf
 
 # Toggle status bar
 bind -n M-S set -g status
