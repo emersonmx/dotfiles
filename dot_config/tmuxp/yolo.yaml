@@ -1,0 +1,10 @@
+session_name: yolo
+start_directory: ~/yolo
+windows:
+  - window_name: editor
+    focus: true
+    panes:
+      -
+  - window_name: exit
+    panes:
+      - exit
