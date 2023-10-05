@@ -35,6 +35,7 @@ MASON_PACKAGES=(
     commitlint \
     djlint \
     editorconfig-checker \
+    efm \
     flake8 \
     gofumpt \
     golangci-lint \
