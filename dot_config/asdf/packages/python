@@ -1,0 +1,12 @@
+black
+cookiecutter
+ipdb
+ipython
+isort
+mypy
+pep8-naming
+pip-tools
+poetry
+pyright
+ruff
+tmuxp
