@@ -24,7 +24,6 @@ return require("packer").startup(function(use)
     use("tpope/vim-abolish")
     use("tpope/vim-eunuch")
     use("lambdalisue/suda.vim")
-    use("gpanders/editorconfig.nvim")
 
     use({ "nvim-telescope/telescope.nvim", tag = "0.1.0" })
     use("tpope/vim-fugitive")
@@ -42,7 +41,6 @@ return require("packer").startup(function(use)
             ts_update()
         end,
     })
-    use("nvim-treesitter/playground")
     use({
         "VonHeikemen/lsp-zero.nvim",
         branch = "v1.x",
