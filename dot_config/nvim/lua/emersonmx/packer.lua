@@ -25,7 +25,7 @@ return require("packer").startup(function(use)
     use("tpope/vim-eunuch")
     use("lambdalisue/suda.vim")
 
-    use({ "nvim-telescope/telescope.nvim", tag = "0.1.0" })
+    use({ "nvim-telescope/telescope.nvim", tag = "0.1.3" })
     use("tpope/vim-fugitive")
     use("lewis6991/gitsigns.nvim")
     use("mbbill/undotree")
