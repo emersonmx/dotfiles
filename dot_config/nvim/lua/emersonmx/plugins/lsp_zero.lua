@@ -73,8 +73,12 @@ return {
         lsp.on_attach(function(client, bufnr)
             local opts = { buffer = bufnr, remap = false }
 
-            vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action,
-                opts)
+            vim.keymap.set(
+                { "n", "v" },
+                "<leader>ca",
+                vim.lsp.buf.code_action,
+                opts
+            )
             vim.keymap.set({ "n", "v" }, "<leader>cf", vim.lsp.buf.format, opts)
             vim.keymap.set("n", "<leader>cn", vim.lsp.buf.rename, opts)
             vim.keymap.set("n", "gs", vim.lsp.buf.workspace_symbol, opts)
