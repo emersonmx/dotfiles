@@ -17,6 +17,9 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("emersonmx.plugins", {
+    install = {
+        colorscheme = { "onedark" },
+    },
     change_detection = {
         notify = false
     }
