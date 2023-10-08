@@ -6,11 +6,6 @@ return {
 
     "tpope/vim-surround",
     "tpope/vim-unimpaired",
-    {
-        "windwp/nvim-autopairs",
-        event = "InsertEnter",
-        opts = {}
-    },
 
     "tpope/vim-repeat",
     "tpope/vim-abolish",
