@@ -2,15 +2,9 @@
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
+rm -f "$SCRIPT_DIR/lazy-lock.json"
 rm -rf "$HOME/.local/share/nvim/"
 rm -rf "$HOME/.local/state/nvim/"
-git clone --depth 1 https://github.com/wbthomason/packer.nvim \
-    "$HOME/.local/share/nvim/site/pack/packer/start/packer.nvim"
-
-nvim \
-    --noplugin \
-    -u "$SCRIPT_DIR/lua/emersonmx/packer.lua" \
-    -c PackerSync
 
 
 rm -rf "$SCRIPT_DIR/.venv"
@@ -28,8 +22,7 @@ python -m venv --upgrade-deps .venv
     pynvim \
     ruff
 
-nvim -c "Mason"
-
+nvim --headless -c "quit"
 MASON_PACKAGES=(
     black \
     commitlint \
@@ -53,4 +46,4 @@ MASON_PACKAGES=(
     yamlfmt \
     yamllint \
 )
-nvim -c "MasonInstall ${MASON_PACKAGES[*]}"
+nvim --headless -c "MasonInstall ${MASON_PACKAGES[*]}" -c "quit"
