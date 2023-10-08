@@ -6,6 +6,6 @@ return {
         style = "darker"
     },
     config = function()
-        vim.cmd([[colorscheme onedark]])
+        vim.cmd.colorscheme("onedark")
     end,
 }
