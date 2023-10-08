@@ -3,25 +3,25 @@ return {
     branch = "v1.x",
     dependencies = {
         -- LSP Support
-        { "neovim/nvim-lspconfig" },
-        { "williamboman/mason.nvim" },
-        { "williamboman/mason-lspconfig.nvim" },
-        { "jose-elias-alvarez/null-ls.nvim" },
+        "neovim/nvim-lspconfig",
+        "williamboman/mason.nvim",
+        "williamboman/mason-lspconfig.nvim",
+        "jose-elias-alvarez/null-ls.nvim",
 
         -- Autocompletion
-        { "hrsh7th/nvim-cmp" },
-        { "hrsh7th/cmp-nvim-lsp" },
-        { "hrsh7th/cmp-buffer" },
-        { "hrsh7th/cmp-path" },
-        { "saadparwaiz1/cmp_luasnip" },
-        { "hrsh7th/cmp-nvim-lua" },
+        "hrsh7th/nvim-cmp",
+        "hrsh7th/cmp-nvim-lsp",
+        "hrsh7th/cmp-buffer",
+        "hrsh7th/cmp-path",
+        "saadparwaiz1/cmp_luasnip",
+        "hrsh7th/cmp-nvim-lua",
 
         -- Debug Support
-        { "mfussenegger/nvim-dap" },
-        { "rcarriga/nvim-dap-ui" },
+        "mfussenegger/nvim-dap",
+        "rcarriga/nvim-dap-ui",
 
         -- Snippets
-        { "L3MON4D3/LuaSnip" },
+        "L3MON4D3/LuaSnip",
     },
     config = function()
         local lsp = require("lsp-zero")
