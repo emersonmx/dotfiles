@@ -16,4 +16,8 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup("emersonmx.plugins")
+require("lazy").setup("emersonmx.plugins", {
+    change_detection = {
+        notify = false
+    }
+})
