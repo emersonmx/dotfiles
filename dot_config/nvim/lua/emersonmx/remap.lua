@@ -16,3 +16,16 @@ vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+
+local function move_up()
+    return vim.fn.wildmenumode() == 1 and "<C-p>" or "<Up>"
+end
+
+local function move_down()
+    return vim.fn.wildmenumode() == 1 and "<C-n>" or "<Down>"
+end
+
+vim.keymap.set("c", "<C-p>", move_up, { noremap = true, expr = true })
+vim.keymap.set("c", "<C-n>", move_down, { noremap = true, expr = true })
+vim.keymap.set("c", "<C-k>", move_up, { noremap = true, expr = true })
+vim.keymap.set("c", "<C-j>", move_down, { noremap = true, expr = true })
