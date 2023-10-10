@@ -22,27 +22,43 @@ python -m venv --upgrade-deps .venv
     pynvim \
     ruff
 
-nvim --headless -c "quit"
 MASON_PACKAGES=(
+    bash-language-server \
     black \
     commitlint \
     djlint \
+    docker-compose-language-service \
+    dockerfile-language-server \
     editorconfig-checker \
     efm \
+    emmet-ls \
+    eslint-lsp \
     flake8 \
     gofumpt \
     golangci-lint \
+    golangci-lint-langserver \
+    gopls \
+    html-lsp \
     isort \
+    json-lsp \
     jsonlint \
+    lua-language-server \
     markdownlint \
     mypy \
     prettier \
+    pyright \
     ruff \
+    ruff-lsp \
+    rust-analyzer \
     shellcheck \
     shfmt \
     sonarlint-language-server \
     stylelint \
+    stylelint-lsp \
     tailwindcss-language-server \
+    taplo \
+    typescript-language-server \
+    yaml-language-server \
     yamlfmt \
     yamllint \
 )
