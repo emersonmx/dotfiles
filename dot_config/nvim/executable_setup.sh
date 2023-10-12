@@ -8,7 +8,6 @@ rm -rf "$HOME/.local/state/nvim/"
 
 MASON_PACKAGES=(
     bash-language-server \
-    black \
     commitlint \
     djlint \
     docker-compose-language-service \
@@ -17,7 +16,6 @@ MASON_PACKAGES=(
     efm \
     emmet-ls \
     eslint-lsp \
-    flake8 \
     gofumpt \
     golangci-lint \
     golangci-lint-langserver \
@@ -28,10 +26,8 @@ MASON_PACKAGES=(
     jsonlint \
     lua-language-server \
     markdownlint \
-    mypy \
     prettier \
     pyright \
-    ruff \
     ruff-lsp \
     rust-analyzer \
     shellcheck \
