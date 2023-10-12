@@ -1,0 +1,26 @@
+version: 2
+root-markers:
+  - .envrc
+  - .git/
+
+tools:
+  python-black: &python-black
+    format-command: "python -m black --quiet -"
+    format-stdin: true
+  python-ruff: &python-ruff
+    format-command: "python -m ruff check --fix -e -n --stdin-filename ${INPUT} -"
+    format-stdin: true
+
+  python-mypy: &python-mypy
+    prefix: mypy
+    lint-command: "python -m mypy --show-column-numbers"
+    lint-formats:
+      - "%f:%l:%c: %trror: %m"
+      - "%f:%l:%c: %tarning: %m"
+      - "%f:%l:%c: %tote: %m"
+
+languages:
+  python:
+    - <<: *python-black
+    - <<: *python-ruff
+    - <<: *python-mypy

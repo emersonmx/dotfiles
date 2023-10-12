@@ -6,7 +6,6 @@ return {
         "neovim/nvim-lspconfig",
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
-        "jose-elias-alvarez/null-ls.nvim",
 
         -- Autocompletion
         "hrsh7th/nvim-cmp",
@@ -49,6 +48,16 @@ return {
                 lua_ls = function()
                     local lua_opts = lsp_zero.nvim_lua_ls()
                     require("lspconfig").lua_ls.setup(lua_opts)
+                end,
+                efm = function()
+                    require("lspconfig").efm.setup({
+                        init_options = { documentFormatting = true },
+                        cmd = {
+                            "efm-langserver",
+                            "-c",
+                            vim.fn.stdpath("config") .. "/efm_config.yaml",
+                        },
+                    })
                 end,
             }
         })
