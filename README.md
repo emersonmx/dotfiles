@@ -15,7 +15,7 @@ sudo apt-get install \
     coreutils \
     curl \
     dirmngr \
-    exa \
+    lsd \
     fd-find \
     fzf \
     g++ \
@@ -193,7 +193,7 @@ yay -S \
     curl \
     direnv \
     entr \
-    exa \
+    lsd \
     fd \
     fzf \
     git \
