@@ -4,13 +4,9 @@
 # completions
 ZSH_CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
 fpath=($ZSH_CACHE_DIR/completions $fpath)
-fpath=($HOME/.local/share/asdf/completions $fpath)
 
 autoload -Uz compinit
 [[ -n ${ZDOTDIR}/.zcompdump(#qN.mh+24) ]] && compinit || compinit -C
-
-# direnv export
-(( ${+commands[direnv]} )) && emulate zsh -c "$(direnv export zsh)"
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -37,9 +33,6 @@ source $HOME/.config/zsh/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 {{- else -}}
 source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 {{- end }}
-
-# direnv hook
-(( ${+commands[direnv]} )) && emulate zsh -c "$(direnv hook zsh)"
 
 # fzf
 {{ if eq .chezmoi.osRelease.id "ubuntu" -}}
@@ -69,6 +62,7 @@ source {{ $ohmyzsh_path }}/lib/prompt_info_functions.zsh
 source {{ $ohmyzsh_path }}/lib/theme-and-appearance.zsh
 source {{ $ohmyzsh_path }}/lib/vcs_info.zsh
 source {{ $ohmyzsh_path }}/plugins/asdf/asdf.plugin.zsh
+source {{ $ohmyzsh_path }}/plugins/direnv/direnv.plugin.zsh
 source {{ $ohmyzsh_path }}/plugins/archlinux/archlinux.plugin.zsh
 source {{ $ohmyzsh_path }}/plugins/extract/extract.plugin.zsh
 source {{ $ohmyzsh_path }}/plugins/git/git.plugin.zsh
