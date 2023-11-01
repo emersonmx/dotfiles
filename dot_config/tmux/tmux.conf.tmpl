@@ -58,8 +58,12 @@ bind -n M-F split-window -c "#{pane_current_path}" lf
 # Toggle status bar
 bind -n M-S set -g status
 
-# switch windows alt+number
+# Toggle zoom
 bind -n M-"'" resize-pane -Z
+bind -n M-` resize-pane -Z
+bind -n M-z resize-pane -Z
+
+# Switch windows alt+number
 bind -n M-0 select-window -t 0
 bind -n M-1 select-window -t 1
 bind -n M-2 select-window -t 2
