@@ -40,7 +40,11 @@ set -g status-left-length 50
 set -g status-left ' #S '
 set -g status-right '#{prefix_highlight}'
 set -ag status-right '#{?pane_synchronized,#[bg='$blue_color']#[fg='$black_color'] S ,}'
+{{ if eq .chezmoi.osRelease.id "ubuntu" -}}
+set -ag status-right '#{battery_color_bg} #{battery_icon_status}#{battery_percentage} '
+{{- else -}}
 set -ag status-right '#{battery_color_bg}#{battery_icon_status}#{battery_percentage}%% '
+{{- end }}
 set -ag status-right '#[bg='$fg_color']#[fg='$black_color'] #(date +"%Y-%m-%d %H:%M") '
 
 set -g window-status-format '#I #W'
