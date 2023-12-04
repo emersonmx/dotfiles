@@ -1,4 +1,5 @@
 dockerfile-language-server-nodejs
+json-server
 neovim
 prettier
 semver
