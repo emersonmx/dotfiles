@@ -1,0 +1,6 @@
+#!/bin/bash
+
+skeleton="$HOME/code/ossuary/$1"
+shift
+
+sk -s "$skeleton" "$@"
