@@ -8,7 +8,7 @@ set -g mouse on
 set -g allow-rename off
 set -g set-titles-string '#T'
 set -g escape-time 5
-set -g allow-passthrough 1
+set -g allow-passthrough on
 {{ if eq .chezmoi.osRelease.id "ubuntu" -}}
 set-option -sa terminal-features ',alacritty:RGB'
 {{- else -}}
