@@ -137,7 +137,7 @@ require("lazy").setup({
     },
     "nvim-tree/nvim-web-devicons",
 
-    -- "tpope/vim-unimpaired",
+    "tpope/vim-unimpaired",
     "tpope/vim-repeat",
     "tpope/vim-abolish",
     "tpope/vim-eunuch",
