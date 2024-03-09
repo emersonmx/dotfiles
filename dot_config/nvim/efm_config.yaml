@@ -6,13 +6,6 @@ format-debounce: 1s
 lint-debounce: 1s
 
 tools:
-  python-black: &python-black
-    format-command: "black --quiet -"
-    format-stdin: true
-  python-ruff: &python-ruff
-    format-command: "ruff check --fix -e -n --stdin-filename ${INPUT} -"
-    format-stdin: true
-
   python-mypy: &python-mypy
     prefix: mypy
     lint-command: "mypy --show-column-numbers"
@@ -23,6 +16,4 @@ tools:
 
 languages:
   python:
-    - <<: *python-black
-    - <<: *python-ruff
     - <<: *python-mypy

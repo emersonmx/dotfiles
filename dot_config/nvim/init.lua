@@ -59,6 +59,10 @@ vim.opt.scrolloff = 10
 vim.opt.hlsearch = true
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
+vim.g.python3_host_prog = vim.fn.stdpath("config") .. "/.venv/bin/python"
+vim.g.loaded_ruby_provider = 0
+vim.g.loaded_perl_provider = 0
+
 vim.keymap.set(
     "n",
     "[d",
@@ -397,6 +401,16 @@ require("lazy").setup({
                 bashls = {},
                 docker_compose_language_service = {},
                 dockerls = {},
+                efm = {
+                    settings = {
+                        init_options = { documentFormatting = true },
+                    },
+                    cmd = {
+                        "efm-langserver",
+                        "-c",
+                        vim.fn.stdpath("config") .. "/efm_config.yaml",
+                    },
+                },
                 emmet_ls = {},
                 eslint = {},
                 golangci_lint_ls = {},
@@ -446,7 +460,6 @@ require("lazy").setup({
                 "commitlint",
                 "djlint",
                 "editorconfig-checker",
-                "efm",
                 "gofumpt",
                 "golangci-lint",
                 "jsonlint",
