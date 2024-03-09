@@ -378,6 +378,8 @@ require("lazy").setup({
                     end,
                 },
             })
+
+            require("lspconfig").gdscript.setup({})
         end,
     },
 
