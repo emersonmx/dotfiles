@@ -345,6 +345,7 @@ require("lazy").setup({
                 "commitlint",
                 "djlint",
                 "editorconfig-checker",
+                "gdtoolkit",
                 "gofumpt",
                 "golangci-lint",
                 "jsonlint",
@@ -406,6 +407,7 @@ require("lazy").setup({
                     end
                 end,
                 javascript = { { "prettierd", "prettier" } },
+                gdscript = { "gdformat" },
             },
         },
     },
