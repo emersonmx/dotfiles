@@ -205,6 +205,7 @@ require("lazy").setup({
             "williamboman/mason.nvim",
             "williamboman/mason-lspconfig.nvim",
             "WhoIsSethDaniel/mason-tool-installer.nvim",
+            { "creativenull/efmls-configs-nvim", version = "v1.x.x" },
             { "j-hui/fidget.nvim", opts = {} },
         },
         config = function()
@@ -282,20 +283,26 @@ require("lazy").setup({
                 require("cmp_nvim_lsp").default_capabilities()
             )
 
+            local languages = {
+                python = { require("efmls-configs.linters.mypy") },
+            }
+            local efmls_config = {
+                filetypes = vim.tbl_keys(languages),
+                settings = {
+                    rootMarkers = { ".git/" },
+                    languages = languages,
+                },
+                init_options = {
+                    documentFormatting = true,
+                    documentRangeFormatting = true,
+                },
+            }
+
             local servers = {
                 bashls = {},
                 docker_compose_language_service = {},
                 dockerls = {},
-                efm = {
-                    settings = {
-                        init_options = { documentFormatting = true },
-                    },
-                    cmd = {
-                        "efm-langserver",
-                        "-c",
-                        vim.fn.stdpath("config") .. "/efm_config.yaml",
-                    },
-                },
+                efm = efmls_config,
                 emmet_ls = {},
                 eslint = {},
                 golangci_lint_ls = {},
