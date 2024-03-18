@@ -1,23 +1,5 @@
 {
-    "overrides": [
-        {
-            "files": ["*.md"],
-            "options": {
-                "tabWidth": 2
-            }
-        },
-        {
-            "files": ["*.html"],
-            "options": {
-                "tabWidth": 2
-            }
-        },
-        {
-            "files": ["*.yml", "*.yaml"],
-            "options": {
-                "tabWidth": 2,
-                "singleQuote": false
-            }
-        }
-    ]
+    "trailingComma": "all",
+    "semi": true,
+    "singleQuote": false
 }
