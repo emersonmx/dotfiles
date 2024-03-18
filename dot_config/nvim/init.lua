@@ -1,2 +1,1 @@
-require("emersonmx.settings")
-require("emersonmx.plugins")
+require("emersonmx")
