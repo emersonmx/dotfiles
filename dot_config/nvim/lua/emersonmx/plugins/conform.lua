@@ -18,6 +18,7 @@ return {
                 end
             end,
             javascript = { { "prettierd", "prettier" } },
+            typescript = { { "prettierd", "prettier" } },
             gdscript = { "gdformat" },
         },
     },
