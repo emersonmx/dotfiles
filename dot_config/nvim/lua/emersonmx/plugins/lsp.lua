@@ -147,6 +147,7 @@ return {
             "markdownlint",
             "mypy",
             "prettier",
+            "prettierd",
             "shellcheck",
             "shfmt",
             "sonarlint-language-server",
