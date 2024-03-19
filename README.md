@@ -145,15 +145,6 @@ git clone https://github.com/asdf-vm/asdf.git $HOME/.local/share/asdf
 # run asdf.py [https://github.com/emersonmx/scripts/blob/main/arch/updater/asdf.py]
 ```
 
-## WSL
-
-```sh
-curl -sLo/tmp/win32yank.zip https://github.com/equalsraf/win32yank/releases/download/v0.0.4/win32yank-x64.zip
-unzip -p /tmp/win32yank.zip win32yank.exe > /tmp/win32yank.exe
-chmod +x /tmp/win32yank.exe
-sudo mv /tmp/win32yank.exe /usr/local/bin/
-```
-
 ### Arch
 
 ```sh
@@ -255,4 +246,11 @@ yay -S \
     zsh-theme-powerlevel10k-git \
     zsh-vi-mode \
     && :
+
+```
+
+#### WSL
+
+```sh
+yay -S win32yank-bin
 ```
