@@ -184,7 +184,6 @@ yay -S \
     curl \
     direnv \
     entr \
-    lsd \
     fd \
     fzf \
     git \
@@ -193,8 +192,10 @@ yay -S \
     httpie \
     iotop \
     jq \
+    lazygit \
     lf-bin \
     lld \
+    lsd \
     man-db \
     man-pages \
     man-pages-pt_br \
