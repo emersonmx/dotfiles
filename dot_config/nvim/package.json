@@ -8,6 +8,10 @@
             {
                 "language": "python",
                 "path": "snippets/python.json"
+            },
+            {
+                "language": "lua",
+                "path": "snippets/lua.json"
             }
         ]
     }
