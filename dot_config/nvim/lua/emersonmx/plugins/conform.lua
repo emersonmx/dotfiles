@@ -19,6 +19,7 @@ return {
             end,
             javascript = { { "prettierd", "prettier" } },
             typescript = { { "prettierd", "prettier" } },
+            rust = { "rustfmt" },
             gdscript = { "gdformat" },
         },
     },
