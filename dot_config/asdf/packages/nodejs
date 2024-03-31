@@ -1,6 +1,9 @@
+@types/node
 dockerfile-language-server-nodejs
 json-server
 neovim
 prettier
 semver
 tree-sitter-cli
+ts-node
+typescript
