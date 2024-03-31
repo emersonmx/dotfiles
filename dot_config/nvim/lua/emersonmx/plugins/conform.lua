@@ -1,3 +1,4 @@
+-- check formatters at: https://github.com/stevearc/conform.nvim/blob/master/doc/conform.txt
 return {
     "stevearc/conform.nvim",
     opts = {
@@ -7,6 +8,8 @@ return {
             lsp_fallback = true,
         },
         formatters_by_ft = {
+            gdscript = { "gdformat" },
+            javascript = { { "prettierd", "prettier" } },
             lua = { "stylua" },
             python = function(bufnr)
                 if
@@ -17,10 +20,8 @@ return {
                     return { "isort", "black" }
                 end
             end,
-            javascript = { { "prettierd", "prettier" } },
-            typescript = { { "prettierd", "prettier" } },
             rust = { "rustfmt" },
-            gdscript = { "gdformat" },
+            typescript = { { "prettierd", "prettier" } },
         },
     },
 }

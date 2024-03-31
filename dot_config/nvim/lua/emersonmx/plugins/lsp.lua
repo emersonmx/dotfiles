@@ -90,6 +90,7 @@ return {
 
         local servers = {
             bashls = {},
+            clangd = {},
             docker_compose_language_service = {},
             dockerls = {},
             efm = efmls_config,
@@ -137,6 +138,7 @@ return {
 
         local ensure_installed = vim.tbl_keys(servers or {})
         vim.list_extend(ensure_installed, {
+            "clang-format",
             "commitlint",
             "djlint",
             "editorconfig-checker",
