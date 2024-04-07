@@ -1,3 +1,5 @@
+---@diagnostic disable: undefined-global
+
 return {
     s("#!", fmt("#!/usr/bin/env {}", i(0, "python"))),
     s("true", t("True")),
