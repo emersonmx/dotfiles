@@ -94,7 +94,7 @@ return {
             docker_compose_language_service = {},
             dockerls = {},
             efm = efmls_config,
-            emmet_ls = {},
+            emmet_language_server = {},
             eslint = {},
             golangci_lint_ls = {},
             gopls = {},
