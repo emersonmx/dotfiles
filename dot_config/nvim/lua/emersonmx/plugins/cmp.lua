@@ -24,6 +24,7 @@ return {
         luasnip.config.setup({
             update_events = { "TextChanged", "TextChangedI" },
         })
+        luasnip.filetype_extend("typescript", { "javascript" })
 
         require("luasnip.loaders.from_lua").lazy_load()
 
