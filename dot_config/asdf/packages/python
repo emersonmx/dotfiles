@@ -1,5 +1,4 @@
 black
-cookiecutter
 ipdb
 ipython
 isort
@@ -9,4 +8,3 @@ poetry
 pyright
 ruff
 tmuxp
-uv
