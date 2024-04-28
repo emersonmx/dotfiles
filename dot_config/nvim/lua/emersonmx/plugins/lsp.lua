@@ -152,7 +152,6 @@ return {
             "prettierd",
             "shellcheck",
             "shfmt",
-            "sonarlint-language-server",
             "stylelint",
             "stylua",
             "taplo",
