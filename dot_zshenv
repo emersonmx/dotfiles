@@ -3,6 +3,5 @@ export ASDF_DIR=$HOME_LOCAL/share/asdf
 export ASDF_DATA_DIR=$ASDF_DIR
 export FZF_DEFAULT_OPTS="--reverse"
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --no-ignore-vcs'
-export COOKIECUTTER_CONFIG="$HOME/.config/cookiecutter/config.yaml"
 export LESS="-RF"
 export EDITOR="vim"
