@@ -5,6 +5,9 @@ windows:
     focus: true
     panes:
       -
-  - window_name: exit
+  - window_name: shell
     panes:
-      - exit
+      -
+  - window_name: chezmoi
+    panes:
+      - chezmoi cd
