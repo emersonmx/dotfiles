@@ -6,6 +6,7 @@ return {
         "WhoIsSethDaniel/mason-tool-installer.nvim",
         { "creativenull/efmls-configs-nvim", version = "v1.x.x" },
         { "j-hui/fidget.nvim", opts = {} },
+        "b0o/SchemaStore.nvim",
     },
     config = function()
         vim.api.nvim_create_autocmd("LspAttach", {
@@ -99,7 +100,14 @@ return {
             golangci_lint_ls = {},
             gopls = {},
             html = {},
-            jsonls = {},
+            jsonls = {
+                settings = {
+                    json = {
+                        schemas = require("schemastore").json.schemas(),
+                        validate = { enable = true },
+                    },
+                },
+            },
             lua_ls = {
                 settings = {
                     Lua = {
@@ -130,8 +138,19 @@ return {
             },
             stylelint_lsp = {},
             tailwindcss = {},
+            taplo = {},
             tsserver = {},
-            yamlls = {},
+            yamlls = {
+                settings = {
+                    yaml = {
+                        schemaStore = {
+                            enable = false,
+                            url = "",
+                        },
+                        schemas = require("schemastore").yaml.schemas(),
+                    },
+                },
+            },
         }
 
         require("mason").setup()
