@@ -17,16 +17,21 @@ return {
         "saadparwaiz1/cmp_luasnip",
         "hrsh7th/cmp-nvim-lsp",
         "hrsh7th/cmp-path",
+        "hrsh7th/cmp-buffer",
+        "hrsh7th/cmp-cmdline",
     },
     config = function()
         local cmp = require("cmp")
         local luasnip = require("luasnip")
+
         luasnip.config.setup({
             update_events = { "TextChanged", "TextChangedI" },
         })
         luasnip.filetype_extend("typescript", { "javascript" })
 
-        require("luasnip.loaders.from_lua").lazy_load()
+        require("luasnip.loaders.from_lua").lazy_load({
+            paths = { "./lua/emersonmx/snippets" },
+        })
 
         cmp.setup({
             snippet = {
@@ -60,6 +65,22 @@ return {
                 { name = "path" },
                 { name = "buffer" },
             },
+        })
+
+        cmp.setup.cmdline({ "/", "?" }, {
+            mapping = cmp.mapping.preset.cmdline(),
+            sources = {
+                { name = "buffer" },
+            },
+        })
+        cmp.setup.cmdline(":", {
+            mapping = cmp.mapping.preset.cmdline(),
+            sources = cmp.config.sources({
+                { name = "path" },
+            }, {
+                { name = "cmdline" },
+            }),
+            matching = { disallow_symbol_nonprefix_matching = false },
         })
     end,
 }
