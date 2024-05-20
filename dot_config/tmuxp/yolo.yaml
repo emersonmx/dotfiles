@@ -4,7 +4,7 @@ windows:
   - window_name: editor
     focus: true
     panes:
-      -
-  - window_name: exit
+      - nvim
+  - window_name: shell
     panes:
-      - exit
+      -

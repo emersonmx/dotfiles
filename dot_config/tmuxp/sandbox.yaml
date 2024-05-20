@@ -5,6 +5,6 @@ windows:
     focus: true
     panes:
       -
-  - window_name: exit
+  - window_name: git
     panes:
-      - exit
+      - lazygit
