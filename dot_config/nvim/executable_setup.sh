@@ -11,4 +11,4 @@ python -m venv --upgrade-deps .venv
 "$SCRIPT_DIR/.venv/bin/python" --version
 "$SCRIPT_DIR/.venv/bin/python" -m pip install pynvim
 
-vim
+nvim
