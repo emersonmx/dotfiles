@@ -8,6 +8,7 @@ return {
             lsp_fallback = true,
         },
         formatters_by_ft = {
+            bash = { "shfmt" },
             css = { { "prettierd", "prettier" } },
             gdscript = { "gdformat" },
             javascript = { { "prettierd", "prettier" } },
@@ -22,6 +23,7 @@ return {
                 end
             end,
             rust = { "rustfmt" },
+            sh = { "shfmt" },
             typescript = { { "prettierd", "prettier" } },
         },
     },
