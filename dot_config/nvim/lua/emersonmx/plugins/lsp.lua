@@ -153,7 +153,9 @@ return {
             },
         }
 
-        require("mason").setup()
+        require("mason").setup({
+            max_concurrent_installers = 8,
+        })
 
         local ensure_installed = vim.tbl_keys(servers or {})
         vim.list_extend(ensure_installed, {
