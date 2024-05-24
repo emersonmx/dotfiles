@@ -1,7 +1,6 @@
 dockerfile-language-server-nodejs
 json-server
 neovim
-pnpm
 prettier
 semver
 tree-sitter-cli
