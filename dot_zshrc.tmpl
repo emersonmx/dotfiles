@@ -84,6 +84,7 @@ source {{ $ohmyzsh_path }}/plugins/pip/pip.plugin.zsh
 source {{ $ohmyzsh_path }}/plugins/rust/rust.plugin.zsh
 source {{ $ohmyzsh_path }}/plugins/docker/docker.plugin.zsh
 source {{ $ohmyzsh_path }}/plugins/docker-compose/docker-compose.plugin.zsh
+source {{ $ohmyzsh_path }}/plugins/kubectl/kubectl.plugin.zsh
 
 # zsh-users
 {{ if eq .chezmoi.osRelease.id "ubuntu" -}}
