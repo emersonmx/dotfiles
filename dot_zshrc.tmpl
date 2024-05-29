@@ -120,15 +120,7 @@ alias ssh='TERM="xterm-256color" ssh'
 alias gcloud='TERM="xterm-256color" gcloud'
 alias ls="lsd --group-dirs=first"
 alias la="ls -lah"
-unalias gk 2>/dev/null
-unalias gg 2>/dev/null
-unalias ga 2>/dev/null
-unalias gss 2>/dev/null
-unalias gp 2>/dev/null
-unalias gb 2>/dev/null
-unalias gco 2>/dev/null
-unset -f ggp 2>/dev/null
-unset -f ggl 2>/dev/null
+alias gg="lazygit"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
