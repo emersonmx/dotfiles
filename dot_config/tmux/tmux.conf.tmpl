@@ -59,9 +59,6 @@ set -g prefix C-a
 
 bind r source-file $HOME/.config/tmux/tmux.conf \; display 'local tmux config loaded'
 
-# Show file manager
-bind -n M-F split-window -c "#{pane_current_path}" lf
-
 # Toggle status bar
 bind -n M-S set -g status
 
@@ -84,8 +81,8 @@ bind -n M-9 select-window -t 9
 bind -n M-s set synchronize-panes
 
 # Split window
-bind -n M-_ split-window -v
-bind -n M-! split-window -h
+bind -n M-_ split-window -v -c "#{pane_current_path}"
+bind -n M-! split-window -h -c "#{pane_current_path}"
 
 # Easy pane navigation
 is_vim="ps -o state= -o comm= -t '#{pane_tty}' \
