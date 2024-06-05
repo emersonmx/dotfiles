@@ -203,12 +203,14 @@ yay -S \
     mold \
     neovim \
     ninja \
+    nmap \
     nodejs \
     npm \
     oh-my-zsh-git \
     openssh \
     openssl \
     pacman-contrib \
+    pandoc \
     procs \
     pulseaudio-alsa \
     python \
@@ -223,6 +225,7 @@ yay -S \
     subversion \
     tealdeer \
     terraform \
+    texlive \
     tk \
     tmux \
     tmuxp \
