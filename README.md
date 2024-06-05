@@ -1,5 +1,70 @@
 # dotfiles
 
+## Setup `.local`
+
+```sh
+mkdir -p $HOME/.local/{bin,share}
+```
+
+## Setup `.ssh`
+
+```sh
+mkdir ~/.ssh
+mkdir ~/.ssh/sockets
+chmod 700 -R ~/.ssh
+touch ~/.ssh/config
+chmod 600 -R ~/.ssh/config
+touch ~/.ssh/example{,.pub}
+chmod 600 -R ~/.ssh/example*
+```
+
+### Config
+
+```sh
+Host * !bitbucket
+    ControlMaster auto
+    ControlPersist yes
+    Compression yes
+    ServerAliveInterval 120
+
+Host example
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/example
+    ControlPath ~/.ssh/sockets/example
+    IdentitiesOnly yes
+
+Host *
+    ControlPath ~/.ssh/sockets/socket-%C
+```
+
+## ZSH
+
+[Changing your default shell](https://wiki.archlinux.org/title/Command-line_shell#Changing_your_default_shell)
+
+```sh
+mkdir -p $HOME/.config/zsh
+
+# Ubuntu
+git clone https://github.com/jeffreytse/zsh-vi-mode.git $HOME/.config/zsh/zsh-vi-mode
+git clone https://github.com/romkatv/powerlevel10k.git $HOME/.config/zsh/powerlevel10k
+git clone https://github.com/zsh-users/zsh-autosuggestions.git $HOME/.config/zsh/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-history-substring-search.git $HOME/.config/zsh/zsh-history-substring-search
+git clone https://github.com/ohmyzsh/ohmyzsh.git $HOME/.config/zsh/ohmyzsh
+
+# Ubuntu and Arch
+git clone https://github.com/emersonmx/zsh-plugins.git $HOME/.config/zsh/zsh-plugins
+git clone https://github.com/changyuheng/zsh-interactive-cd.git $HOME/.config/zsh/zsh-interactive-cd
+```
+
+## asdf
+
+```sh
+git clone https://github.com/asdf-vm/asdf.git $HOME/.local/share/asdf
+
+# run asdf.py [https://github.com/emersonmx/scripts/blob/main/arch/updater/asdf.py]
+```
+
 ## Ubuntu
 
 ```sh
@@ -80,72 +145,7 @@ sudo make install
 popd
 ```
 
-## Setup `.local`
-
-```sh
-mkdir -p $HOME/.local/{bin,share}
-```
-
-## Setup `.ssh`
-
-```sh
-mkdir ~/.ssh
-mkdir ~/.ssh/sockets
-chmod 700 -R ~/.ssh
-touch ~/.ssh/config
-chmod 600 -R ~/.ssh/config
-touch ~/.ssh/example{,.pub}
-chmod 600 -R ~/.ssh/example*
-```
-
-### Config
-
-```sh
-Host * !bitbucket
-    ControlMaster auto
-    ControlPersist yes
-    Compression yes
-    ServerAliveInterval 120
-
-Host example
-    HostName github.com
-    User git
-    IdentityFile ~/.ssh/example
-    ControlPath ~/.ssh/sockets/example
-    IdentitiesOnly yes
-
-Host *
-    ControlPath ~/.ssh/sockets/socket-%C
-```
-
-## ZSH
-
-[Changing your default shell](https://wiki.archlinux.org/title/Command-line_shell#Changing_your_default_shell)
-
-```sh
-mkdir -p $HOME/.config/zsh
-
-# Ubuntu
-git clone https://github.com/jeffreytse/zsh-vi-mode.git $HOME/.config/zsh/zsh-vi-mode
-git clone https://github.com/romkatv/powerlevel10k.git $HOME/.config/zsh/powerlevel10k
-git clone https://github.com/zsh-users/zsh-autosuggestions.git $HOME/.config/zsh/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-history-substring-search.git $HOME/.config/zsh/zsh-history-substring-search
-git clone https://github.com/ohmyzsh/ohmyzsh.git $HOME/.config/zsh/ohmyzsh
-
-# Ubuntu and Arch
-git clone https://github.com/emersonmx/zsh-plugins.git $HOME/.config/zsh/zsh-plugins
-git clone https://github.com/changyuheng/zsh-interactive-cd.git $HOME/.config/zsh/zsh-interactive-cd
-```
-
-## asdf
-
-```sh
-git clone https://github.com/asdf-vm/asdf.git $HOME/.local/share/asdf
-
-# run asdf.py [https://github.com/emersonmx/scripts/blob/main/arch/updater/asdf.py]
-```
-
-### Arch
+## Arch
 
 ```sh
 # as root
@@ -253,7 +253,7 @@ yay -S \
 
 ```
 
-#### WSL
+### WSL
 
 ```sh
 yay -S win32yank-bin
