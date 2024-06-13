@@ -11,6 +11,7 @@ return {
             bash = { "shfmt" },
             css = { { "prettierd", "prettier" } },
             gdscript = { "gdformat" },
+            go = { "goimports", "gofumpt" },
             javascript = { { "prettierd", "prettier" } },
             lua = { "stylua" },
             python = function(bufnr)
