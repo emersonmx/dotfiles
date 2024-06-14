@@ -1,8 +1,8 @@
 ---@diagnostic disable: undefined-global
 
 return {
-    s("pub", t("public ")),
-    s("pro", t("protected ")),
-    s("pri", t("private ")),
+    s("pu", t("public ")),
+    s("po", t("protected ")),
+    s("pi", t("private ")),
     s("ro", t("readonly ")),
 }

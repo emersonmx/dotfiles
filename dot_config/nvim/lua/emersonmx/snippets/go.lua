@@ -13,7 +13,7 @@ return {
                 {}
             }}
             ]],
-            { i(1, "funcName"), i(2, "..."), i(3), i(0) }
+            { i(1, "funcName"), i(2), i(3), i(0) }
         )
     ),
     s(
@@ -28,7 +28,7 @@ return {
                 i(1, "receiver"),
                 i(2, "type"),
                 i(3, "methodName"),
-                i(4, "..."),
+                i(4),
                 i(5),
                 i(0),
             }
