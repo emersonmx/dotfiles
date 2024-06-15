@@ -1,10 +1,6 @@
 ---@diagnostic disable: undefined-global
 
 return {
-    s("pr", fmt("fmt.Println({})", i(0))),
-    s("prf", fmt("fmt.Printf({})", i(0))),
-    s("re", t("return")),
-    s("fs", fmt("fmt.Sprintf({})", i(0))),
     s(
         "fn",
         fmt(
@@ -34,4 +30,10 @@ return {
             }
         )
     ),
+
+    s("re", t("return")),
+
+    s("pr", fmt("fmt.Println({})", i(0))),
+    s("prf", fmt("fmt.Printf({})", i(0))),
+    s("fs", fmt("fmt.Sprintf({})", i(0))),
 }
