@@ -38,7 +38,7 @@ return {
     s("err", fmt("Err({})", i(1))),
 
     s("pr", fmt("println!({})", i(1))),
-    s("fmt", fmt("format!({})", i(1))),
+    s("fs", fmt("format!({})", i(1))),
 
     s(
         "modtest",
