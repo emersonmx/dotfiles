@@ -26,6 +26,8 @@ return {
         )
     ),
 
+    s("arm", fmt("{} => {}", { i(1), i(0) })),
+
     s("self", t("Self")),
     s("re", t("return")),
 
