@@ -70,3 +70,11 @@ vim.api.nvim_create_autocmd("TextYankPost", {
         vim.highlight.on_yank()
     end,
 })
+
+local my_custom_ft_group =
+    vim.api.nvim_create_augroup("my-custom-file-types", { clear = true })
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+    group = my_custom_ft_group,
+    pattern = { "*.h" },
+    command = "set filetype=c",
+})
