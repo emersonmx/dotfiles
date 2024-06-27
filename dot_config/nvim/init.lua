@@ -29,6 +29,10 @@ require("lazy").setup({
         { import = "emersonmx/plugins" },
     },
 
+    change_detection = {
+        notify = false,
+    },
+
     ui = {
         icons = {
             cmd = "⌘",
