@@ -12,25 +12,25 @@ set(
     "n",
     "[d",
     vim.diagnostic.goto_prev,
-    { desc = "Go to previous [D]iagnostic message" }
+    { desc = "Go to previous Diagnostic message" }
 )
 set(
     "n",
     "]d",
     vim.diagnostic.goto_next,
-    { desc = "Go to next [D]iagnostic message" }
+    { desc = "Go to next Diagnostic message" }
 )
 set(
     "n",
     "<leader>e",
     vim.diagnostic.open_float,
-    { desc = "Show diagnostic [E]rror messages" }
+    { desc = "Show diagnostic Error messages" }
 )
 set(
     "n",
     "<leader>q",
     vim.diagnostic.setloclist,
-    { desc = "Open diagnostic [Q]uickfix list" }
+    { desc = "Open diagnostic Quickfix list" }
 )
 
 set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })

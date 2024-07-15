@@ -1,17 +1,30 @@
 return {
     "folke/which-key.nvim",
     event = "VeryLazy",
-    config = function()
-        require("which-key").setup()
-
-        require("which-key").register({
-            ["<leader>"] = {
-                c = "[C]ode",
-                d = "[D]ocument",
-                r = "[R]ename",
-                s = "[S]earch",
-                w = "[W]orkspace",
+    opts = {
+        spec = {
+            { "<leader>c", desc = "Code" },
+            {
+                "<leader>d",
+                icon = { icon = "󰈔", color = "green" },
+                desc = "Document",
             },
-        })
-    end,
+            {
+                "<leader>r",
+                icon = { icon = "󰑕", color = "green" },
+                desc = "Rename",
+            },
+            { "<leader>s", desc = "Search" },
+            {
+                "<leader>w",
+                icon = { icon = "", color = "green" },
+                desc = "Workspace",
+            },
+        },
+        icons = {
+            rules = {
+                { pattern = "directory", icon = "", color = "green" },
+            },
+        },
+    },
 }
