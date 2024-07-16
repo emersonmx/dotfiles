@@ -25,24 +25,20 @@ return {
                 end
                 local tb = require("telescope.builtin")
 
-                map("gd", tb.lsp_definitions, "[G]oto [D]efinition")
-                map("gr", tb.lsp_references, "[G]oto [R]eferences")
-                map("gI", tb.lsp_implementations, "[G]oto [I]mplementation")
-                map("<leader>D", tb.lsp_type_definitions, "Type [D]efinition")
-                map(
-                    "<leader>ds",
-                    tb.lsp_document_symbols,
-                    "[D]ocument [S]ymbols"
-                )
+                map("gd", tb.lsp_definitions, "Goto Definition")
+                map("gr", tb.lsp_references, "Goto References")
+                map("gI", tb.lsp_implementations, "Goto Implementation")
+                map("<leader>D", tb.lsp_type_definitions, "Type Definition")
+                map("<leader>ds", tb.lsp_document_symbols, "Document Symbols")
                 map(
                     "<leader>ws",
                     tb.lsp_dynamic_workspace_symbols,
-                    "[W]orkspace [S]ymbols"
+                    "Workspace Symbols"
                 )
-                map("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
-                map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
+                map("<leader>rn", vim.lsp.buf.rename, "Rename")
+                map("<leader>ca", vim.lsp.buf.code_action, "Code Action")
                 map("K", vim.lsp.buf.hover, "Hover Documentation")
-                map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
+                map("gD", vim.lsp.buf.declaration, "Goto Declaration")
                 local client = vim.lsp.get_client_by_id(event.data.client_id)
                 if
                     client
