@@ -1,7 +1,7 @@
 ---@diagnostic disable: undefined-global
 
 return {
-    s("derive", fmt("#[derive({})]", i(1, "Clone, Debug, Default"))),
+    s("derive", fmt("#[derive({})]", i(1, "Debug, Clone, Default, PartialEq"))),
     s(
         "impl",
         fmt(
