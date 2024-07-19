@@ -1,6 +1,41 @@
 ---@diagnostic disable: undefined-global
 
 return {
+    s("re", t("return")),
+
+    s(
+        "if",
+        fmt(
+            [[
+            if ({}) {{
+                {}
+            }}
+            ]],
+            { i(1), i(0) }
+        )
+    ),
+    s(
+        "for",
+        fmt(
+            [[
+            for ({}) {{
+                {}
+            }}
+            ]],
+            { i(1), i(0) }
+        )
+    ),
+    s(
+        "while",
+        fmt(
+            [[
+            while ({}) {{
+                {}
+            }}
+            ]],
+            { i(1), i(0) }
+        )
+    ),
     s(
         "cls",
         fmt(
@@ -23,7 +58,6 @@ return {
             { i(1), i(0) }
         )
     ),
-    s("af", fmt("({}) => {}", { i(1), i(0) })),
     s(
         "fn",
         fmt(
@@ -46,8 +80,7 @@ return {
             { i(1, "methodName"), i(2), i(0) }
         )
     ),
-
-    s("re", t("return")),
+    s("af", fmt("({}) => {}", { i(1), i(0) })),
     s(
         "cb",
         fmt(
@@ -59,17 +92,6 @@ return {
             i(0)
         )
     ),
-    s(
-        "if",
-        fmt(
-            [[
-            if ({}) {{
-                {}
-            }}
-            ]],
-            { i(1), i(0) }
-        )
-    ),
-
+    s("req", fmt("const {{ {} }} = require({});", { i(2), i(1) })),
     s("pr", fmt("console.log({})", i(0))),
 }
