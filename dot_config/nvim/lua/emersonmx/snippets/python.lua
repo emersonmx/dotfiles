@@ -1,6 +1,13 @@
 ---@diagnostic disable: undefined-global
 
 return {
+    s("true", t("True")),
+    s("false", t("False")),
+    s("re", t("return")),
+    s("#ti", t("# type: ignore")),
+    s("#nq", t("# noqa")),
+    s("#nc", t("# pragma: no cover")),
+
     s(
         "cls",
         fmt(
@@ -53,13 +60,6 @@ return {
         )
     ),
 
-    s("true", t("True")),
-    s("false", t("False")),
-    s("re", t("return")),
-
-    s("pr", fmt("print({})", i(0))),
-    s("fs", fmt("f'{}'", i(0))),
-
     s("#!", fmt("#!/usr/bin/env {}", i(0, "python"))),
     s(
         "ifmain",
@@ -94,8 +94,6 @@ return {
             { i(1, "main"), i(0), rep(1) }
         )
     ),
-
-    s("#ti", t("# type: ignore")),
-    s("#nq", t("# noqa")),
-    s("#nc", t("# pragma: no cover")),
+    s("pr", fmt("print({})", i(0))),
+    s("fs", fmt("f'{}'", i(0))),
 }

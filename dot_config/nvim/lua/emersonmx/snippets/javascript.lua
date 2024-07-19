@@ -80,6 +80,7 @@ return {
             { i(1, "methodName"), i(2), i(0) }
         )
     ),
+
     s("af", fmt("({}) => {}", { i(1), i(0) })),
     s(
         "cb",
