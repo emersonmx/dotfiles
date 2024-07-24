@@ -15,6 +15,8 @@ opt.breakindent = true
 opt.wrap = false
 opt.colorcolumn = "81"
 
+opt.formatexpr = "v:lua.require('conform').formatexpr()"
+
 opt.swapfile = false
 opt.backup = false
 opt.undodir = vim.fn.stdpath("state") .. "/undodir"

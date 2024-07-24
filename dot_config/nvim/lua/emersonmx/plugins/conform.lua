@@ -9,10 +9,10 @@ return {
         },
         formatters_by_ft = {
             bash = { "shfmt" },
-            css = { { "prettierd", "prettier" } },
+            css = { "prettierd", "prettier", stop_after_first = true },
             gdscript = { "gdformat" },
             go = { "goimports", "gofumpt" },
-            javascript = { { "prettierd", "prettier" } },
+            javascript = { "prettierd", "prettier", stop_after_first = true },
             lua = { "stylua" },
             python = function(bufnr)
                 if
@@ -23,9 +23,9 @@ return {
                     return { "isort", "black" }
                 end
             end,
-            rust = { "rustfmt" },
+            rust = { "rustfmt", lsp_format = "fallback" },
             sh = { "shfmt" },
-            typescript = { { "prettierd", "prettier" } },
+            typescript = { "prettierd", "prettier", stop_after_first = true },
         },
     },
 }
