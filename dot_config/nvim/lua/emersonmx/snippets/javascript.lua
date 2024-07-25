@@ -94,5 +94,6 @@ return {
         )
     ),
     s("req", fmt("const {{ {} }} = require({});", { i(2), i(1) })),
+    s("imp", fmt("import {{ {} }} from {};", { i(2), i(1) })),
     s("pr", fmt("console.log({})", i(0))),
 }
