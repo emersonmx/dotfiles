@@ -10,6 +10,18 @@ return {
     s("re", t("return ")),
 
     s(
+        "mc",
+        fmt(
+            [[
+            match {} {{
+                {}
+            }}
+            ]],
+            { i(1), i(0) }
+        )
+    ),
+    s("arm", fmt("{} => {}", { i(1), i(0) })),
+    s(
         "impl",
         fmt(
             [[
@@ -46,7 +58,6 @@ return {
         )
     ),
     s("test", t("#[test]")),
-    s("arm", fmt("{} => {}", { i(1), i(0) })),
     s("derive", fmt("#[derive({})]", i(1, "Debug, Clone, Default, PartialEq"))),
     s("o", fmt("let {} = {}", { i(1), i(0) })),
     s("pr", fmt("println!({})", i(1))),
