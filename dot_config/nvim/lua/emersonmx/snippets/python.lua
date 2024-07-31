@@ -64,7 +64,7 @@ return {
         "m",
         fmt(
             [[
-            def {}(self, {}) -> {}:
+            def {}(self{}) -> {}:
                 {}
             ]],
             { i(1, "method_name"), i(2), i(3, "None"), i(4, "...") }
