@@ -36,6 +36,18 @@ return {
             { i(1), i(0) }
         )
     ),
+    s("af", fmt("({}) => {}", { i(1), i(0) })),
+    s(
+        "fn",
+        fmt(
+            [[
+            function {}({}) {{
+                {}
+            }}
+            ]],
+            { i(1, "functionName"), i(2), i(0) }
+        )
+    ),
     s(
         "cls",
         fmt(
@@ -59,17 +71,6 @@ return {
         )
     ),
     s(
-        "fn",
-        fmt(
-            [[
-            function {}({}) {{
-                {}
-            }}
-            ]],
-            { i(1, "functionName"), i(2), i(0) }
-        )
-    ),
-    s(
         "m",
         fmt(
             [[
@@ -81,7 +82,6 @@ return {
         )
     ),
 
-    s("af", fmt("({}) => {}", { i(1), i(0) })),
     s(
         "cb",
         fmt(
@@ -95,5 +95,7 @@ return {
     ),
     s("req", fmt("const {{ {} }} = require({});", { i(2), i(1) })),
     s("imp", fmt("import {{ {} }} from {};", { i(2), i(1) })),
+    s("o", fmt("const {} = {}", { i(1), i(0) })),
     s("pr", fmt("console.log({})", i(0))),
+    s("fs", fmt("`{}`", i(0))),
 }
