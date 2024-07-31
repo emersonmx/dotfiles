@@ -20,6 +20,7 @@ return {
             { i(1, "Type"), i(0) }
         )
     ),
+    s("af", fmt("|{}| {}", { i(1), i(0) })),
     s(
         "fn",
         fmt(
@@ -47,6 +48,7 @@ return {
     s("test", t("#[test]")),
     s("arm", fmt("{} => {}", { i(1), i(0) })),
     s("derive", fmt("#[derive({})]", i(1, "Debug, Clone, Default, PartialEq"))),
+    s("o", fmt("let {} = {}", { i(1), i(0) })),
     s("pr", fmt("println!({})", i(1))),
     s("fs", fmt("format!({})", i(1))),
 }
