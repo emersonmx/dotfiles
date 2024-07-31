@@ -57,6 +57,18 @@ return {
             i(0)
         )
     ),
+    s(
+        "tfn",
+        fmt(
+            [[
+            #[test]
+            fn {}() {{
+                {}
+            }}
+            ]],
+            { i(1, "test_name"), i(0) }
+        )
+    ),
     s("test", t("#[test]")),
     s("derive", fmt("#[derive({})]", i(1, "Debug, Clone, Default, PartialEq"))),
     s("o", fmt("let {} = {}", { i(1), i(0) })),
