@@ -7,7 +7,7 @@ return {
     s("result", fmt("Result<{}, {}>", { i(1, "T"), i(2, "E") })),
     s("ok", fmt("Ok({})", i(1))),
     s("err", fmt("Err({})", i(1))),
-    s("re", t("return")),
+    s("re", t("return ")),
 
     s(
         "impl",

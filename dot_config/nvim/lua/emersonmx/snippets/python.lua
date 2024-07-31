@@ -3,7 +3,7 @@
 return {
     s("true", t("True")),
     s("false", t("False")),
-    s("re", t("return")),
+    s("re", t("return ")),
     s("#ti", t("# type: ignore")),
     s("#nq", t("# noqa")),
     s("#nc", t("# pragma: no cover")),

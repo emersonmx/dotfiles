@@ -1,8 +1,8 @@
 ---@diagnostic disable: undefined-global
 
 return {
-    s("re", t("return")),
-    s("pkg", t("package")),
+    s("re", t("return ")),
+    s("pkg", t("package ")),
 
     s(
         "if",

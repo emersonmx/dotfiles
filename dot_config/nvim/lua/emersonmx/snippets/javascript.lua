@@ -1,7 +1,7 @@
 ---@diagnostic disable: undefined-global
 
 return {
-    s("re", t("return")),
+    s("re ", t("return ")),
 
     s(
         "if",
