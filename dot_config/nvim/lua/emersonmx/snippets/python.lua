@@ -8,6 +8,17 @@ return {
     s("#nq", t("# noqa")),
     s("#nc", t("# pragma: no cover")),
 
+    s("af", fmt("lambda {}: {}", { i(1), i(0) })),
+    s(
+        "fn",
+        fmt(
+            [[
+            def {}({}) -> {}:
+                {}
+            ]],
+            { i(1, "function_name"), i(2), i(3, "None"), i(4, "...") }
+        )
+    ),
     s(
         "cls",
         fmt(
@@ -50,17 +61,16 @@ return {
         )
     ),
     s(
-        "def",
+        "m",
         fmt(
             [[
-            def {}({}) -> {}:
+            def {}(self, {}) -> {}:
                 {}
             ]],
-            { i(1, "function_name"), i(2), i(3, "None"), i(4, "...") }
+            { i(1, "method_name"), i(2), i(3, "None"), i(4, "...") }
         )
     ),
 
-    s("#!", fmt("#!/usr/bin/env {}", i(0, "python"))),
     s(
         "ifmain",
         fmt(
@@ -94,6 +104,8 @@ return {
             { i(1, "main"), i(0), rep(1) }
         )
     ),
+    s("#!", fmt("#!/usr/bin/env {}", i(0, "python"))),
+    s("o", fmt("{} = {}", { i(1), i(0) })),
     s("pr", fmt("print({})", i(0))),
     s("fs", fmt("f'{}'", i(0))),
 }

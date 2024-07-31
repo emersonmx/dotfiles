@@ -91,7 +91,6 @@ return {
         )
     ),
 
-    s("o", fmt("{} := {}", { i(1), i(0) })),
     s(
         "cb",
         fmt(
@@ -103,6 +102,7 @@ return {
             i(0)
         )
     ),
+    s("o", fmt("{} := {}", { i(1), i(0) })),
     s("pr", fmt("fmt.Println({})", i(0))),
     s("prf", fmt("fmt.Printf({})", i(0))),
     s("fs", fmt("fmt.Sprintf({})", i(0))),
