@@ -26,7 +26,7 @@ return {
         )
     ),
     s(
-        "while",
+        "wh",
         fmt(
             [[
             while ({}) {{
@@ -36,6 +36,20 @@ return {
             { i(1), i(0) }
         )
     ),
+    s(
+        "sw",
+        fmt(
+            [[
+            switch {} {{
+                {}
+            }}
+            ]],
+            { i(1), i(0) }
+        )
+    ),
+    s("cs", fmt("case {}:", i(1))),
+    s("df", t("default:")),
+    s("bk", t("break")),
     s("af", fmt("({}) => {}", { i(1), i(0) })),
     s(
         "fn",

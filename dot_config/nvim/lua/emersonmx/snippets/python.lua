@@ -8,6 +8,37 @@ return {
     s("#nq", t("# noqa")),
     s("#nc", t("# pragma: no cover")),
 
+    s(
+        "if",
+        fmt(
+            [[
+            if {}:
+                {}
+            ]],
+            { i(1), i(0) }
+        )
+    ),
+    s(
+        "for",
+        fmt(
+            [[
+            for {} in {}:
+                {}
+            ]],
+            { i(1), i(2), i(0) }
+        )
+    ),
+    s(
+        "wh",
+        fmt(
+            [[
+            while {}:
+                {}
+            ]],
+            { i(1), i(0) }
+        )
+    ),
+    s("bk", t("break")),
     s("af", fmt("lambda {}: {}", { i(1), i(0) })),
     s(
         "fn",
