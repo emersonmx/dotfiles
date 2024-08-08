@@ -68,7 +68,7 @@ return {
                 {}
             }}
             ]],
-            { i(1, "void"), i(2, "func_name"), i(3), i(0) }
+            { i(1, "void"), i(2, "func_name"), i(3, "void"), i(0) }
         )
     ),
 
