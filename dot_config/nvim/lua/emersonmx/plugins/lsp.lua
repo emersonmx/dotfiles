@@ -88,6 +88,7 @@ return {
         local servers = {
             bashls = {},
             clangd = {},
+            cmake = {},
             docker_compose_language_service = {},
             dockerls = {},
             efm = efmls_config,
