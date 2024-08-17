@@ -185,15 +185,16 @@ yay -S \
     direnv \
     entr \
     fd \
+    ffmpegthumbnailer \
     fzf \
     git \
     helm \
     htop \
     httpie \
+    imagemagick \
     iotop \
     jq \
     lazygit \
-    lf-bin \
     lld \
     lsd \
     man-db \
@@ -209,8 +210,10 @@ yay -S \
     oh-my-zsh-git \
     openssh \
     openssl \
+    p7zip \
     pacman-contrib \
     pandoc \
+    poppler \
     procs \
     pulseaudio-alsa \
     python \
@@ -241,8 +244,10 @@ yay -S \
     xdotool \
     xz \
     yarn \
+    yazi \
     zip \
     zlib \
+    zoxide \
     zsh \
     zsh-autosuggestions \
     zsh-completions \
