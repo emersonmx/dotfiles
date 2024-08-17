@@ -89,7 +89,7 @@
     nordvpn                 # nordvpn connection status, linux only (https://nordvpn.com/)
     #ranger                  # ranger shell (https://github.com/ranger/ranger)
     #nnn                     # nnn shell (https://github.com/jarun/nnn)
-    lf                      # lf shell (https://github.com/gokcehan/lf)
+    #lf                      # lf shell (https://github.com/gokcehan/lf)
     #xplr                    # xplr shell (https://github.com/sayanarijit/xplr)
     vim_shell               # vim shell indicator (:sh)
     #midnight_commander      # midnight commander shell (https://midnight-commander.org/)
