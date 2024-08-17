@@ -134,7 +134,6 @@ chezmoi init gh_personal:emersonmx/dotfiles.git
 chezmoi apply
 
 ln -sf /usr/bin/fdfind $HOME/.local/bin/fd
-env CGO_ENABLED=0 go install -ldflags="-s -w" github.com/gokcehan/lf@latest
 
 rm -rf /tmp/mold
 git clone https://github.com/rui314/mold.git /tmp/mold
