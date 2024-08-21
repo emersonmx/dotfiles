@@ -8,3 +8,4 @@ poetry
 pyright
 ruff
 tmuxp
+uv
