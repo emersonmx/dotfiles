@@ -1,0 +1,3 @@
+#!/bin/bash
+
+sks "$(skls | grep -v '^snippets/' | fzf)" "$@"
