@@ -136,6 +136,7 @@ return {
             stylelint_lsp = {},
             tailwindcss = {},
             taplo = {},
+            templ = {},
             tsserver = {},
             yamlls = {
                 settings = {
