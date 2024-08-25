@@ -12,6 +12,7 @@ return {
             css = { "prettierd", "prettier", stop_after_first = true },
             gdscript = { "gdformat" },
             go = { "goimports", "gofumpt" },
+            templ = { "templ" },
             javascript = { "prettierd", "prettier", stop_after_first = true },
             lua = { "stylua" },
             python = function(bufnr)
