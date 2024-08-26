@@ -1,4 +1,6 @@
 -- check formatters at: https://github.com/stevearc/conform.nvim/blob/master/doc/conform.txt
+local prettier_formatter = { "prettierd", "prettier", stop_after_first = true }
+
 return {
     "stevearc/conform.nvim",
     opts = {
@@ -9,11 +11,11 @@ return {
         },
         formatters_by_ft = {
             bash = { "shfmt" },
-            css = { "prettierd", "prettier", stop_after_first = true },
+            css = prettier_formatter,
             gdscript = { "gdformat" },
             go = { "goimports", "gofumpt" },
-            templ = { "templ" },
-            javascript = { "prettierd", "prettier", stop_after_first = true },
+            html = prettier_formatter,
+            javascript = prettier_formatter,
             lua = { "stylua" },
             python = function(bufnr)
                 if
@@ -26,7 +28,8 @@ return {
             end,
             rust = { "rustfmt", lsp_format = "fallback" },
             sh = { "shfmt" },
-            typescript = { "prettierd", "prettier", stop_after_first = true },
+            templ = { "templ" },
+            typescript = prettier_formatter,
         },
     },
 }
