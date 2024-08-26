@@ -1,3 +1,5 @@
 #!/bin/bash
 
+set -euo pipefail
+
 myrepos | xargs -P 4 -I{} zsh -ic "cd {}; pwd; $*"

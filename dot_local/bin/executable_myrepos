@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -euo pipefail
+
 MYREPOS_CONFIG="${MYREPOS_CONFIG:-$HOME/.config/myrepos}"
 
 if [[ ! -f "$MYREPOS_CONFIG" ]]; then

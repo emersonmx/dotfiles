@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -euo pipefail
+
 skeleton="$HOME/code/ossuary/$1"
 shift
 

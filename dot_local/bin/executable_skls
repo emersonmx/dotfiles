@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -euo pipefail
+
 ossuary_dir="$HOME/code/ossuary"
 
 find "${ossuary_dir}" -name "skelly.toml" -print0 |

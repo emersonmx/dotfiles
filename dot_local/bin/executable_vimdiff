@@ -1,3 +1,5 @@
 #!/bin/bash
 
-vim -d $*
+set -euo pipefail
+
+vim -d "$@"
