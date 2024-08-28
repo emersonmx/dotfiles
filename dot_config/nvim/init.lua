@@ -17,7 +17,6 @@ vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
 require("lazy").setup({
     spec = {
-        "folke/zen-mode.nvim",
         "mbbill/undotree",
         "nvim-tree/nvim-web-devicons",
         "tpope/vim-abolish",
