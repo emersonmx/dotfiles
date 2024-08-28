@@ -21,7 +21,6 @@ require("lazy").setup({
         "mbbill/undotree",
         "nvim-tree/nvim-web-devicons",
         "tpope/vim-abolish",
-        "tpope/vim-eunuch",
         "tpope/vim-repeat",
         "tpope/vim-unimpaired",
 
