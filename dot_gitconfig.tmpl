@@ -49,9 +49,3 @@
 	whitespace = red reverse
 [url "https://"]
 	insteadOf = git://
-{{ if eq .chezmoi.os "linux" -}}
-{{-   if (.chezmoi.kernel.osrelease | lower | contains "microsoft") -}}
-[credential]
-	helper = /mnt/c/Program\\ Files/Git/mingw64/bin/git-credential-manager.exe
-{{   end -}}
-{{- end -}}
