@@ -168,9 +168,8 @@ sudo locale-gen
 sudo pacman -Syu archlinux-keyring base base-devel
 
 cd /tmp
-curl -LO https://aur.archlinux.org/cgit/aur.git/snapshot/yay-bin.tar.gz
-tar xvf yay-bin.tar.gz
-cd yay-bin
+git clone https://aur.archlinux.org/yay.git
+cd yay
 makepkg -si
 
 yay -S \
