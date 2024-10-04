@@ -80,7 +80,6 @@ sudo apt-get install \
     coreutils \
     curl \
     dirmngr \
-    lsd \
     fd-find \
     fzf \
     g++ \
