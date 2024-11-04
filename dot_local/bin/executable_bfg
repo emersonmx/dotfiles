@@ -1,0 +1,17 @@
+#!/bin/bash
+
+set -euo pipefail
+
+bin_diretory="$HOME/.local/share/bfg"
+bin_path="$bin_diretory/bfg.jar"
+
+if [[ ! -f "$bin_path" ]]; then
+    latest_version=$(curl https://repo1.maven.org/maven2/com/madgag/bfg/maven-metadata.xml |
+        grep '<version>' |
+        sed -r 's#\s*<version>(.*)</version>#\1#g' |
+        tail -n1)
+    mkdir -p "$bin_diretory"
+    curl -L -o "$bin_path" "https://repo1.maven.org/maven2/com/madgag/bfg/$latest_version/bfg-$latest_version.jar"
+fi
+
+java -jar "$bin_path" "$@"
