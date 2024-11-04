@@ -56,6 +56,17 @@ return {
     s("arm", fmt("{} => {}", { i(1), i(0) })),
     s("bk", t("break")),
     s(
+        "st",
+        fmt(
+            [[
+            struct {} {{
+                {}
+            }}
+            ]],
+            { i(1), i(0) }
+        )
+    ),
+    s(
         "impl",
         fmt(
             [[
