@@ -123,7 +123,7 @@ return {
                 },
             },
             pyright = {},
-            ruff_lsp = {},
+            ruff = {},
             rust_analyzer = {
                 settings = {
                     ["rust-analyzer"] = {
