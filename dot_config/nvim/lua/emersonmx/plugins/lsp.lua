@@ -104,6 +104,9 @@ return {
                         validate = { enable = true },
                     },
                 },
+                init_options = {
+                    provideFormatter = false,
+                },
             },
             lua_ls = {
                 settings = {
