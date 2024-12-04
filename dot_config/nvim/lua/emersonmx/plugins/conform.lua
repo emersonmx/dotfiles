@@ -1,6 +1,4 @@
 -- check formatters at: https://github.com/stevearc/conform.nvim/blob/master/doc/conform.txt
-local web_formatter =
-    { "biome", "prettierd", "prettier", stop_after_first = true }
 
 return {
     "stevearc/conform.nvim",
@@ -12,12 +10,12 @@ return {
         },
         formatters_by_ft = {
             bash = { "shfmt" },
-            css = web_formatter,
+            css = { "biome" },
             gdscript = { "gdformat" },
             go = { "goimports", "gofumpt" },
-            html = web_formatter,
-            javascript = web_formatter,
-            json = web_formatter,
+            html = { "biome" },
+            javascript = { "biome" },
+            json = { "biome" },
             lua = { "stylua" },
             python = function(bufnr)
                 if
@@ -31,7 +29,7 @@ return {
             rust = { "rustfmt", lsp_format = "fallback" },
             sh = { "shfmt" },
             templ = { "templ" },
-            typescript = web_formatter,
+            typescript = { "biome" },
         },
     },
 }

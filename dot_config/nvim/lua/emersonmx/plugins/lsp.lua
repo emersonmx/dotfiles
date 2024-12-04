@@ -166,8 +166,6 @@ return {
             "jsonlint",
             "markdownlint",
             "mypy",
-            "prettier",
-            "prettierd",
             "shellcheck",
             "shfmt",
             "stylelint",
