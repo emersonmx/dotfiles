@@ -24,6 +24,8 @@ opt.undofile = true
 
 opt.showmode = false
 
+opt.clipboard = "unnamedplus"
+
 opt.ignorecase = true
 opt.smartcase = true
 
