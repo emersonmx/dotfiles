@@ -29,6 +29,10 @@ return {
         })
         luasnip.filetype_extend("cpp", { "c" })
         luasnip.filetype_extend("typescript", { "javascript" })
+        luasnip.filetype_extend(
+            "typescriptreact",
+            { "javascript", "typescript" }
+        )
 
         require("luasnip.loaders.from_lua").lazy_load({
             paths = { "./lua/emersonmx/snippets" },
