@@ -28,6 +28,7 @@ return {
             update_events = { "TextChanged", "TextChangedI" },
         })
         luasnip.filetype_extend("cpp", { "c" })
+        luasnip.filetype_extend("javascriptreact", { "javascript" })
         luasnip.filetype_extend("typescript", { "javascript" })
         luasnip.filetype_extend(
             "typescriptreact",
