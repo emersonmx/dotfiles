@@ -2,7 +2,11 @@
 
 set -euo pipefail
 
-cd "$ASDF_DIR"
-git fetch --all --tags --prune --jobs=10
-latest_version=$(semver "$(git tag)" | tail -n1)
-git checkout "v${latest_version}"
+if [[ ! -d "$ASDF_DIR" ]]; then
+    git clone https://github.com/asdf-vm/asdf.git "$ASDF_DIR"
+fi
+
+# shellcheck disable=SC2046
+cd "$ASDF_DIR" &&
+    git fetch --all --tags --prune --jobs=10 &&
+    git checkout "v$(semver $(git tag) | tail -n1)"
