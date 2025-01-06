@@ -1,0 +1,8 @@
+#!/bin/bash
+
+set -euo pipefail
+
+cd "$ASDF_DIR"
+git fetch --all --tags --prune --jobs=10
+latest_version=$(semver "$(git tag)" | tail -n1)
+git checkout "v${latest_version}"
