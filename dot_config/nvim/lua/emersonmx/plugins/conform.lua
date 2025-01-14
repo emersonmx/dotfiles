@@ -21,12 +21,13 @@ return {
         end,
         formatters_by_ft = {
             bash = { "shfmt" },
-            css = { "biome" },
+            css = { "biome-check" },
             gdscript = { "gdformat" },
             go = { "goimports", "gofumpt" },
-            html = { "biome" },
-            javascript = { "biome" },
-            json = { "biome" },
+            html = { "biome-check" },
+            javascript = { "biome-check" },
+            javascriptreact = { "biome-check" },
+            json = { "biome-check" },
             lua = { "stylua" },
             python = function(bufnr)
                 if
@@ -40,7 +41,8 @@ return {
             rust = { "rustfmt", lsp_format = "fallback" },
             sh = { "shfmt" },
             templ = { "templ" },
-            typescript = { "biome" },
+            typescript = { "biome-check" },
+            typescriptreact = { "biome-check" },
         },
     },
 }
