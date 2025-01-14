@@ -24,9 +24,9 @@ return {
             css = { "biome-check" },
             gdscript = { "gdformat" },
             go = { "goimports", "gofumpt" },
-            html = { "biome-check" },
+            html = { "rustywind", "biome-check" },
             javascript = { "biome-check" },
-            javascriptreact = { "biome-check" },
+            javascriptreact = { "rustywind", "biome-check" },
             json = { "biome-check" },
             lua = { "stylua" },
             python = function(bufnr)
@@ -42,7 +42,7 @@ return {
             sh = { "shfmt" },
             templ = { "templ" },
             typescript = { "biome-check" },
-            typescriptreact = { "biome-check" },
+            typescriptreact = { "rustywind", "biome-check" },
         },
     },
 }
