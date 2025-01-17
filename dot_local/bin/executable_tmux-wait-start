@@ -1,0 +1,5 @@
+#!/bin/bash
+
+set -euo pipefail
+
+(while ! (mount | grep -q 'tmpfs on /tmp'); do sleep 2; done) && exec tmux-start
