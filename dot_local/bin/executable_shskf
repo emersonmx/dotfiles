@@ -1,0 +1,8 @@
+#!/bin/bash
+
+set -euo pipefail
+
+file_path="$HOME/code/ossuary/$1"
+shift
+
+sh <(sk -f "$file_path" "$@")
