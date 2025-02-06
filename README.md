@@ -175,6 +175,7 @@ cd yay
 makepkg -si
 
 yay -S \
+    asdf-vm \
     bat \
     bottom \
     chezmoi \
