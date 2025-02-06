@@ -60,7 +60,10 @@ git clone https://github.com/changyuheng/zsh-interactive-cd.git $HOME/.config/zs
 ## asdf
 
 ```sh
-git clone https://github.com/asdf-vm/asdf.git $HOME/.local/share/asdf
+# Download binary from https://github.com/asdf-vm/asdf/releases
+
+mkdir -p "${ASDF_DATA_DIR:-$HOME/.asdf}/completions"
+asdf completion zsh > "${ASDF_DATA_DIR:-$HOME/.asdf}/completions/_asdf"
 
 # run asdf.py [https://github.com/emersonmx/scripts/blob/main/arch/updater/asdf.py]
 ```
