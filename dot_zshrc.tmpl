@@ -7,6 +7,7 @@ path=("$ASDF_DATA_DIR/shims" $path)
 # completions
 ZSH_CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
 fpath=($ZSH_CACHE_DIR/completions $fpath)
+fpath=($ASDF_DATA_DIR/completions $fpath)
 
 autoload -Uz compinit
 [[ -n ${ZDOTDIR}/.zcompdump(#qN.mh+24) ]] && compinit || compinit -C
