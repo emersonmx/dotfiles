@@ -1,4 +1,6 @@
 @biomejs/biome
+@commitlint/cli
+@commitlint/config-conventional
 dockerfile-language-server-nodejs
 json-server
 neovim
