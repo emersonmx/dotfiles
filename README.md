@@ -195,6 +195,8 @@ yay -S \
     imagemagick \
     iotop \
     jq \
+    k6 \
+    kubectl \
     lazygit \
     lld \
     lsd \
