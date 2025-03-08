@@ -4,9 +4,5 @@ set -euo pipefail
 
 ossuary_dir="$HOME/code/ossuary"
 
-find "${ossuary_dir}" -name "skelly.toml" -print0 |
-    xargs -0 -n1 dirname |
-    sed -e "s#""${ossuary_dir}/""##g"
-
-find "${ossuary_dir}" -type f -wholename "**/snippets/*" |
-    sed -e "s#""${ossuary_dir}/""##g"
+find "${ossuary_dir}" -type f |
+    sed -E -e "s#""${ossuary_dir}/""##g" -e '/^(\.git\/|README.md)/ d'
