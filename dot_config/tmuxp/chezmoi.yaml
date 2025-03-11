@@ -1,0 +1,13 @@
+session_name: chezmoi
+start_directory: ~/.local/share/chezmoi
+windows:
+  - window_name: editor
+    focus: true
+    panes:
+      - nvim
+  - window_name: shell
+    panes:
+      -
+  - window_name: git
+    panes:
+      - lazygit
