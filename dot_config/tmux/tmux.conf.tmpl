@@ -65,6 +65,13 @@ bind -n M-S set -g status
 # Toggle zoom
 bind -n M-z resize-pane -Z
 
+# Sync panes
+bind -n M-s set synchronize-panes
+
+# Split window
+bind -n M-_ split-window -v -c "#{pane_current_path}"
+bind -n M-! split-window -h -c "#{pane_current_path}"
+
 # Switch windows alt+number
 bind -n M-0 select-window -t 0
 bind -n M-1 select-window -t 1
@@ -76,11 +83,6 @@ bind -n M-6 select-window -t 6
 bind -n M-7 select-window -t 7
 bind -n M-8 select-window -t 8
 bind -n M-9 select-window -t 9
-bind -n M-s set synchronize-panes
-
-# Split window
-bind -n M-_ split-window -v -c "#{pane_current_path}"
-bind -n M-! split-window -h -c "#{pane_current_path}"
 
 # Easy pane navigation
 is_vim="ps -o state= -o comm= -t '#{pane_tty}' \
