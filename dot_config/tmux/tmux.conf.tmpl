@@ -72,7 +72,6 @@ bind -n M-s set synchronize-panes
 bind -n M-! split-window -h -c "#{pane_current_path}"
 
 # Switch windows alt+number
-bind -n M-0 select-window -t 0
 bind -n M-1 select-window -t 1
 bind -n M-2 select-window -t 2
 bind -n M-3 select-window -t 3
@@ -82,6 +81,7 @@ bind -n M-6 select-window -t 6
 bind -n M-7 select-window -t 7
 bind -n M-8 select-window -t 8
 bind -n M-9 select-window -t 9
+bind -n M-0 select-window -t 10
 
 # Easy pane navigation
 is_vim="ps -o state= -o comm= -t '#{pane_tty}' \
