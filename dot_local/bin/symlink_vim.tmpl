@@ -1,5 +1,5 @@
 {{ if eq .chezmoi.osRelease.id "ubuntu" -}}
-nvim
+/opt/nvim/bin/nvim
 {{- else -}}
 /usr/sbin/nvim
 {{- end }}
