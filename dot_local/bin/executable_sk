@@ -2,8 +2,4 @@
 
 set -euo pipefail
 
-if ! command -v -- skelly >/dev/null 2>&1; then
-    cargo install --git https://github.com/emersonmx/skelly
-fi
-
 skelly "$@"
