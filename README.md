@@ -68,6 +68,10 @@ asdf completion zsh > "${ASDF_DATA_DIR:-$HOME/.asdf}/completions/_asdf"
 # run asdf.py [https://github.com/emersonmx/scripts/blob/main/arch/updater/asdf.py]
 ```
 
+### WSL
+
+- [Setup Arch](https://wiki.archlinux.org/title/Install_Arch_Linux_on_WSL)
+
 ## Ubuntu
 
 ```sh
@@ -158,16 +162,14 @@ passwd {username}
 exit
 
 # as user
-sudo pacman-key --init
-sudo pacman-key --populate
+sudo pacman -Syu
+sudo pacman -S archlinux-keyring base base-devel git neovim
 
 sudo vim /etc/pacman.conf
 sudo vim /etc/pacman.d/mirrorlist
 sudo vim /etc/locale.gen
 sudo vim /etc/locale.conf
 sudo locale-gen
-
-sudo pacman -Syu archlinux-keyring base base-devel
 
 cd /tmp
 git clone https://aur.archlinux.org/yay.git
@@ -198,11 +200,13 @@ yay -S \
     k6 \
     kubectl \
     lazygit \
+    lib32-vulkan-icd-loader \
     lld \
     lsd \
     man-db \
     man-pages \
     man-pages-pt_br \
+    mesa \
     mingw-w64-gcc \
     mold \
     neovim \
@@ -240,7 +244,8 @@ yay -S \
     unzip \
     util-linux \
     vi \
-    vulkan-swrast \
+    vulkan-dzn \
+    vulkan-icd-loader \
     wmctrl \
     xclip \
     xdg-utils \
@@ -259,10 +264,4 @@ yay -S \
     zsh-vi-mode \
     && :
 
-```
-
-### WSL
-
-```sh
-yay -S win32yank-bin
 ```
