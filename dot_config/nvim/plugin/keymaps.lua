@@ -10,18 +10,6 @@ end, { desc = "Toggle line numbers" })
 
 set(
     "n",
-    "[d",
-    vim.diagnostic.goto_prev,
-    { desc = "Go to previous Diagnostic message" }
-)
-set(
-    "n",
-    "]d",
-    vim.diagnostic.goto_next,
-    { desc = "Go to next Diagnostic message" }
-)
-set(
-    "n",
     "<leader>e",
     vim.diagnostic.open_float,
     { desc = "Show diagnostic Error messages" }
