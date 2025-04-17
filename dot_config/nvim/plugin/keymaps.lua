@@ -20,6 +20,12 @@ set(
     vim.diagnostic.setloclist,
     { desc = "Open diagnostic Quickfix list" }
 )
+set(
+    "x",
+    "g/",
+    "<Esc>/\\%V",
+    { silent = false, desc = "Search inside visual selection" }
+)
 
 set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
