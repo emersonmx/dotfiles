@@ -29,8 +29,6 @@ require("lazy").setup({
         "mbbill/undotree",
         "nvim-tree/nvim-web-devicons",
         "tpope/vim-abolish",
-        "tpope/vim-repeat",
-        "tpope/vim-unimpaired",
 
         { import = "emersonmx/plugins" },
     },
