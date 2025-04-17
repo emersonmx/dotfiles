@@ -1,11 +1,10 @@
-local opt = vim.opt
 local set = vim.keymap.set
 
 set("n", "<Esc>", vim.cmd.nohlsearch)
 set("n", "<leader>n", function()
-    local value = opt.number:get() or opt.relativenumber:get()
-    opt.number = not value
-    opt.relativenumber = not value
+    local value = vim.o.number or vim.o.relativenumber
+    vim.o.number = not value
+    vim.o.relativenumber = not value
 end, { desc = "Toggle line numbers" })
 
 set(
