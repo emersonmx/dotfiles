@@ -240,7 +240,6 @@ yay -S \
     tmux \
     tmuxp \
     ttf-dejavu \
-    ttf-meslo-nerd-font-powerlevel10k \
     unzip \
     util-linux \
     vi \
