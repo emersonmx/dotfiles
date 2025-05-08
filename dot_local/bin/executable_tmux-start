@@ -2,4 +2,6 @@
 
 set -euo pipefail
 
+export PATH=$(echo $PATH | tr ':' '\n' | grep -v '/\.local/' | paste -sd:)
+
 tmux new-session -A -s home
