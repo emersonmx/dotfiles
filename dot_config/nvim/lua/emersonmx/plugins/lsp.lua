@@ -4,7 +4,7 @@ return {
         { "williamboman/mason.nvim", version = "v1.x" },
         { "williamboman/mason-lspconfig.nvim", version = "v1.x" },
         "WhoIsSethDaniel/mason-tool-installer.nvim",
-        { "creativenull/efmls-configs-nvim", version = "v1.x.x" },
+        "creativenull/efmls-configs-nvim",
         { "j-hui/fidget.nvim", opts = {} },
         "b0o/SchemaStore.nvim",
     },
