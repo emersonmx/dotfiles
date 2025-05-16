@@ -10,14 +10,9 @@ return {
                     default_adapter,
                     {
                         env = {
-{{- if eq .chezmoi.osRelease.id "ubuntu" }}
                             api_key = "cmd: gpg --batch --decrypt "
                                 .. api_key_file
                                 .. " 2>/dev/null",
-{{- else }}
-                            api_key = "cmd: gpg --batch --quiet --decrypt "
-                                .. api_key_file,
-{{- end }}
                         },
                     }
                 )
