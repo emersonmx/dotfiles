@@ -4,8 +4,18 @@ local default_adapter = "gemini"
 return {
     "olimorris/codecompanion.nvim",
     opts = {
-        env = {
-            api_key = "cmd: gpg --batch --quiet --decrypt" .. api_key_file,
+        adapters = {
+            [default_adapter] = function()
+                return require("codecompanion.adapters").extend(
+                    default_adapter,
+                    {
+                        env = {
+                            api_key = "cmd: gpg --batch --quiet --decrypt "
+                                .. api_key_file,
+                        },
+                    }
+                )
+            end,
         },
         strategies = {
             chat = {
