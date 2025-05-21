@@ -2,9 +2,9 @@ name: chezmoi
 directory: ~/.local/share/chezmoi
 windows:
   - name: editor
-    focus: true
     panes:
-      - command: nvim
+      - focus: true
+        command: nvim
   - name: shell
     panes:
       -
