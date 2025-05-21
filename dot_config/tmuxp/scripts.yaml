@@ -1,9 +1,0 @@
-session_name: scripts
-start_directory: ~/code/scripts
-windows:
-  - window_name: shell
-    panes:
-      -
-  - window_name: git
-    panes:
-      - lazygit

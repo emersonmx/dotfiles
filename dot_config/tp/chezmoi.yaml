@@ -1,0 +1,13 @@
+name: chezmoi
+directory: ~/.local/share/chezmoi
+windows:
+  - name: editor
+    focus: true
+    panes:
+      - command: nvim
+  - name: shell
+    panes:
+      -
+  - name: git
+    panes:
+      - command: lazygit

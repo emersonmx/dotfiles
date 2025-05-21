@@ -1,0 +1,10 @@
+name: yolo
+directory: ~/yolo
+windows:
+  - name: editor
+    panes:
+      - focus: true
+        command: nvim
+  - name: shell
+    panes:
+      -

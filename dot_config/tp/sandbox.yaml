@@ -1,0 +1,9 @@
+name: sandbox
+directory: ~/code/sandbox
+windows:
+  - name: editor
+    panes:
+      - focus: true
+  - name: git
+    panes:
+      - command: lazygit

@@ -1,0 +1,13 @@
+name: nvim
+directory: ~/.config/nvim
+windows:
+  - name: editor
+    focus: true
+    panes:
+      -
+  - name: shell
+    panes:
+      -
+  - name: chezmoi
+    panes:
+      - command: chezmoi cd

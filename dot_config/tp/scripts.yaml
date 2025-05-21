@@ -1,0 +1,9 @@
+name: scripts
+directory: ~/code/scripts
+windows:
+  - name: shell
+    panes:
+      - focus: true
+  - name: git
+    panes:
+      - command: lazygit
