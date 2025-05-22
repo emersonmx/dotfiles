@@ -2,12 +2,9 @@ name: nvim
 directory: ~/.config/nvim
 windows:
   - name: editor
-    focus: true
     panes:
-      -
+      - focus: true
   - name: shell
-    panes:
-      -
   - name: chezmoi
     panes:
       - command: chezmoi cd
