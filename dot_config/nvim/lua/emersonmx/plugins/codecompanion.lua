@@ -1,18 +1,34 @@
 local api_key_file = vim.fn.stdpath("config") .. "/ai_api_key.gpg"
 local default_adapter = "gemini"
 
+local cached_api_key = nil
+
 return {
     "olimorris/codecompanion.nvim",
     opts = {
         adapters = {
             [default_adapter] = function()
+                if cached_api_key == nil then
+                    local command = "gpg --batch --decrypt "
+                        .. vim.fn.shellescape(api_key_file)
+                        .. " 2>/dev/null"
+                    cached_api_key = vim.fn.system(command)
+                    cached_api_key =
+                        cached_api_key:gsub("%s*$", ""):gsub("^%s*", "")
+                    if vim.v.shell_error ~= 0 then
+                        vim.notify(
+                            "Failed to decrypt API key from " .. api_key_file,
+                            vim.log.levels.ERROR
+                        )
+                        cached_api_key = ""
+                    end
+                end
+
                 return require("codecompanion.adapters").extend(
                     default_adapter,
                     {
                         env = {
-                            api_key = "cmd: gpg --batch --decrypt "
-                                .. api_key_file
-                                .. " 2>/dev/null",
+                            api_key = cached_api_key,
                         },
                     }
                 )
