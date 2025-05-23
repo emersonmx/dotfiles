@@ -45,6 +45,11 @@ return {
                 adapter = default_adapter,
             },
         },
+        display = {
+            chat = {
+                auto_scroll = false,
+            },
+        },
     },
     dependencies = {
         "nvim-lua/plenary.nvim",
