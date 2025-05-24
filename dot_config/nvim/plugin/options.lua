@@ -50,19 +50,3 @@ vim.g.netrw_list_hide = [[\(^\|\s\s\)\zs\.\S\+]]
 vim.g.python3_host_prog = vim.fn.stdpath("config") .. "/.venv/bin/python"
 vim.g.loaded_ruby_provider = 0
 vim.g.loaded_perl_provider = 0
-
-vim.api.nvim_create_autocmd("TextYankPost", {
-    desc = "Highlight yanked text",
-    group = vim.api.nvim_create_augroup("custom-highlight-yank", {}),
-    pattern = "*",
-    callback = function()
-        vim.highlight.on_yank()
-    end,
-})
-
-local custom_ft_group = vim.api.nvim_create_augroup("custom-file-types", {})
-vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
-    group = custom_ft_group,
-    pattern = { "*.h" },
-    command = "set filetype=c",
-})
