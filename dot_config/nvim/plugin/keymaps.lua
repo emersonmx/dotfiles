@@ -25,6 +25,12 @@ set(
     "<Esc>/\\%V",
     { silent = false, desc = "Search inside visual selection" }
 )
+set(
+    "n",
+    "<leader>rf",
+    "<cmd>read <cfile><cr>",
+    { desc = "Read file from current line" }
+)
 
 set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
