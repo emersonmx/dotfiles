@@ -7,5 +7,4 @@ pip-tools
 poetry
 pyright
 ruff
-tmuxp
 uv
