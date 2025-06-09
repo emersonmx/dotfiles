@@ -195,11 +195,11 @@ return {
                         capabilities,
                         server.capabilities or {}
                     )
-                    require("lspconfig")[server_name].setup(server)
+                    vim.lsp.enable(server)
                 end,
             },
         })
 
-        require("lspconfig").gdscript.setup({})
+        vim.lsp.enable("gdscript")
     end,
 }
