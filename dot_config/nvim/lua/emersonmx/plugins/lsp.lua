@@ -46,8 +46,6 @@ return {
                 },
                 init_options = { provideFormatter = false },
             },
-            kotlin_language_server = {},
-            gradle_ls = {},
             lua_ls = {
                 settings = {
                     Lua = {
