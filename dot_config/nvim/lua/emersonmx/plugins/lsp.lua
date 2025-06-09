@@ -44,29 +44,22 @@ return {
                         validate = { enable = true },
                     },
                 },
-                init_options = {
-                    provideFormatter = false,
-                },
+                init_options = { provideFormatter = false },
             },
+            kotlin_language_server = {},
+            gradle_ls = {},
             lua_ls = {
                 settings = {
                     Lua = {
                         runtime = {
                             version = "LuaJIT",
-                            path = {
-                                "lua/?.lua",
-                                "lua/?/init.lua",
-                            },
+                            path = { "lua/?.lua", "lua/?/init.lua" },
                         },
                         workspace = {
                             checkThirdParty = false,
-                            library = {
-                                vim.env.VIMRUNTIME,
-                            },
+                            library = { vim.env.VIMRUNTIME },
                         },
-                        completion = {
-                            callSnippet = "Replace",
-                        },
+                        completion = { callSnippet = "Replace" },
                     },
                 },
             },
@@ -75,9 +68,7 @@ return {
             rust_analyzer = {
                 settings = {
                     ["rust-analyzer"] = {
-                        check = {
-                            command = "clippy",
-                        },
+                        check = { command = "clippy" },
                     },
                 },
             },
