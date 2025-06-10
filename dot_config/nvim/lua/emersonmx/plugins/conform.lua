@@ -31,7 +31,6 @@ return {
         formatters_by_ft = {
             bash = { "shfmt" },
             css = prettier_formatter,
-            gdscript = { "gdformat" },
             go = { "goimports", "gofumpt" },
             html = web_formatter,
             javascript = prettier_formatter,
