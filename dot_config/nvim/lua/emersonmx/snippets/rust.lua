@@ -118,6 +118,22 @@ return {
     s("derive", fmt("#[derive({})]", i(1, "Debug, Clone, Default, PartialEq"))),
     s("at", fmt("#[{}]", i(1))),
     s("o", fmt("let {} = {}", { i(1), i(0) })),
-    s("pr", fmt("println!({})", i(1))),
-    s("fs", fmt("format!({})", i(1))),
+    s(
+        "pr",
+        fmt(
+            [[
+            println!("{}", {})
+            ]],
+            { i(1), i(2) }
+        )
+    ),
+    s(
+        "fs",
+        fmt(
+            [[
+            format!("{}", {})
+            ]],
+            { i(1), i(2) }
+        )
+    ),
 }
