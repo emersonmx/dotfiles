@@ -11,6 +11,7 @@ return {
             "gitignore",
             "go",
             "gotmpl",
+            "helm",
             "html",
             "javascript",
             "json",
