@@ -3,7 +3,6 @@ return {
     build = ":TSUpdate",
     opts = {
         ensure_installed = {
-            "vimdoc",
             "bash",
             "c",
             "css",
@@ -11,6 +10,7 @@ return {
             "gitcommit",
             "gitignore",
             "go",
+            "gotmpl",
             "html",
             "javascript",
             "json",
@@ -22,6 +22,7 @@ return {
             "toml",
             "typescript",
             "vim",
+            "vimdoc",
             "yaml",
         },
         auto_install = true,
