@@ -1,12 +1,13 @@
+{{- $defaultAdapter := .nvim.ai.default.adapter -}}
 local api_key_file = vim.fn.stdpath("config") .. "/ai_api_key.gpg"
-local default_adapter = "{{ .nvim.ai.default }}"
+local default_adapter = "{{ $defaultAdapter }}"
 
 local cached_api_key = nil
 
 return {
     "olimorris/codecompanion.nvim",
     opts = {
-        {{ if ne .nvim.ai.default "copilot" -}}
+        {{ if and (ne $defaultAdapter "copilot") (ne $defaultAdapter "ollama") -}}
         adapters = {
             [default_adapter] = function()
                 if cached_api_key == nil then

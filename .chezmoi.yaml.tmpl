@@ -1,10 +1,10 @@
 {{- $fullName := promptString "Full Name" -}}
 {{- $email := promptString "Email" -}}
-{{- $nvim_ai_default := promptString "AI Adapter" -}}
 data:
   user:
     full_name: {{ $fullName }}
     email: {{ $email }}
   nvim:
     ai:
-      default: {{ $nvim_ai_default }}
+      default:
+        adapter: ollama
