@@ -215,6 +215,8 @@ yay -S \
     nodejs \
     npm \
     oh-my-zsh-git \
+    ollama \
+    ollama-cuda \
     openssh \
     openssl \
     p7zip \
