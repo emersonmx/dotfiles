@@ -1,11 +1,12 @@
 local api_key_file = vim.fn.stdpath("config") .. "/ai_api_key.gpg"
-local default_adapter = "gemini"
+local default_adapter = "{{ .nvim.ai.default }}"
 
 local cached_api_key = nil
 
 return {
     "olimorris/codecompanion.nvim",
     opts = {
+        {{ if ne .nvim.ai.default "copilot" -}}
         adapters = {
             [default_adapter] = function()
                 if cached_api_key == nil then
@@ -45,6 +46,7 @@ return {
                 adapter = default_adapter,
             },
         },
+        {{ end -}}
         display = {
             chat = {
                 auto_scroll = false,
