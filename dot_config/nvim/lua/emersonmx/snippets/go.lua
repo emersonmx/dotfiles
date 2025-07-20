@@ -114,6 +114,42 @@ return {
             i(0)
         )
     ),
+    s(
+        "tfn",
+        fmt(
+            [[
+            func {}(t *testing.T) {{
+                {}
+            }}
+            ]],
+            { i(1, "TestFunc"), i(0) }
+        )
+    ),
+    s(
+        "trfn",
+        fmt(
+            [[
+            t.Run("{}", func(t *testing.T) {{
+                {}
+            }})
+            ]],
+            { i(1, "a test"), i(0) }
+        )
+    ),
+    s(
+        "aif",
+        fmt(
+            [[
+            got := {}
+            want := {}
+
+            if got != want {{
+                t.Errorf("got {} want {}", got, want)
+            }}
+            ]],
+            { i(1), i(2), i(3, "%q"), rep(3) }
+        )
+    ),
     s("o", fmt("{} := {}", { i(1), i(0) })),
     s("pr", fmt("fmt.Println({})", i(0))),
     s("prf", fmt("fmt.Printf({})", i(0))),
