@@ -36,6 +36,7 @@ return {
             javascript = prettier_formatter,
             javascriptreact = web_formatter,
             json = prettier_formatter,
+            jsonc = prettier_formatter,
             lua = { "stylua" },
             python = function(bufnr)
                 if
