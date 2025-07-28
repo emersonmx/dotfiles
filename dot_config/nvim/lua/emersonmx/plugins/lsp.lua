@@ -100,7 +100,6 @@ return {
             "markdownlint",
             "mypy",
             "prettier",
-            "prettierd",
             "rustywind",
             "shellcheck",
             "shfmt",
