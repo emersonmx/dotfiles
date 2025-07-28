@@ -154,7 +154,7 @@ return {
                     "must have valid client"
                 )
 
-                local map = function(keys, func, desc)
+                local function map(keys, func, desc)
                     vim.keymap.set(
                         "n",
                         keys,

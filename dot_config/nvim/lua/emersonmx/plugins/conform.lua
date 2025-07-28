@@ -1,7 +1,7 @@
 -- check formatters at: https://github.com/stevearc/conform.nvim/blob/master/doc/conform.txt
 
 local prettier_formatter = { "prettierd", "prettier", stop_after_first = true }
-local web_formatter = function(bufnr)
+local function web_formatter(bufnr)
     if require("conform").get_formatter_info("prettierd", bufnr).available then
         return { "rustywind", "prettierd" }
     else
