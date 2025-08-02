@@ -115,6 +115,17 @@ return {
         )
     ),
     s(
+        "ctor",
+        fmt(
+            [[
+            func New{}({}) {}{} {{
+                return {}{}{{{}}}
+            }}
+            ]],
+            { i(1, "Object"), i(2), i(3, "*"), rep(1), i(4, "&"), rep(1), i(0) }
+        )
+    ),
+    s(
         "tfn",
         fmt(
             [[
