@@ -1,13 +1,7 @@
 -- check formatters at: https://github.com/stevearc/conform.nvim/blob/master/doc/conform.txt
 
-local prettier_formatter = { "prettierd", "prettier", stop_after_first = true }
-local function web_formatter(bufnr)
-    if require("conform").get_formatter_info("prettierd", bufnr).available then
-        return { "rustywind", "prettierd" }
-    else
-        return { "rustywind", "prettier" }
-    end
-end
+local prettier_formatter = { "prettier" }
+local web_formatter = { "rustywind", "prettier" }
 
 vim.api.nvim_create_user_command("ToggleAutoFormat", function()
     local value = not (vim.b.disable_autoformat or vim.g.disable_autoformat)
