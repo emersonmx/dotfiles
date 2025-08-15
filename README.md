@@ -241,6 +241,8 @@ yay -S \
     tk \
     tmux \
     tmuxp \
+    tree-sitter \
+    tree-sitter-cli \
     ttf-dejavu \
     unzip \
     util-linux \
