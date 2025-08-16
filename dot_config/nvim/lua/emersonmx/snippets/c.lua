@@ -60,6 +60,17 @@ return {
     s("df", t("default:")),
     s("bk", t("break")),
     s(
+        "st",
+        fmt(
+            [[
+            struct {} {{
+                {}
+            }}
+            ]],
+            { i(1), i(2) }
+        )
+    ),
+    s(
         "fn",
         fmt(
             [[
@@ -69,6 +80,17 @@ return {
             }}
             ]],
             { i(1, "void"), i(2, "func_name"), i(3, "void"), i(0) }
+        )
+    ),
+    s(
+        "cb",
+        fmt(
+            [[
+            {{
+                {}
+            }}
+            ]],
+            i(0)
         )
     ),
 
@@ -88,5 +110,6 @@ return {
     ),
     s("inc", t("#include ")),
     s("def", t("#define ")),
+    s("o", fmt("{} {} = {};", { i(3, "int"), i(1, "i"), i(2, "0") })),
     s("pr", fmt("printf({})", i(0))),
 }
