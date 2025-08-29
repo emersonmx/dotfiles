@@ -59,15 +59,25 @@ return {
     s("cs", fmt("case {}:", i(1))),
     s("df", t("default:")),
     s("bk", t("break")),
+    s("ty", t("typedef")),
     s(
         "st",
         fmt(
             [[
             struct {} {{
                 {}
-            }}
+            }} {};
             ]],
-            { i(1), i(2) }
+            { i(1, "struct_name"), i(0), i(2, "name") }
+        )
+    ),
+    s(
+        "pfn",
+        fmt(
+            [[
+            {} {}({});
+            ]],
+            { i(1, "void"), i(2, "func_name"), i(3, "void") }
         )
     ),
     s(
