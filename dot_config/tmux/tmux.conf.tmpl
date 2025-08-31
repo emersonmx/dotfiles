@@ -16,39 +16,38 @@ set -sa terminal-features ',xterm-256color:RGB'
 {{- end }}
 
 # Variables
-white_color='#ebdbb2'
-black_color='#282828'
-fg_color='#ebdbb2'
-bg_color='#504945'
-red_color='#fb4935'
-green_color='#B8BB26'
-blue_color='#83A598'
-yellow_color='#FABD2F'
+primary_color='#abb2bf'
+secondary_color='#1e2127'
+active_color='#98c379'
 
 # Plugins Settings
-set -g @prefix_highlight_bg $red_color
-set -g @prefix_highlight_fg $white_color
+set -g @prefix_highlight_bg $primary_color
+set -g @prefix_highlight_fg $secondary_color
 set -g @prefix_highlight_show_copy_mode 'on'
 
 # Freshness
-set -g status-bg $bg_color
-set -g status-fg $fg_color
+set -g status-bg $secondary_color
+set -g status-fg $primary_color
 set -g status-left-length 50
-set -g status-left ' #S '
+set -g status-left ' [#S] '
 set -g status-right '#{prefix_highlight}'
-set -ag status-right '#{?pane_synchronized,#[bg='$blue_color']#[fg='$black_color'] S ,}'
+set -ag status-right '#{?pane_synchronized,#[bg='$primary_color']#[fg='$secondary_color'] S ,}'
+set -ag status-right '#[bg='$secondary_color']#[fg='$primary_color']'
+set -ag status-right ' '
 {{ if eq .chezmoi.osRelease.id "ubuntu" -}}
-set -ag status-right '#{battery_color_bg} #{battery_icon_status}#{battery_percentage} '
+set -ag status-right '#{battery_icon_status}#{battery_percentage} '
 {{- else -}}
-set -ag status-right '#{battery_color_bg}#{battery_icon_status}#{battery_percentage}%% '
+set -ag status-right '#{battery_icon_status}#{battery_percentage}%% '
 {{- end }}
-set -ag status-right '#[bg='$fg_color']#[fg='$black_color'] #(date +"%Y-%m-%d %H:%M") '
+set -ag status-right '#[bg='$secondary_color']#[fg='$primary_color']'
+set -ag status-right '|'
+set -ag status-right ' #(date +"%Y-%m-%d %H:%M") '
 
 set -g window-status-format '#I #W'
-set -g window-status-current-format '#{?window_zoomed_flag,#[bg='$green_color'],} #I #W '
-set -gw window-status-current-style bg=$white_color,fg=$black_color
-set -g pane-active-border-style fg=$white_color
-set -g pane-border-style fg=$bg_color
+set -g window-status-current-format '#{?window_zoomed_flag,#[bg='$active_color'],} #I: #W '
+set -gw window-status-current-style bg=$primary_color,fg=$secondary_color
+set -g pane-active-border-style fg=$primary_color
+set -g pane-border-style fg=$secondary_color
 
 # Binds
 unbind C-b
