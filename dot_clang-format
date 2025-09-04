@@ -14,3 +14,4 @@ AlignConsecutiveMacros:
   AlignCompound: false
   PadOperators: false
 Cpp11BracedListStyle: false
+SpaceAfterCStyleCast: true
