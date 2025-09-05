@@ -30,11 +30,13 @@ return {
     "olimorris/codecompanion.nvim",
     opts = {
         adapters = {
-            gemini = function()
-                return require("codecompanion.adapters").extend("gemini", {
-                    env = { api_key = get_apikey("gemini") },
-                })
-            end,
+            http = {
+                gemini = function()
+                    return require("codecompanion.adapters").extend("gemini", {
+                        env = { api_key = get_apikey("gemini") },
+                    })
+                end,
+            },
         },
         strategies = {
             chat = {
