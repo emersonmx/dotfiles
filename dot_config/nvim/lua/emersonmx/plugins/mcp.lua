@@ -3,8 +3,10 @@ return {
     dependencies = {
         "nvim-lua/plenary.nvim",
     },
-    build = "npm install -g mcp-hub@latest",
+    build = "bundled_build.lua",
     config = function()
-        require("mcphub").setup()
+        require("mcphub").setup({
+            use_bundled_binary = true,
+        })
     end,
 }
