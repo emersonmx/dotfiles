@@ -246,6 +246,7 @@ yay -S \
     ttf-dejavu \
     unzip \
     util-linux \
+    uv \
     vi \
     vulkan-dzn \
     vulkan-icd-loader \
