@@ -240,7 +240,6 @@ yay -S \
     texlive \
     tk \
     tmux \
-    tmuxp \
     tree-sitter \
     tree-sitter-cli \
     ttf-dejavu \
