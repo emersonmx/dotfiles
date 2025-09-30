@@ -4,5 +4,6 @@ dockerfile-language-server-nodejs
 json-server
 neovim
 npm-check-updates
+npq
 pnpm
 semver
