@@ -135,21 +135,8 @@ return {
             { i(1, "main"), i(0), rep(1) }
         )
     ),
-    s("#!", fmt("#!/usr/bin/env {}", i(0, "python"))),
-    s(
-        "#!",
-        fmt(
-            [[
-            #!/usr/bin/env -S uv --quiet run --script
-            #
-            # /// script
-            # requires-python = "{}"
-            # dependencies = []
-            # ///
-            ]],
-            { i(1, ">=3.13") }
-        )
-    ),
+    s("#!", t("#!/usr/bin/env python")),
+    s("#!", t("#!/usr/bin/env -S uv --quiet run --script")),
     s("o", fmt("{} = {}", { i(1), i(0) })),
     s("pr", fmt("print({})", i(0))),
     s("fs", fmt("f'{}'", i(0))),
