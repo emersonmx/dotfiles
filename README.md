@@ -191,6 +191,7 @@ yay -S \
     ffmpegthumbnailer \
     fzf \
     git \
+    git-lfs \
     helm \
     htop \
     httpie \
