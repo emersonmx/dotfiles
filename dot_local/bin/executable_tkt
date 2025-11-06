@@ -1,0 +1,11 @@
+#!/bin/bash
+
+current_session=$(tmux display-message -p '#S' 2>/dev/null)
+last_session=$(tmux ls 2>/dev/null | grep -v '(attached)' | head -n 1 | cut -d: -f1)
+if [[ -n "$last_session" ]]; then
+    tmux switch-client -t "$last_session"
+    tmux kill-session -t "$current_session"
+else
+    echo "No other tmux sessions found."
+    exit 1
+fi
