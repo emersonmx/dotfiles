@@ -27,6 +27,7 @@ return {
             "yaml",
         },
         auto_install = true,
+        ignore_install = { "jsonc" },
         highlight = { enable = true },
         indent = { enable = true },
         incremental_selection = { enable = true },
