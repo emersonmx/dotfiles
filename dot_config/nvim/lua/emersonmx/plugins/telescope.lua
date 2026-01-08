@@ -1,7 +1,5 @@
 return {
     "nvim-telescope/telescope.nvim",
-    event = "VimEnter",
-    branch = "v0.2.0",
     dependencies = {
         "nvim-lua/plenary.nvim",
         {
@@ -12,7 +10,7 @@ return {
             end,
         },
         { "nvim-telescope/telescope-ui-select.nvim" },
-        { "nvim-tree/nvim-web-devicons" },
+        { "nvim-tree/nvim-web-devicons", opts = {} },
     },
     config = function()
         require("telescope").setup({
