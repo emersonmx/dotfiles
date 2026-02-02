@@ -163,7 +163,7 @@ exit
 
 # as user
 sudo pacman -Syu
-sudo pacman -S archlinux-keyring base base-devel git neovim
+sudo pacman -S base base-devel git neovim chezmoi
 
 sudo vim /etc/pacman.conf
 sudo vim /etc/pacman.d/mirrorlist
@@ -177,9 +177,9 @@ cd yay
 makepkg -si
 
 yay -S \
+    alacritty \
     asdf-vm \
     bat \
-    bottom \
     chezmoi \
     clang \
     cmake \
@@ -188,26 +188,19 @@ yay -S \
     direnv \
     entr \
     fd \
-    ffmpegthumbnailer \
     fzf \
     git \
     git-lfs \
-    helm \
     htop \
     httpie \
-    imagemagick \
     iotop \
     jq \
-    k6 \
-    kubectl \
     lazygit \
-    lib32-vulkan-icd-loader \
     lld \
     lsd \
     man-db \
     man-pages \
     man-pages-pt_br \
-    mesa \
     mingw-w64-gcc \
     mold \
     neovim \
@@ -216,19 +209,11 @@ yay -S \
     nodejs \
     npm \
     oh-my-zsh-git \
-    ollama \
-    ollama-cuda \
-    openssh \
-    openssl \
     p7zip \
     pacman-contrib \
     pandoc \
-    poppler \
-    procs \
-    pulseaudio-alsa \
     python \
     python-pip \
-    rancher-k3d-bin \
     reflector \
     ripgrep \
     rsync \
@@ -237,29 +222,24 @@ yay -S \
     sqlite \
     subversion \
     tealdeer \
-    terraform \
     texlive \
     tk \
     tmux \
     tree-sitter \
     tree-sitter-cli \
     ttf-dejavu \
+    ttf-meslo-nerd \
     unzip \
     util-linux \
     uv \
     vi \
-    vulkan-dzn \
-    vulkan-icd-loader \
     wmctrl \
     xclip \
     xdg-utils \
-    xdotool \
     xz \
-    yarn \
-    yazi \
+    ydotool \
     zip \
     zlib \
-    zoxide \
     zsh \
     zsh-autosuggestions \
     zsh-completions \
