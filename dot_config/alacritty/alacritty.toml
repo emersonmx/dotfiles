@@ -1,0 +1,44 @@
+[window]
+startup_mode = "Fullscreen"
+decorations = "None"
+dynamic_padding = true
+
+[font.normal]
+family = "MesloLGS Nerd Font"
+
+[font.bold]
+family = "MesloLGS Nerd Font"
+
+[font.italic]
+family = "MesloLGS Nerd Font"
+
+[font.bold_italic]
+family = "MesloLGS Nerd Font"
+
+[colors]
+primary.foreground = "#ABB2BF"
+primary.background = "#1E2127"
+
+normal.black = '#1E2127'
+normal.red = '#E06C75'
+normal.green = '#98C379'
+normal.yellow = '#D19A66'
+normal.blue = '#61AFEF'
+normal.magenta = '#C678DD'
+normal.cyan = '#56B6C2'
+normal.white = '#ABB2BF'
+
+bright.black = '#5C6370'
+bright.red = '#E06C75'
+bright.green = '#98C379'
+bright.yellow = '#D19A66'
+bright.blue = '#61AFEF'
+bright.magenta = '#C678DD'
+bright.cyan = '#56B6C2'
+bright.white = '#FFFFFF'
+
+cursor.text = '#1E2127'
+cursor.cursor = '#FFFFFF'
+
+selection.text = '#1E2127'
+selection.background = '#FFFFFF'
