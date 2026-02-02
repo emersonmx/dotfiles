@@ -34,11 +34,7 @@ set -g status-right '#{prefix_highlight}'
 set -ag status-right '#{?pane_synchronized,#[bg='$primary_color']#[fg='$secondary_color'] S ,}'
 set -ag status-right '#[bg='$secondary_color']#[fg='$primary_color']'
 set -ag status-right ' '
-{{ if eq .chezmoi.osRelease.id "ubuntu" -}}
 set -ag status-right '#{battery_icon_status}#{battery_percentage} '
-{{- else -}}
-set -ag status-right '#{battery_icon_status}#{battery_percentage}%% '
-{{- end }}
 set -ag status-right '#[bg='$secondary_color']#[fg='$primary_color']'
 set -ag status-right '|'
 set -ag status-right ' #(date +"%Y-%m-%d %H:%M") '
