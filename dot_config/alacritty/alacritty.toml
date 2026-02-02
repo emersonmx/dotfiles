@@ -15,30 +15,34 @@ family = "MesloLGS Nerd Font"
 [font.bold_italic]
 family = "MesloLGS Nerd Font"
 
-[colors]
-primary.foreground = "#ABB2BF"
-primary.background = "#1E2127"
+[colors.primary]
+foreground = "#ABB2BF"
+background = "#1E2127"
 
-normal.black = '#1E2127'
-normal.red = '#E06C75'
-normal.green = '#98C379'
-normal.yellow = '#D19A66'
-normal.blue = '#61AFEF'
-normal.magenta = '#C678DD'
-normal.cyan = '#56B6C2'
-normal.white = '#ABB2BF'
+[colors.normal]
+black = '#1E2127'
+red = '#E06C75'
+green = '#98C379'
+yellow = '#D19A66'
+blue = '#61AFEF'
+magenta = '#C678DD'
+cyan = '#56B6C2'
+white = '#ABB2BF'
 
-bright.black = '#5C6370'
-bright.red = '#E06C75'
-bright.green = '#98C379'
-bright.yellow = '#D19A66'
-bright.blue = '#61AFEF'
-bright.magenta = '#C678DD'
-bright.cyan = '#56B6C2'
-bright.white = '#FFFFFF'
+[colors.bright]
+black = '#5C6370'
+red = '#E06C75'
+green = '#98C379'
+yellow = '#D19A66'
+blue = '#61AFEF'
+magenta = '#C678DD'
+cyan = '#56B6C2'
+white = '#FFFFFF'
 
-cursor.text = '#1E2127'
-cursor.cursor = '#FFFFFF'
+[colors.cursor]
+text = '#1E2127'
+cursor = '#FFFFFF'
 
-selection.text = '#1E2127'
-selection.background = '#FFFFFF'
+[colors.selection]
+text = '#1E2127'
+background = '#FFFFFF'
