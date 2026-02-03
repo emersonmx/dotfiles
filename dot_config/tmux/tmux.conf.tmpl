@@ -49,6 +49,9 @@ set -g pane-border-style fg=$secondary_color
 unbind C-b
 set -g prefix C-a
 
+# Enter copy mode
+bind-key -n M-c copy-mode
+
 # Toggle status bar
 bind-key -n M-S set -g status
 
