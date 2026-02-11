@@ -237,7 +237,6 @@ yay -S \
     xclip \
     xdg-utils \
     xz \
-    ydotool \
     zip \
     zlib \
     zsh \
