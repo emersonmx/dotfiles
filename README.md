@@ -233,6 +233,7 @@ yay -S \
     util-linux \
     uv \
     vi \
+    wget \
     wmctrl \
     xclip \
     xdg-utils \
