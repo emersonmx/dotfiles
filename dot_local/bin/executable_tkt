@@ -1,7 +1,13 @@
 #!/bin/bash
 
-current_session=$(tmux display-message -p '#S' 2>/dev/null)
-last_session=$(tmux ls 2>/dev/null | grep -v '(attached)' | head -n 1 | cut -d: -f1)
+[[ $TMUX ]] || {
+    echo "This script must be run inside a tmux session."
+    exit 1
+}
+
+sessions=$(tmux list-sessions -F '#{session_name} #{session_created} #{?session_attached,(attached),}' | sort -k2 -n)
+current_session=$(tmux display-message -p '#{session_name}')
+last_session=$(echo "$sessions" | grep -v '(attached)' | tail -n1 | awk '{print $1}')
 if [[ -n "$last_session" ]]; then
     tmux switch-client -t "$last_session"
     tmux kill-session -t "$current_session"
