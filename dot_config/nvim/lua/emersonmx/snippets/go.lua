@@ -129,11 +129,11 @@ return {
         "tfn",
         fmt(
             [[
-            func {}(t *testing.T) {{
+            func Test{}(t *testing.T) {{
                 {}
             }}
             ]],
-            { i(1, "TestFunc"), i(0) }
+            { i(1, "Func"), i(0) }
         )
     ),
     s(
