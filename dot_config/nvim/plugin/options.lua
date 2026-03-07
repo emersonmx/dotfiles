@@ -13,6 +13,7 @@ opt.smartindent = true
 opt.breakindent = true
 
 opt.wrap = false
+opt.linebreak = true
 opt.colorcolumn = "81"
 
 opt.formatexpr = "v:lua.require('conform').formatexpr()"

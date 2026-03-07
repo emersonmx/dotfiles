@@ -7,9 +7,16 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     end,
 })
 
-local custom_ft_group = vim.api.nvim_create_augroup("custom-file-types", {})
 vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
-    group = custom_ft_group,
+    group = vim.api.nvim_create_augroup("custom-file-types", {}),
     pattern = { "*.h" },
     command = "set filetype=c",
+})
+
+vim.api.nvim_create_autocmd("WinEnter", {
+    callback = function()
+        if vim.api.nvim_win_get_config(0).relative ~= "" then
+            vim.wo.wrap = true
+        end
+    end,
 })
