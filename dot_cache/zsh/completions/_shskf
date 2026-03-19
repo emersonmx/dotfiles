@@ -1,0 +1,9 @@
+#compdef shskf
+
+_shskf() {
+    local -a files
+    files=(${(f)"$(skls | grep '\.sh$')"})
+    _describe 'shell file' files
+}
+
+compdef _shskf shskf
