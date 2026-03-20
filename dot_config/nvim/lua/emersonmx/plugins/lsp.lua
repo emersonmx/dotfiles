@@ -103,6 +103,7 @@ return {
             "rustywind",
             "shellcheck",
             "shfmt",
+            "staticcheck",
             "stylelint",
             "stylua",
             "taplo",
