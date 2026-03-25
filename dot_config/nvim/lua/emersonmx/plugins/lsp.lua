@@ -85,7 +85,6 @@ return {
                     },
                 },
             },
-            ty = {},
         }
 
         local ensure_installed = {
