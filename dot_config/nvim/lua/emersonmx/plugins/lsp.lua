@@ -69,7 +69,7 @@ return {
                     },
                 },
             },
-            stylelint_lsp = {},
+            ["stylelint-language-server"] = {},
             tailwindcss = {},
             taplo = {},
             templ = {},
