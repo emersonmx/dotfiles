@@ -209,6 +209,7 @@ yay -S \
     nodejs \
     npm \
     oh-my-zsh-git \
+    ollama \
     p7zip \
     pacman-contrib \
     pandoc \
