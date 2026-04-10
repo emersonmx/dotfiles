@@ -2,5 +2,5 @@ export HOME_LOCAL=$HOME/.local
 export ASDF_DATA_DIR=$HOME_LOCAL/share/asdf
 export FZF_DEFAULT_OPTS="--reverse"
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --no-ignore-vcs'
-export LESS="-RF"
+export LESS="-RF --mouse"
 export EDITOR="vim"
