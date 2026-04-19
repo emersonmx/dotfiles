@@ -4,6 +4,7 @@ windows:
   - name: editor
     panes:
       - focus: true
+        command: nvim
   - name: git
     panes:
       - command: lazygit
