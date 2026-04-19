@@ -1,6 +1,5 @@
 return {
-    "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate",
+    "romus204/tree-sitter-manager.nvim",
     opts = {
         ensure_installed = {
             "bash",
@@ -27,9 +26,7 @@ return {
             "yaml",
         },
         auto_install = true,
-        ignore_install = { "jsonc" },
-        highlight = { enable = true },
-        indent = { enable = true },
-        incremental_selection = { enable = true },
+        highlight = true,
+        border = "single",
     },
 }
