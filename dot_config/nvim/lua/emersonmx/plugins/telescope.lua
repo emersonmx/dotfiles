@@ -10,7 +10,6 @@ return {
             end,
         },
         { "nvim-telescope/telescope-ui-select.nvim" },
-        { "nvim-tree/nvim-web-devicons", opts = {} },
     },
     config = function()
         require("telescope").setup({
