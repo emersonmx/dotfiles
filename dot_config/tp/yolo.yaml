@@ -4,3 +4,4 @@ windows:
   - name: editor
     panes:
       - focus: true
+        command: nvim
