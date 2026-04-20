@@ -180,7 +180,7 @@ return {
                 map("<leader>rn", vim.lsp.buf.rename, "Rename")
                 map("<leader>ca", vim.lsp.buf.code_action, "Code Action")
                 map("K", function()
-                    vim.lsp.buf.hover({ wrap = false, max_width = 80 })
+                    vim.lsp.buf.hover({ wrap = true, max_width = 80 })
                 end, "Hover Documentation")
                 map("gD", vim.lsp.buf.declaration, "Goto Declaration")
 

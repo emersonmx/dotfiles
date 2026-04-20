@@ -26,11 +26,3 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
         end
     end,
 })
-
-vim.api.nvim_create_autocmd("WinEnter", {
-    callback = function()
-        if vim.api.nvim_win_get_config(0).relative ~= "" then
-            vim.wo.wrap = true
-        end
-    end,
-})
