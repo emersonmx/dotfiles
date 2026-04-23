@@ -163,11 +163,7 @@ return {
                 end
                 local tb = require("telescope.builtin")
 
-                map("gd", function()
-                    tb.lsp_definitions({
-                        jump_type = "vsplit",
-                    })
-                end, "Goto Definition")
+                map("gd", tb.lsp_definitions, "Goto Definition")
                 map("gr", tb.lsp_references, "Goto References")
                 map("gI", tb.lsp_implementations, "Goto Implementation")
                 map("<leader>D", tb.lsp_type_definitions, "Type Definition")
