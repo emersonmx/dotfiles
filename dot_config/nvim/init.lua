@@ -28,7 +28,6 @@ vim.g.maplocalleader = " "
 
 require("lazy").setup({
     spec = {
-        "mbbill/undotree",
         "nvim-tree/nvim-web-devicons",
         "tpope/vim-abolish",
 
