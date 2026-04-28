@@ -116,6 +116,7 @@ sudo apt-get install \
     lld \
     llvm \
     make \
+    meson \
     neovim \
     nodejs \
     pkg-config \
