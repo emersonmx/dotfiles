@@ -48,6 +48,12 @@ return {
                     return vim.list_contains(git_ignored[dir], name)
                 end,
             },
+            confirmation = {
+                border = "solid",
+            },
+            keymaps_help = {
+                border = "solid",
+            },
         })
 
         vim.keymap.set(
