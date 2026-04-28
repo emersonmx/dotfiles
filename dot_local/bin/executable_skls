@@ -5,4 +5,8 @@ set -euo pipefail
 ossuary_dir="$HOME/code/ossuary"
 
 find "${ossuary_dir}" -type f |
-    sed -E -e "s#""${ossuary_dir}/""##g" -e '/^(\.git\/|README.md)/ d'
+    sed -E \
+        -e "s#""${ossuary_dir}/""##g" \
+        -e '/^\./ d' \
+        -e '/(^_|\/_)/ d' \
+        -e '/^README.md/ d'
