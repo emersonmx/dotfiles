@@ -41,6 +41,7 @@ opt.inccommand = "split"
 opt.cursorline = true
 
 opt.scrolloff = 5
+opt.winborder = "solid"
 
 opt.hlsearch = true
 
