@@ -27,6 +27,6 @@ return {
         },
         auto_install = true,
         highlight = true,
-        border = "single",
+        border = "solid",
     },
 }
