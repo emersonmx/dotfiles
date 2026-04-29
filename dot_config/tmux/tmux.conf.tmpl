@@ -74,8 +74,9 @@ bind-key -n M-9 select-window -t 9
 bind-key -n M-0 select-window -t 10
 
 # Easy pane navigation
+vim_pattern='(\S+/)?g?\.?(view|l?n?vim?x?|fzf)(diff)?(-wrapped)?'
 is_vim="ps -o state= -o comm= -t '#{pane_tty}' \
-    | grep -iqE '^[^TXZ ]+ +(\\S+\\/)?g?(view|n?vim?x?)(diff)?$'"
+    | grep -iqE '^[^TXZ ]+ +${vim_pattern}$'"
 
 bind-key -n 'M-h' if-shell "$is_vim" 'send-keys M-h' 'select-pane -L'
 bind-key -n 'M-j' if-shell "$is_vim" 'send-keys M-j' 'select-pane -D'
@@ -100,7 +101,6 @@ set -g @plugin 'laktak/extrakto'
 set -g @plugin 'tmux-plugins/tmux-battery'
 set -g @plugin 'tmux-plugins/tmux-pain-control'
 set -g @plugin 'tmux-plugins/tmux-prefix-highlight'
-set -g @plugin 'tmux-plugins/vim-tmux-focus-events'
 set -g @plugin 'tmux-plugins/tmux-sensible'
 set -g @plugin 'tmux-plugins/tmux-sessionist'
 set -g @plugin 'tmux-plugins/tmux-yank'
