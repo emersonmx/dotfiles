@@ -1,1 +1,3 @@
 confirmOnQuit: true
+gui:
+  border: single
