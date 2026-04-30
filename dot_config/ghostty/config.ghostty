@@ -1,0 +1,44 @@
+# Window
+fullscreen = true
+window-padding-balance = true
+window-padding-color = background
+confirm-close-surface = false
+
+# Fonts
+font-size = 11.25
+font-family = "MesloLGS Nerd Font"
+font-family-bold = "MesloLGS Nerd Font"
+font-family-italic = "MesloLGS Nerd Font"
+font-family-bold-italic = "MesloLGS Nerd Font"
+
+# Theme
+foreground = "#ABB2BF"
+background = "#1E2127"
+
+## Normal
+palette = 0=#1E2127
+palette = 1=#E06C75
+palette = 2=#98C379
+palette = 3=#D19A66
+palette = 4=#61AFEF
+palette = 5=#C678DD
+palette = 6=#56B6C2
+palette = 7=#ABB2BF
+
+## Bright
+palette = 8=#5C6370
+palette = 9=#E06C75
+palette = 10=#98C379
+palette = 11=#D19A66
+palette = 12=#61AFEF
+palette = 13=#c678dd
+palette = 14=#56b6c2
+palette = 15=#ffffff
+
+## Cursor
+cursor-color = "#FFFFFF"
+cursor-text = "#1E2127"
+
+## Selection
+selection-foreground = "#1E2127"
+selection-background = "#FFFFFF"
