@@ -178,7 +178,6 @@ cd yay
 makepkg -si
 
 yay -S \
-    alacritty \
     asdf-vm \
     bat \
     chezmoi \
@@ -190,6 +189,7 @@ yay -S \
     entr \
     fd \
     fzf \
+    ghostty \
     git \
     git-lfs \
     htop \
