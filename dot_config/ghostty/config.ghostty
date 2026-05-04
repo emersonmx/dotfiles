@@ -42,3 +42,7 @@ cursor-text = "#1E2127"
 ## Selection
 selection-foreground = "#1E2127"
 selection-background = "#FFFFFF"
+
+# Keybinds
+
+keybind = F11=toggle_fullscreen
