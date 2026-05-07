@@ -154,7 +154,7 @@ return {
                     "must have valid client"
                 )
 
-                local function map(keys, func, desc)
+                local function nmap(keys, func, desc)
                     vim.keymap.set(
                         "n",
                         keys,
@@ -162,24 +162,33 @@ return {
                         { buffer = bufnr, desc = "LSP: " .. desc }
                     )
                 end
+                local function vmap(keys, func, desc)
+                    vim.keymap.set(
+                        "v",
+                        keys,
+                        func,
+                        { buffer = bufnr, desc = "LSP: " .. desc }
+                    )
+                end
                 local tb = require("telescope.builtin")
 
-                map("gd", tb.lsp_definitions, "Goto Definition")
-                map("gr", tb.lsp_references, "Goto References")
-                map("gI", tb.lsp_implementations, "Goto Implementation")
-                map("<leader>D", tb.lsp_type_definitions, "Type Definition")
-                map("<leader>ds", tb.lsp_document_symbols, "Document Symbols")
-                map(
+                nmap("gd", tb.lsp_definitions, "Goto Definition")
+                nmap("gr", tb.lsp_references, "Goto References")
+                nmap("gI", tb.lsp_implementations, "Goto Implementation")
+                nmap("<leader>D", tb.lsp_type_definitions, "Type Definition")
+                nmap("<leader>ds", tb.lsp_document_symbols, "Document Symbols")
+                nmap(
                     "<leader>ws",
                     tb.lsp_dynamic_workspace_symbols,
                     "Workspace Symbols"
                 )
-                map("<leader>rn", vim.lsp.buf.rename, "Rename")
-                map("<leader>ca", vim.lsp.buf.code_action, "Code Action")
-                map("K", function()
+                nmap("<leader>rn", vim.lsp.buf.rename, "Rename")
+                nmap("<leader>ca", vim.lsp.buf.code_action, "Code Action")
+                vmap("<leader>ca", vim.lsp.buf.code_action, "Code Action")
+                nmap("K", function()
                     vim.lsp.buf.hover({ wrap = true, max_width = 80 })
                 end, "Hover Documentation")
-                map("gD", vim.lsp.buf.declaration, "Goto Declaration")
+                nmap("gD", vim.lsp.buf.declaration, "Goto Declaration")
 
                 if
                     client
