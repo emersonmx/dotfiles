@@ -7,7 +7,11 @@ return {
         require("mini.diff").setup({
             view = { style = "number" },
         })
-        require("mini.git").setup()
+        require("mini.git").setup({
+            command = {
+                split = "vertical",
+            },
+        })
         require("mini.indentscope").setup()
         require("mini.pairs").setup()
         require("mini.surround").setup()
