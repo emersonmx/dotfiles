@@ -8,18 +8,13 @@ return {
     opts = {
         instructions_file = "avante.md",
         provider = "copilot",
-        providers = {
-            copilot = {
-                adapter = "copilot",
-                config = {
-                    accept_keymap = "<C-y>",
-                },
-            },
-        },
     },
     dependencies = {
         "nvim-lua/plenary.nvim",
         "MunifTanjim/nui.nvim",
+        "MeanderingProgrammer/render-markdown.nvim",
+        "nvim-telescope/telescope.nvim",
+        "nvim-tree/nvim-web-devicons",
         "zbirenbaum/copilot.lua",
     },
 }
