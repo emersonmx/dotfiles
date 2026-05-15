@@ -13,11 +13,6 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
 })
 
 vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
-    pattern = { "*.h" },
-    command = "set filetype=c",
-})
-
-vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
     callback = function(args)
         local home = vim.fn.expand("$HOME")
         local target_dir = home .. "/.cache/zsh/completions/"
