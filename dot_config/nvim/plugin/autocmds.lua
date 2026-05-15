@@ -26,3 +26,18 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
         end
     end,
 })
+
+local remember_view =
+    vim.api.nvim_create_augroup("remember_view", { clear = true })
+
+vim.api.nvim_create_autocmd("BufWinLeave", {
+    group = remember_view,
+    pattern = "*",
+    command = "silent! mkview",
+})
+
+vim.api.nvim_create_autocmd("BufWinEnter", {
+    group = remember_view,
+    pattern = "*",
+    command = "silent! loadview",
+})
