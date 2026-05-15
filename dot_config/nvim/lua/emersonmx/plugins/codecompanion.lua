@@ -23,11 +23,6 @@ return {
                     adapter = default_adapter,
                 },
             },
-            display = {
-                chat = {
-                    auto_scroll = false,
-                },
-            },
         })
 
         vim.keymap.set(
