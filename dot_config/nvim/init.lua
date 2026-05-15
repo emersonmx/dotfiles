@@ -28,7 +28,7 @@ vim.g.maplocalleader = " "
 
 require("lazy").setup({
     spec = {
-        "nvim-tree/nvim-web-devicons",
+        { "nvim-tree/nvim-web-devicons", lazy = true },
         "tpope/vim-abolish",
 
         { import = "emersonmx/plugins" },
