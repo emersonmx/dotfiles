@@ -8,8 +8,31 @@ return {
         local default_adapter = "copilot"
 
         require("codecompanion").setup({
+            rules = {
+                default = {
+                    description = "Collection of common files for all projects",
+                    files = {
+                        ".clinerules",
+                        ".cursorrules",
+                        ".goosehints",
+                        ".rules",
+                        ".windsurfrules",
+                        ".github/copilot-instructions.md",
+                        "AGENT.md",
+                        "AGENTS.md",
+                        { path = "CLAUDE.md", parser = "claude" },
+                        { path = "CLAUDE.local.md", parser = "claude" },
+                        { path = "~/.claude/CLAUDE.md", parser = "claude" },
+                    },
+                    is_preset = true,
+                },
+            },
             opts = {
                 language = "pt-BR",
+                chat = {
+                    autoload = "default",
+                    enabled = true,
+                },
             },
             interactions = {
                 chat = {
