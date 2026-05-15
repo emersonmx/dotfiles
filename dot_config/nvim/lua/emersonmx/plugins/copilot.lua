@@ -2,14 +2,21 @@ return {
     "zbirenbaum/copilot.lua",
     cmd = "Copilot",
     event = "InsertEnter",
-    opts = {
-        suggestion = {
-            auto_trigger = true,
-            keymap = {
-                accept = "<C-y>",
-                next = "<M-]>",
-                prev = "<M-[>",
+    config = function()
+        require("copilot").setup({
+            panel = {
+                enabled = true,
+                auto_refresh = true,
             },
-        },
-    },
+            suggestion = {
+                enabled = true,
+                auto_trigger = true,
+                keymap = {},
+            },
+        })
+
+        vim.keymap.set("i", "<C-y>", function()
+            require("copilot.suggestion").accept()
+        end, { silent = true, noremap = true })
+    end,
 }
