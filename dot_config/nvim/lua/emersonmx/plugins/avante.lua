@@ -6,7 +6,7 @@ return {
     event = "VeryLazy",
     version = false,
     opts = {
-        instructions_file = ".avante.md",
+        instructions_file = "avante.md",
         provider = "copilot",
     },
     dependencies = {
