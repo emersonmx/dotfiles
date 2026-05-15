@@ -2,6 +2,7 @@
 @commitlint/config-conventional
 dockerfile-language-server-nodejs
 json-server
+mcp-hub
 neovim
 npm-check-updates
 npq
