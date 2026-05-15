@@ -21,6 +21,9 @@ return {
                 cmd = {
                     adapter = default_adapter,
                 },
+                background = {
+                    adapter = default_adapter,
+                },
             },
         })
 
