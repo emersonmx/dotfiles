@@ -8,11 +8,10 @@ return {
         local default_adapter = "copilot"
 
         require("codecompanion").setup({
-            ignore_warnings = true,
             opts = {
                 language = "pt-BR",
             },
-            strategies = {
+            interactions = {
                 chat = {
                     adapter = default_adapter,
                 },
