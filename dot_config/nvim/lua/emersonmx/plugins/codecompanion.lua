@@ -27,6 +27,14 @@ return {
                     is_preset = true,
                 },
             },
+            prompt_library = {
+                markdown = {
+                    dirs = {
+                        vim.fn.getcwd() .. "/.prompts",
+                        "~/.config/prompts",
+                    },
+                },
+            },
             opts = {
                 language = "pt-BR",
                 chat = {
