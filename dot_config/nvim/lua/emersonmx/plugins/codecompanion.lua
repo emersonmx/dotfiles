@@ -1,13 +1,29 @@
 return {
     "olimorris/codecompanion.nvim",
+    version = "^19.0.0",
     dependencies = {
         "nvim-lua/plenary.nvim",
         "zbirenbaum/copilot.lua",
+        "ravitemer/mcphub.nvim",
     },
     config = function()
         local default_adapter = "copilot"
 
         require("codecompanion").setup({
+            extensions = {
+                mcphub = {
+                    callback = "mcphub.extensions.codecompanion",
+                    opts = {
+                        make_tools = true,
+                        show_server_tools_in_chat = true,
+                        add_mcp_prefix_to_tool_names = false,
+                        show_result_in_chat = true,
+                        format_tool = nil,
+                        make_vars = false,
+                        make_slash_commands = true,
+                    },
+                },
+            },
             rules = {
                 default = {
                     description = "Collection of common files for all projects",
@@ -71,6 +87,6 @@ return {
             { noremap = true, silent = true }
         )
 
-        vim.cmd([[cab cc CodeCompanion]])
+        vim.cmd([[cabbrev cc CodeCompanion]])
     end,
 }
