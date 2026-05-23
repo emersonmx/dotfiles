@@ -235,6 +235,7 @@ yay -S \
     uv \
     vi \
     wget \
+    wl-clipboard \
     wmctrl \
     xclip \
     xdg-utils \
