@@ -35,6 +35,7 @@ function zvm_config() {
     ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
     ZVM_VI_HIGHLIGHT_BACKGROUND=#264f78
     ZVM_VI_SURROUND_BINDKEY=s-prefix
+    ZVM_SYSTEM_CLIPBOARD_ENABLED=true
 }
 {{ if eq .chezmoi.osRelease.id "ubuntu" -}}
 source $HOME/.config/zsh/zsh-vi-mode/zsh-vi-mode.plugin.zsh
