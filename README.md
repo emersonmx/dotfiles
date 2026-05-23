@@ -193,7 +193,6 @@ yay -S \
     git \
     git-lfs \
     htop \
-    httpie \
     iotop \
     jq \
     lazygit \
