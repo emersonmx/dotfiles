@@ -1,3 +1,5 @@
+command = "exec $HOME/.local/bin/tmux-start"
+
 # Window
 fullscreen = true
 window-padding-balance = true
@@ -44,5 +46,4 @@ selection-foreground = "#1E2127"
 selection-background = "#FFFFFF"
 
 # Keybinds
-
 keybind = F11=toggle_fullscreen
