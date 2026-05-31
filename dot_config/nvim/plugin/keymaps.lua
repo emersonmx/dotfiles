@@ -6,6 +6,15 @@ set("n", "<leader>n", function()
     vim.o.number = not value
     vim.o.relativenumber = not value
 end, { desc = "Toggle line numbers" })
+set("n", "<leader>tw", function()
+    if vim.o.textwidth == 0 then
+        vim.o.textwidth = 80
+        print(string.format("textwidth enabled (%d)", vim.o.textwidth))
+    else
+        vim.o.textwidth = 0
+        print("textwidth disabled")
+    end
+end, { desc = "Toggle textwidth" })
 
 set(
     "n",
