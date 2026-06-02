@@ -61,6 +61,9 @@ return {
             interactions = {
                 chat = {
                     adapter = default_adapter,
+                    keymaps = {
+                        clear = false,
+                    },
                 },
                 inline = {
                     adapter = default_adapter,
