@@ -1,0 +1,8 @@
+name = "yolo"
+directory = "~/yolo"
+
+[[windows]]
+name = "editor"
+
+[[windows.panes]]
+focus = true

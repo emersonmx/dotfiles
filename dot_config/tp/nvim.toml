@@ -1,0 +1,17 @@
+name = "nvim"
+directory = "~/.config/nvim"
+
+[[windows]]
+name = "editor"
+
+[[windows.panes]]
+focus = true
+
+[[windows]]
+name = "shell"
+
+[[windows]]
+name = "chezmoi"
+
+[[windows.panes]]
+command = "chezmoi cd"

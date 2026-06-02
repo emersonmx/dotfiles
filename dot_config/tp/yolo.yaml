@@ -1,6 +1,0 @@
-name: yolo
-directory: ~/yolo
-windows:
-  - name: editor
-    panes:
-      - focus: true

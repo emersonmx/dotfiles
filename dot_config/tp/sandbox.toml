@@ -1,0 +1,14 @@
+name = "sandbox"
+directory = "~/code/sandbox"
+
+[[windows]]
+name = "editor"
+
+[[windows.panes]]
+focus = true
+
+[[windows]]
+name = "git"
+
+[[windows.panes]]
+command = "lazygit"
