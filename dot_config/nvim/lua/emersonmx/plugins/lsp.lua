@@ -82,6 +82,7 @@ return {
             taplo = {},
             templ = {},
             ts_ls = {},
+            ts_query_ls = {},
             yamlls = {
                 settings = {
                     yaml = {
