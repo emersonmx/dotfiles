@@ -37,7 +37,8 @@ vim.api.nvim_create_user_command("TSInstallDefault", function()
         end
     end
 
-    require("nvim-treesitter").install(to_install)
+    require("nvim-treesitter").install(to_install):wait(300000)
+    print("Treesitter parsers installed")
 end, {
     desc = "Install the default set of treesitter parsers",
 })
