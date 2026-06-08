@@ -1,29 +1,30 @@
+local languages = {
+    "bash",
+    "c",
+    "css",
+    "dockerfile",
+    "gitcommit",
+    "gitignore",
+    "go",
+    "gotmpl",
+    "helm",
+    "html",
+    "javascript",
+    "json",
+    "lua",
+    "make",
+    "markdown",
+    "python",
+    "query",
+    "rust",
+    "toml",
+    "typescript",
+    "vim",
+    "vimdoc",
+    "yaml",
+}
+
 vim.api.nvim_create_user_command("TSInstallDefault", function()
-    local languages = {
-        "bash",
-        "c",
-        "css",
-        "dockerfile",
-        "gitcommit",
-        "gitignore",
-        "go",
-        "gotmpl",
-        "helm",
-        "html",
-        "javascript",
-        "json",
-        "lua",
-        "make",
-        "markdown",
-        "python",
-        "query",
-        "rust",
-        "toml",
-        "typescript",
-        "vim",
-        "vimdoc",
-        "yaml",
-    }
     local registry = require("treesitter-registry")
 
     local to_install = {}
@@ -40,3 +41,10 @@ vim.api.nvim_create_user_command("TSInstallDefault", function()
 end, {
     desc = "Install the default set of treesitter parsers",
 })
+
+return {
+    "neovim-treesitter/nvim-treesitter",
+    dependencies = { "neovim-treesitter/treesitter-parser-registry" },
+    lazy = false,
+    build = ":TSUpdate",
+}
