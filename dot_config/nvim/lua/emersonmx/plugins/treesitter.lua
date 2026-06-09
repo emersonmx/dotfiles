@@ -24,6 +24,10 @@ local languages = {
     "yaml",
 }
 
+local function has_query(lang, name)
+    return #vim.treesitter.query.get_files(lang, name) > 0
+end
+
 vim.api.nvim_create_user_command("TSInstallDefault", function()
     local registry = require("treesitter-registry")
 
@@ -44,26 +48,18 @@ end, {
 })
 
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = {
-        "bash",
-        "c",
-        "go",
-        "html",
-        "javascript",
-        "json",
-        "lua",
-        "python",
-        "query",
-        "rust",
-        "toml",
-        "typescript",
-        "yaml",
-    },
-    callback = function()
+    pattern = languages,
+    callback = function(args)
+        local lang = args.match
+
         vim.treesitter.start()
-        vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
-        vim.wo.foldmethod = "expr"
-        vim.bo.indentexpr = "v:lua.require('nvim-treesitter').indentexpr()"
+        if has_query(lang, "folds") then
+            vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+            vim.wo.foldmethod = "expr"
+        end
+        if has_query(lang, "indents") then
+            vim.bo.indentexpr = "v:lua.require('nvim-treesitter').indentexpr()"
+        end
     end,
 })
 
