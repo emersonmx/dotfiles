@@ -54,11 +54,9 @@ return {
         "st",
         fmt(
             [[
-            struct {} {{
-                {}
-            }}
+            struct {}
             ]],
-            { i(1), i(0) }
+            { i(1) }
         )
     ),
     s(
