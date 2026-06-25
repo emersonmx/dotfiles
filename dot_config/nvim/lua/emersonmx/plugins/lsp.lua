@@ -202,10 +202,16 @@ return {
                     client
                     and client.server_capabilities.documentHighlightProvider
                 then
+                    local hl_group = vim.api.nvim_create_augroup(
+                        "custom-lsp-document-highlight-" .. bufnr,
+                        { clear = true }
+                    )
+
                     vim.api.nvim_create_autocmd(
                         { "CursorHold", "CursorHoldI" },
                         {
                             buffer = bufnr,
+                            group = hl_group,
                             callback = vim.lsp.buf.document_highlight,
                         }
                     )
@@ -214,9 +220,22 @@ return {
                         { "CursorMoved", "CursorMovedI" },
                         {
                             buffer = bufnr,
+                            group = hl_group,
                             callback = vim.lsp.buf.clear_references,
                         }
                     )
+
+                    vim.api.nvim_create_autocmd("LspDetach", {
+                        buffer = bufnr,
+                        group = hl_group,
+                        callback = function()
+                            vim.lsp.buf.clear_references()
+                            vim.api.nvim_clear_autocmds({
+                                group = hl_group,
+                                buffer = bufnr,
+                            })
+                        end,
+                    })
                 end
             end,
         })
