@@ -17,6 +17,7 @@ local languages = {
     "python",
     "query",
     "rust",
+    "tera",
     "toml",
     "typescript",
     "vim",
