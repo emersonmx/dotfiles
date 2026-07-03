@@ -7,6 +7,14 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     end,
 })
 
+vim.api.nvim_create_autocmd({ "FileType" }, {
+    pattern = { "codecompanion" },
+    callback = function()
+        vim.o.number = false
+        vim.o.relativenumber = false
+    end,
+})
+
 vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
     pattern = { "*.h" },
     command = "set filetype=c",
