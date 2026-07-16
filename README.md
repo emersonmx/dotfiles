@@ -54,19 +54,12 @@ git clone https://github.com/ohmyzsh/ohmyzsh.git $HOME/.config/zsh/ohmyzsh
 
 # Ubuntu and Arch
 git clone https://github.com/emersonmx/zsh-plugins.git $HOME/.config/zsh/zsh-plugins
-git clone https://github.com/changyuheng/zsh-interactive-cd.git $HOME/.config/zsh/zsh-interactive-cd
 ```
 
-## asdf
+## mise
 
-```sh
-# Download binary from https://github.com/asdf-vm/asdf/releases
-
-mkdir -p "${ASDF_DATA_DIR:-$HOME/.asdf}/completions"
-asdf completion zsh > "${ASDF_DATA_DIR:-$HOME/.asdf}/completions/_asdf"
-
-# run asdf.py [https://github.com/emersonmx/scripts/blob/main/arch/updater/asdf.py]
-```
+- [Setup mise](https://mise.jdx.dev/getting-started.html)
+- [run mise.sh](https://github.com/emersonmx/scripts/blob/main/arch/updater/mise.sh)
 
 ### WSL
 
@@ -136,8 +129,8 @@ sudo apt-get install \
     zlib1g-dev \
     zsh
 
-BINDIR=$HOME/.local/bin sh -c "$(curl -fsLS chezmoi.io/get)"
-chezmoi init gh_personal:emersonmx/dotfiles.git
+BINDIR=$HOME/.local/bin sh -c "$(curl -fsLS https://get.chezmoi.io)"
+chezmoi init https://github.com/emersonmx/dotfiles.git
 chezmoi apply
 
 ln -sf /usr/bin/fdfind $HOME/.local/bin/fd
@@ -178,7 +171,6 @@ cd yay
 makepkg -si
 
 yay -S \
-    asdf-vm \
     bat \
     chezmoi \
     clang \
@@ -202,6 +194,7 @@ yay -S \
     man-pages \
     man-pages-pt_br \
     mingw-w64-gcc \
+    mise \
     mold \
     neovim \
     ninja \
