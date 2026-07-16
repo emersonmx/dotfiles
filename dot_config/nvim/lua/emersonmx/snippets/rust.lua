@@ -121,7 +121,7 @@ return {
         )
     ),
     s("test", t("#[test]")),
-    s("derive", fmt("#[derive({})]", i(1, "Debug, Clone, Default, PartialEq"))),
+    s("derive", fmt("#[derive({})]", i(1, "Debug, PartialEq"))),
     s("at", fmt("#[{}]", i(1))),
     s("lf", fmt("'{}", i(1, "a"))),
     s("o", fmt("let {} = {}", { i(1), i(0) })),
