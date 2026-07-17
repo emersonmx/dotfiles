@@ -1,3 +1,6 @@
 cargo-binstall
 https://github.com/emersonmx/skelly
 https://github.com/emersonmx/tp
+{{ if eq .chezmoi.osRelease.id "ubuntu" -}}
+tree-sitter-cli
+{{ end -}}
