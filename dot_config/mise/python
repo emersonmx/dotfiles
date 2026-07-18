@@ -3,7 +3,6 @@ ipdb
 ipython
 isort
 mypy
-pip-tools
 poetry
 pyright
 ruff
