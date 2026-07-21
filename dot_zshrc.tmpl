@@ -2,7 +2,8 @@
 # Run: tmux new-session -A -s home
 
 # ASDF
-path=("$ASDF_DATA_DIR/shims" $path)
+typeset -U path PATH
+[[ -n $ASDF_DATA_DIR ]] && path=("$ASDF_DATA_DIR/shims" $path)
 
 # completions
 ZSH_CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
