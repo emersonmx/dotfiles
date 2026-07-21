@@ -58,14 +58,14 @@ git clone https://github.com/emersonmx/zsh-plugins.git $HOME/.config/zsh/zsh-plu
 
 ## asdf
 
-```sh
-# Download binary from https://github.com/asdf-vm/asdf/releases
+- [Download asdf binary](https://github.com/asdf-vm/asdf/releases)
+- [Run asdf.sh](https://github.com/emersonmx/scripts/blob/main/arch/updater/asdf.sh)
+- Install completions
+  ```sh
+  mkdir -p "$ZSH_CACHE_DIR/completions"
+  asdf completion zsh > "$ZSH_CACHE_DIR/completions/_asdf"
+  ```
 
-mkdir -p "${ASDF_DATA_DIR:-$HOME/.asdf}/completions"
-asdf completion zsh > "${ASDF_DATA_DIR:-$HOME/.asdf}/completions/_asdf"
-
-# run asdf.sh [https://github.com/emersonmx/scripts/blob/main/arch/updater/asdf.sh]
-```
 
 ### WSL
 
