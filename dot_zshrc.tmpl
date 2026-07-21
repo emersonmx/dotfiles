@@ -1,9 +1,13 @@
 # Tmux
 # Run: tmux new-session -A -s home
 
+# ASDF
+path=("$ASDF_DATA_DIR/shims" $path)
+
 # completions
 ZSH_CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
 fpath=($ZSH_CACHE_DIR/completions $fpath)
+fpath=($ASDF_DATA_DIR/completions $fpath)
 
 autoload -Uz compinit
 [[ -n ${ZDOTDIR}/.zcompdump(#qN.mh+24) ]] && compinit || compinit -C
@@ -119,5 +123,3 @@ alias t="tmux"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-eval "$(mise activate zsh)"

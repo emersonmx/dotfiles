@@ -56,10 +56,16 @@ git clone https://github.com/ohmyzsh/ohmyzsh.git $HOME/.config/zsh/ohmyzsh
 git clone https://github.com/emersonmx/zsh-plugins.git $HOME/.config/zsh/zsh-plugins
 ```
 
-## mise
+## asdf
 
-- [Setup mise](https://mise.jdx.dev/getting-started.html)
-- [run mise.sh](https://github.com/emersonmx/scripts/blob/main/arch/updater/mise.sh)
+```sh
+# Download binary from https://github.com/asdf-vm/asdf/releases
+
+mkdir -p "${ASDF_DATA_DIR:-$HOME/.asdf}/completions"
+asdf completion zsh > "${ASDF_DATA_DIR:-$HOME/.asdf}/completions/_asdf"
+
+# run asdf.sh [https://github.com/emersonmx/scripts/blob/main/arch/updater/asdf.sh]
+```
 
 ### WSL
 
@@ -171,6 +177,7 @@ cd yay
 makepkg -si
 
 yay -S \
+    asdf-vm \
     bat \
     chezmoi \
     clang \
@@ -194,7 +201,6 @@ yay -S \
     man-pages \
     man-pages-pt_br \
     mingw-w64-gcc \
-    mise \
     mold \
     neovim \
     ninja \
