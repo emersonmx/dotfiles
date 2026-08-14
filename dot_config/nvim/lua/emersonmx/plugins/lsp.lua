@@ -108,7 +108,6 @@ return {
             "markdownlint",
             "mypy",
             "prettier",
-            "rustywind",
             "shellcheck",
             "shfmt",
             "staticcheck",
