@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-ossuary_dir="$HOME/code/ossuary"
+ossuary_dir="$HOME/code/ossuary/templates"
 
 find "${ossuary_dir}" -type f |
     sed -E \

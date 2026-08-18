@@ -1,9 +1,0 @@
-#!/bin/bash
-
-set -euo pipefail
-
-skeleton="$(skls | grep -v '^snippets/' | fzf)"
-
-[[ -z $skeleton ]] && exit 1
-
-sks "$skeleton" "$@"

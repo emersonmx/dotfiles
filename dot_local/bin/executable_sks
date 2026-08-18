@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-skeleton="$HOME/code/ossuary/$1"
+skeleton="$HOME/code/ossuary/templates/$1"
 shift
 
 sk -s "$skeleton" "$@"

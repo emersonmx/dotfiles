@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-ossuary_path="$HOME/code/ossuary"
+ossuary_path="$HOME/code/ossuary/templates"
 
 case "$1" in
 -l)
