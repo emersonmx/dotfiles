@@ -1,8 +1,0 @@
-#!/bin/bash
-
-set -euo pipefail
-
-skeleton="$HOME/code/ossuary/templates/$1"
-shift
-
-sk -s "$skeleton" "$@"
