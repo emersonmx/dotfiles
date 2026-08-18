@@ -2,7 +2,28 @@
 
 set -euo pipefail
 
-file_path="$HOME/code/ossuary/$1"
-shift
+ossuary_path="$HOME/code/ossuary"
 
-sk -f "$file_path" "$@"
+case "$1" in
+-l)
+    shift
+    library_dir="$ossuary_path/$1"
+    shift
+    template_path="$ossuary_path/$1"
+    shift
+    sk -l "$library_dir" -f "$template_path" "$@"
+    ;;
+-h)
+    script_name=$(basename "$0")
+    echo "Usage: $script_name [options] <file> [args]"
+    echo
+    echo 'Options:'
+    echo '  -l <dir>  Specify the library directory and template file'
+    echo '  -h        Show this help message'
+    ;;
+*)
+    file_path="$ossuary_path/$1"
+    shift
+    sk -f "$file_path" "$@"
+    ;;
+esac
