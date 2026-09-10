@@ -7,8 +7,8 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     end,
 })
 
-vim.api.nvim_create_autocmd({ "FileType" }, {
-    pattern = { "codecompanion" },
+vim.api.nvim_create_autocmd({ "User" }, {
+    pattern = { "CodeCompanionChatCreated", "CodeCompanionCLICreated" },
     callback = function()
         vim.o.number = false
         vim.o.relativenumber = false

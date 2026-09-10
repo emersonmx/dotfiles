@@ -65,6 +65,17 @@ return {
                         clear = false,
                     },
                 },
+                cli = {
+                    agent = "opencode",
+                    agents = {
+                        opencode = {
+                            cmd = "opencode",
+                            args = {},
+                            description = "OpenCode CLI",
+                            provider = "terminal",
+                        },
+                    },
+                },
                 inline = {
                     adapter = default_adapter,
                 },
