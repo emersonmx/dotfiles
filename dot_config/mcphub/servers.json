@@ -1,5 +1,10 @@
 {
     "mcpServers": {
+        "codegraph": {
+            "args": ["serve", "--mcp"],
+            "command": "codegraph",
+            "disabled": false
+        },
         "context7": {
             "args": ["-y", "@upstash/context7-mcp"],
             "command": "npx",
