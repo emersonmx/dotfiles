@@ -5,6 +5,7 @@
 typeset -U path PATH
 
 [[ -n $ASDF_DATA_DIR ]] && path=("$ASDF_DATA_DIR/shims" $path)
+[[ -n $PNPM_HOME ]] && path=("$PNPM_HOME/bin" $path)
 path=($HOME_LOCAL/bin $path)
 
 # completions
