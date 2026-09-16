@@ -36,7 +36,7 @@ return {
                         ".github/copilot-instructions.md",
                         "AGENT.md",
                         "AGENTS.md",
-                        "~/.config/opencode/AGENTS.md",
+                        "~/.agents/AGENTS.md",
                         { path = "CLAUDE.md", parser = "claude" },
                         { path = "CLAUDE.local.md", parser = "claude" },
                         { path = "~/.claude/CLAUDE.md", parser = "claude" },
