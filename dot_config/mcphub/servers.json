@@ -5,6 +5,10 @@
             "command": "codegraph",
             "disabled": false
         },
+        "context-mode": {
+            "args": ["-y", "context-mode"],
+            "command": "npx"
+        },
         "context7": {
             "args": ["-y", "@upstash/context7-mcp"],
             "command": "npx",
