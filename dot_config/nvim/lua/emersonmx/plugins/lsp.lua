@@ -82,7 +82,7 @@ return {
             tailwindcss = {},
             taplo = {},
             templ = {},
-            ts_ls = {},
+            tsc = {},
             ts_query_ls = {},
             yamlls = {
                 settings = {
