@@ -83,19 +83,13 @@ source {{ $ohmyzsh_path }}/plugins/docker/docker.plugin.zsh
 source {{ $ohmyzsh_path }}/plugins/extract/extract.plugin.zsh
 source {{ $ohmyzsh_path }}/plugins/git/git.plugin.zsh
 source {{ $ohmyzsh_path }}/plugins/gitignore/gitignore.plugin.zsh
+source {{ $ohmyzsh_path }}/plugins/history-substring-search/history-substring-search.plugin.zsh
 source {{ $ohmyzsh_path }}/plugins/rust/rust.plugin.zsh
 
-# zsh-users
-{{ if eq .chezmoi.osRelease.id "ubuntu" -}}
-source $HOME/.config/zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
-{{- else -}}
-source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
-{{- end }}
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
-bindkey "$terminfo[kcuu1]" history-substring-search-up
-bindkey "$terminfo[kcud1]" history-substring-search-down
 
+# zsh-users
 {{ if eq .chezmoi.osRelease.id "ubuntu" -}}
 source $HOME/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 {{- else -}}
