@@ -60,6 +60,7 @@ return {
                     },
                 },
             },
+            oxlint = {},
             pyright = {},
             ruff = {},
             rust_analyzer = {
