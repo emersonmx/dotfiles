@@ -78,17 +78,17 @@ source {{ $ohmyzsh_path }}/lib/misc.zsh
 source {{ $ohmyzsh_path }}/lib/prompt_info_functions.zsh
 source {{ $ohmyzsh_path }}/lib/theme-and-appearance.zsh
 source {{ $ohmyzsh_path }}/lib/vcs_info.zsh
+source {{ $ohmyzsh_path }}/plugins/docker-compose/docker-compose.plugin.zsh
+source {{ $ohmyzsh_path }}/plugins/docker/docker.plugin.zsh
 source {{ $ohmyzsh_path }}/plugins/extract/extract.plugin.zsh
+source {{ $ohmyzsh_path }}/plugins/gh/gh.plugin.zsh
 source {{ $ohmyzsh_path }}/plugins/git/git.plugin.zsh
 source {{ $ohmyzsh_path }}/plugins/gitignore/gitignore.plugin.zsh
-source {{ $ohmyzsh_path }}/plugins/gh/gh.plugin.zsh
-source {{ $ohmyzsh_path }}/plugins/python/python.plugin.zsh
-source {{ $ohmyzsh_path }}/plugins/pip/pip.plugin.zsh
-source {{ $ohmyzsh_path }}/plugins/rust/rust.plugin.zsh
 source {{ $ohmyzsh_path }}/plugins/golang/golang.plugin.zsh
-source {{ $ohmyzsh_path }}/plugins/docker/docker.plugin.zsh
-source {{ $ohmyzsh_path }}/plugins/docker-compose/docker-compose.plugin.zsh
 source {{ $ohmyzsh_path }}/plugins/kubectl/kubectl.plugin.zsh
+source {{ $ohmyzsh_path }}/plugins/pip/pip.plugin.zsh
+source {{ $ohmyzsh_path }}/plugins/python/python.plugin.zsh
+source {{ $ohmyzsh_path }}/plugins/rust/rust.plugin.zsh
 
 # zsh-users
 {{ if eq .chezmoi.osRelease.id "ubuntu" -}}
