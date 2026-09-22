@@ -5,7 +5,6 @@ return {
         "mason-org/mason-lspconfig.nvim",
         "WhoIsSethDaniel/mason-tool-installer.nvim",
         "creativenull/efmls-configs-nvim",
-        { "j-hui/fidget.nvim", opts = {} },
         "b0o/SchemaStore.nvim",
     },
     config = function()
