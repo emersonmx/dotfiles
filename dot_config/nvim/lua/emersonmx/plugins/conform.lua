@@ -1,7 +1,7 @@
 -- check formatters at: https://github.com/stevearc/conform.nvim/blob/master/doc/conform.txt
 
 local prettier_formatter = { "prettier" }
-local web_formatter = { "rustywind", "prettier" }
+local web_formatter = { "prettier" }
 
 vim.api.nvim_create_user_command("ToggleAutoFormat", function()
     local value = not (vim.b.disable_autoformat or vim.g.disable_autoformat)
