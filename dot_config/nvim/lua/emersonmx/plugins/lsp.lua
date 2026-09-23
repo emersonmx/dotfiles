@@ -4,7 +4,6 @@ return {
         "mason-org/mason.nvim",
         "mason-org/mason-lspconfig.nvim",
         "WhoIsSethDaniel/mason-tool-installer.nvim",
-        "creativenull/efmls-configs-nvim",
         "b0o/SchemaStore.nvim",
     },
     config = function()
@@ -16,19 +15,6 @@ return {
             clangd = {},
             docker_compose_language_service = {},
             dockerls = {},
-            efm = {
-                filetypes = { "python" },
-                settings = {
-                    rootMarkers = { ".git/" },
-                    languages = {
-                        python = { require("efmls-configs.linters.mypy") },
-                    },
-                },
-                init_options = {
-                    documentFormatting = true,
-                    documentRangeFormatting = true,
-                },
-            },
             emmet_language_server = {},
             eslint = {},
             gdscript = { manual_install = true },
@@ -60,7 +46,6 @@ return {
                 },
             },
             oxlint = {},
-            pyright = {},
             ruff = {},
             rust_analyzer = {
                 settings = {
@@ -107,7 +92,6 @@ return {
             "golangci-lint",
             "jsonlint",
             "markdownlint",
-            "mypy",
             "prettier",
             "shellcheck",
             "shfmt",
