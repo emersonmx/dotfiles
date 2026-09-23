@@ -83,6 +83,7 @@ return {
             templ = {},
             tsc = {},
             ts_query_ls = {},
+            ty = {},
             yamlls = {
                 settings = {
                     yaml = {
