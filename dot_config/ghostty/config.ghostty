@@ -54,6 +54,7 @@ keybind = ctrl+==increase_font_size:1
 keybind = ctrl++=increase_font_size:1
 keybind = ctrl+-=decrease_font_size:1
 keybind = ctrl+0=reset_font_size
+keybind = ctrl+9=set_font_size:18
 keybind = alt+f4=close_window
 keybind = F11=toggle_fullscreen
 keybind = ctrl+shift+p=toggle_command_palette
