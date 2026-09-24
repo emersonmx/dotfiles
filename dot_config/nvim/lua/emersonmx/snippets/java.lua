@@ -8,6 +8,29 @@ return {
     s("pi", t("private ")),
 
     s(
+        "cls",
+        fmt(
+            [[
+            class {} {{
+                {}
+            }}
+            ]],
+            { i(1, "ClassName"), i(0) }
+        )
+    ),
+    s(
+        "ctor",
+        fmt(
+            [[
+            {}({}) {{
+                {}
+            }}
+            ]],
+            { i(1, "ClassName"), i(2), i(0) }
+        )
+    ),
+
+    s(
         "pr",
         fmt(
             [[
