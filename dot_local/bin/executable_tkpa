@@ -1,0 +1,8 @@
+#!/bin/bash
+
+[[ $TMUX ]] || {
+    echo "This script must be run inside a tmux session."
+    exit 1
+}
+
+tmux kill-pane -a
