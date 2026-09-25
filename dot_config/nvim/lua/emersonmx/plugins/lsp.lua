@@ -30,6 +30,7 @@ return {
                 },
                 init_options = { provideFormatter = false },
             },
+            lemminx = {},
             lua_ls = {
                 settings = {
                     Lua = {
