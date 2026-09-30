@@ -13,15 +13,24 @@ return {
         local servers = {
             bashls = {},
             clangd = {},
+            ["clang-format"] = {},
+            commitlint = {},
+            djlint = {},
             docker_compose_language_service = {},
             dockerls = {},
+            ["editorconfig-checker"] = {},
             emmet_language_server = {},
             eslint = {},
             gdscript = { manual_install = true },
+            gdtoolkit = {},
+            detekt = {},
+            gofumpt = {},
+            ["golangci-lint"] = {},
             golangci_lint_ls = {},
             gopls = {},
             html = {},
             jdtls = {},
+            jsonlint = {},
             jsonls = {
                 settings = {
                     json = {
@@ -31,6 +40,8 @@ return {
                 },
                 init_options = { provideFormatter = false },
             },
+            kotlin_lsp = {},
+            ktlint = {},
             lemminx = {},
             lua_ls = {
                 settings = {
@@ -47,7 +58,9 @@ return {
                     },
                 },
             },
+            markdownlint = {},
             oxlint = {},
+            prettier = {},
             ruff = {},
             rust_analyzer = {
                 settings = {
@@ -64,13 +77,20 @@ return {
                     },
                 },
             },
+            shellcheck = {},
+            shfmt = {},
+            staticcheck = {},
+            stylelint = {},
             ["stylelint-language-server"] = {},
+            stylua = {},
             tailwindcss = {},
             taplo = {},
             templ = {},
             tsc = {},
             ts_query_ls = {},
             ty = {},
+            yamlfmt = {},
+            yamllint = {},
             yamlls = {
                 settings = {
                     yaml = {
@@ -84,26 +104,6 @@ return {
             },
         }
 
-        local ensure_installed = {
-            "clang-format",
-            "commitlint",
-            "djlint",
-            "editorconfig-checker",
-            "gdtoolkit",
-            "gofumpt",
-            "golangci-lint",
-            "jsonlint",
-            "markdownlint",
-            "prettier",
-            "shellcheck",
-            "shfmt",
-            "staticcheck",
-            "stylelint",
-            "stylua",
-            "taplo",
-            "yamlfmt",
-            "yamllint",
-        }
         local servers_to_install = vim.tbl_filter(function(key)
             local t = servers[key]
             if type(t) == "table" then
@@ -112,10 +112,9 @@ return {
                 return t
             end
         end, vim.tbl_keys(servers))
-        vim.list_extend(ensure_installed, servers_to_install)
 
         require("mason-tool-installer").setup({
-            ensure_installed = ensure_installed,
+            ensure_installed = servers_to_install,
         })
 
         local capabilities = vim.lsp.protocol.make_client_capabilities()
