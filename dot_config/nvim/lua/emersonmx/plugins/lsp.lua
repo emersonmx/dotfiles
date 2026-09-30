@@ -21,6 +21,7 @@ return {
             golangci_lint_ls = {},
             gopls = {},
             html = {},
+            jdtls = {},
             jsonls = {
                 settings = {
                     json = {
