@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+TP_SESSIONS_DIR=${TP_SESSIONS_DIR:-$HOME/.config/tp}
+sessions=$(tp list)
+session=$(echo "$sessions" | fzf --preview "cat $TP_SESSIONS_DIR/{}.toml")
+
+tp load "$session"
