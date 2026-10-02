@@ -36,6 +36,44 @@ return {
     config = function()
         require("oil").setup({
             columns = { "icon" },
+            keymaps = {
+                ["gl"] = {
+                    desc = "Open entry, skipping single-child directories",
+                    callback = function()
+                        local oil = require("oil")
+                        local entry = oil.get_cursor_entry()
+                        local dir = oil.get_current_dir()
+                        if
+                            not entry
+                            or entry.type ~= "directory"
+                            or not dir
+                        then
+                            return oil.select()
+                        end
+                        local path = dir .. entry.name
+                        while true do
+                            local children = {}
+                            for name, type in vim.fs.dir(path) do
+                                table.insert(
+                                    children,
+                                    { name = name, type = type }
+                                )
+                                if #children > 1 then
+                                    break
+                                end
+                            end
+                            if
+                                #children ~= 1
+                                or children[1].type ~= "directory"
+                            then
+                                break
+                            end
+                            path = path .. "/" .. children[1].name
+                        end
+                        oil.open(path)
+                    end,
+                },
+            },
             view_options = {
                 is_hidden_file = function(name, _)
                     if vim.startswith(name, ".") then
