@@ -34,13 +34,14 @@ local git_ignored = setmetatable({}, {
 return {
     "stevearc/oil.nvim",
     config = function()
-        require("oil").setup({
+        local oil = require("oil")
+
+        oil.setup({
             columns = { "icon" },
             keymaps = {
                 ["gl"] = {
                     desc = "Open entry, skipping single-child directories",
                     callback = function()
-                        local oil = require("oil")
                         local entry = oil.get_cursor_entry()
                         local dir = oil.get_current_dir()
                         if
@@ -79,7 +80,7 @@ return {
                     if vim.startswith(name, ".") then
                         return true
                     end
-                    local dir = require("oil").get_current_dir()
+                    local dir = oil.get_current_dir()
                     if not dir then
                         return false
                     end
