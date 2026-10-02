@@ -40,7 +40,7 @@ return {
             columns = { "icon" },
             keymaps = {
                 ["gl"] = {
-                    desc = "Open entry, skipping single-child directories",
+                    desc = "Open the entry under the cursor, skipping single-child directories",
                     callback = function()
                         local entry = oil.get_cursor_entry()
                         local dir = oil.get_current_dir()
