@@ -1,1 +1,3 @@
 path=($HOME_LOCAL/bin $path)
+
+export ANDROID_HOME=~/Android/Sdk
