@@ -33,167 +33,41 @@ return {
             "yamllint",
         }
 
+        -- Configs live in after/lsp/<name>.lua
         local servers = {
-            bashls = {},
-            clangd = {},
-            docker_compose_language_service = {},
-            dockerls = {},
-            emmet_language_server = {},
-            eslint = {},
-            gdscript = { manual_install = true },
-            golangci_lint_ls = {},
-            gopls = {},
-            html = {},
-            jdtls = {},
-            jsonls = {
-                settings = {
-                    json = {
-                        schemas = require("schemastore").json.schemas(),
-                        validate = { enable = true },
-                    },
-                },
-                init_options = { provideFormatter = false },
-            },
-            kotlin_lsp = {
-                handlers = (function()
-                    local function is_composable(bufnr, lnum)
-                        local first = math.max(lnum - 20, 0)
-                        local lines = vim.api.nvim_buf_get_lines(
-                            bufnr,
-                            first,
-                            lnum + 1,
-                            false
-                        )
-                        for i = #lines, 1, -1 do
-                            local l = lines[i]
-                            if l:find("@Composable", 1, true) then
-                                return true
-                            end
-                            if
-                                i < #lines
-                                and (
-                                    l:match("^%s*$")
-                                    or l:match("[{}]%s*$")
-                                    or l:match("%*/%s*$")
-                                )
-                            then
-                                return false
-                            end
-                        end
-                        return false
-                    end
-
-                    local function filter(diagnostics, uri)
-                        local bufnr = vim.uri_to_bufnr(uri)
-                        if not vim.api.nvim_buf_is_loaded(bufnr) then
-                            return diagnostics
-                        end
-                        return vim.tbl_filter(function(d)
-                            local msg = d.message or ""
-                            return not (
-                                msg:match(
-                                    "^Function name .* should start with a lowercase letter"
-                                )
-                                and is_composable(bufnr, d.range.start.line)
-                            )
-                        end, diagnostics)
-                    end
-
-                    return {
-                        ["textDocument/publishDiagnostics"] = function(
-                            err,
-                            result,
-                            ctx
-                        )
-                            if result and result.diagnostics then
-                                result.diagnostics =
-                                    filter(result.diagnostics, result.uri)
-                            end
-                            vim.lsp.diagnostic.on_publish_diagnostics(
-                                err,
-                                result,
-                                ctx
-                            )
-                        end,
-                        ["textDocument/diagnostic"] = function(
-                            err,
-                            result,
-                            ctx
-                        )
-                            if result and result.items then
-                                result.items = filter(
-                                    result.items,
-                                    ctx.params.textDocument.uri
-                                )
-                            end
-                            vim.lsp.diagnostic.on_diagnostic(err, result, ctx)
-                        end,
-                    }
-                end)(),
-            },
-            lemminx = {},
-            lua_ls = {
-                settings = {
-                    Lua = {
-                        runtime = {
-                            version = "LuaJIT",
-                            path = { "lua/?.lua", "lua/?/init.lua" },
-                        },
-                        workspace = {
-                            checkThirdParty = false,
-                            library = { vim.env.VIMRUNTIME },
-                        },
-                        completion = { callSnippet = "Replace" },
-                    },
-                },
-            },
-            oxlint = {},
-            ruff = {},
-            rust_analyzer = {
-                settings = {
-                    ["rust-analyzer"] = {
-                        cargo = { features = "all" },
-                        check = { command = "clippy" },
-                        procMacro = {
-                            ignored = {
-                                leptos_macro = {
-                                    "server",
-                                },
-                            },
-                        },
-                    },
-                },
-            },
-            ["stylelint-language-server"] = {},
-            tailwindcss = {},
-            taplo = {},
-            templ = {},
-            ts_query_ls = {},
-            ty = {},
-            yamlls = {
-                settings = {
-                    yaml = {
-                        schemaStore = {
-                            enable = false,
-                            url = "",
-                        },
-                        schemas = require("schemastore").yaml.schemas(),
-                    },
-                },
-            },
+            "bashls",
+            "clangd",
+            "docker_compose_language_service",
+            "dockerls",
+            "emmet_language_server",
+            "eslint",
+            "golangci_lint_ls",
+            "gopls",
+            "html",
+            "jdtls",
+            "jsonls",
+            "kotlin_lsp",
+            "lemminx",
+            "lua_ls",
+            "oxlint",
+            "ruff",
+            "rust_analyzer",
+            "stylelint_lsp",
+            "tailwindcss",
+            "taplo",
+            "templ",
+            "ts_query_ls",
+            "ty",
+            "yamlls",
         }
 
-        local servers_to_install = vim.tbl_filter(function(key)
-            local t = servers[key]
-            if type(t) == "table" then
-                return not t.manual_install
-            else
-                return t
-            end
-        end, vim.tbl_keys(servers))
+        -- Enabled, but installed outside Mason
+        local manual_servers = {
+            "gdscript",
+        }
 
         require("mason-tool-installer").setup({
-            ensure_installed = vim.list_extend(servers_to_install, tools),
+            ensure_installed = vim.list_extend(vim.deepcopy(servers), tools),
         })
 
         local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -202,17 +76,10 @@ return {
             capabilities,
             require("cmp_nvim_lsp").default_capabilities()
         )
+        vim.lsp.config("*", { capabilities = capabilities })
 
-        for name, config in pairs(servers) do
-            config = vim.tbl_deep_extend(
-                "force",
-                {},
-                { capabilities = capabilities },
-                config
-            )
-            vim.lsp.config(name, config)
-            vim.lsp.enable(name)
-        end
+        vim.lsp.enable(servers)
+        vim.lsp.enable(manual_servers)
 
         vim.api.nvim_create_autocmd("LspAttach", {
             group = vim.api.nvim_create_augroup(
