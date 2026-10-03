@@ -10,27 +10,41 @@ return {
         require("mason").setup()
         require("mason-lspconfig").setup()
 
+        local tools = {
+            "clang-format",
+            "commitlint",
+            "detekt",
+            "djlint",
+            "editorconfig-checker",
+            "gdtoolkit",
+            "gofumpt",
+            "golangci-lint",
+            "jsonlint",
+            "ktlint",
+            "markdownlint",
+            "prettier",
+            "shellcheck",
+            "shfmt",
+            "staticcheck",
+            "stylelint",
+            "stylua",
+            "tsc",
+            "yamlfmt",
+            "yamllint",
+        }
+
         local servers = {
             bashls = {},
             clangd = {},
-            ["clang-format"] = {},
-            commitlint = {},
-            djlint = {},
             docker_compose_language_service = {},
             dockerls = {},
-            ["editorconfig-checker"] = {},
             emmet_language_server = {},
             eslint = {},
             gdscript = { manual_install = true },
-            gdtoolkit = {},
-            detekt = {},
-            gofumpt = {},
-            ["golangci-lint"] = {},
             golangci_lint_ls = {},
             gopls = {},
             html = {},
             jdtls = {},
-            jsonlint = {},
             jsonls = {
                 settings = {
                     json = {
@@ -40,8 +54,83 @@ return {
                 },
                 init_options = { provideFormatter = false },
             },
-            kotlin_lsp = {},
-            ktlint = {},
+            kotlin_lsp = {
+                handlers = (function()
+                    local function is_composable(bufnr, lnum)
+                        local first = math.max(lnum - 20, 0)
+                        local lines = vim.api.nvim_buf_get_lines(
+                            bufnr,
+                            first,
+                            lnum + 1,
+                            false
+                        )
+                        for i = #lines, 1, -1 do
+                            local l = lines[i]
+                            if l:find("@Composable", 1, true) then
+                                return true
+                            end
+                            if
+                                i < #lines
+                                and (
+                                    l:match("^%s*$")
+                                    or l:match("[{}]%s*$")
+                                    or l:match("%*/%s*$")
+                                )
+                            then
+                                return false
+                            end
+                        end
+                        return false
+                    end
+
+                    local function filter(diagnostics, uri)
+                        local bufnr = vim.uri_to_bufnr(uri)
+                        if not vim.api.nvim_buf_is_loaded(bufnr) then
+                            return diagnostics
+                        end
+                        return vim.tbl_filter(function(d)
+                            local msg = d.message or ""
+                            return not (
+                                msg:match(
+                                    "^Function name .* should start with a lowercase letter"
+                                )
+                                and is_composable(bufnr, d.range.start.line)
+                            )
+                        end, diagnostics)
+                    end
+
+                    return {
+                        ["textDocument/publishDiagnostics"] = function(
+                            err,
+                            result,
+                            ctx
+                        )
+                            if result and result.diagnostics then
+                                result.diagnostics =
+                                    filter(result.diagnostics, result.uri)
+                            end
+                            vim.lsp.diagnostic.on_publish_diagnostics(
+                                err,
+                                result,
+                                ctx
+                            )
+                        end,
+                        ["textDocument/diagnostic"] = function(
+                            err,
+                            result,
+                            ctx
+                        )
+                            if result and result.items then
+                                result.items = filter(
+                                    result.items,
+                                    ctx.params.textDocument.uri
+                                )
+                            end
+                            vim.lsp.diagnostic.on_diagnostic(err, result, ctx)
+                        end,
+                    }
+                end)(),
+            },
             lemminx = {},
             lua_ls = {
                 settings = {
@@ -58,9 +147,7 @@ return {
                     },
                 },
             },
-            markdownlint = {},
             oxlint = {},
-            prettier = {},
             ruff = {},
             rust_analyzer = {
                 settings = {
@@ -77,20 +164,12 @@ return {
                     },
                 },
             },
-            shellcheck = {},
-            shfmt = {},
-            staticcheck = {},
-            stylelint = {},
             ["stylelint-language-server"] = {},
-            stylua = {},
             tailwindcss = {},
             taplo = {},
             templ = {},
-            tsc = {},
             ts_query_ls = {},
             ty = {},
-            yamlfmt = {},
-            yamllint = {},
             yamlls = {
                 settings = {
                     yaml = {
@@ -114,7 +193,7 @@ return {
         end, vim.tbl_keys(servers))
 
         require("mason-tool-installer").setup({
-            ensure_installed = servers_to_install,
+            ensure_installed = vim.list_extend(servers_to_install, tools),
         })
 
         local capabilities = vim.lsp.protocol.make_client_capabilities()
