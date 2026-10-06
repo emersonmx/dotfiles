@@ -52,7 +52,7 @@ return {
             "oxlint",
             "ruff",
             "rust_analyzer",
-            "stylelint_lsp",
+            "stylelint-language-server",
             "tailwindcss",
             "taplo",
             "templ",
