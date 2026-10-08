@@ -64,6 +64,15 @@ return {
                         luasnip.jump(-1)
                     end
                 end, { "i", "s" }),
+                ["<C-e>"] = cmp.mapping(function(fallback)
+                    if luasnip.choice_active() then
+                        luasnip.change_choice(1)
+                    elseif cmp.visible() then
+                        cmp.abort()
+                    else
+                        fallback()
+                    end
+                end, { "i", "s" }),
             }),
             sources = {
                 { name = "nvim_lsp" },
