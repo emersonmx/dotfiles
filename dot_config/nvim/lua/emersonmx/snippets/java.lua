@@ -29,6 +29,23 @@ return {
             { i(1, "ClassName"), i(2), i(0) }
         )
     ),
+    s(
+        "m",
+        fmt(
+            [[
+            {} {} {}({}) {{
+                {}
+            }}
+            ]],
+            {
+                c(1, { t("public"), t("private"), t("protected") }),
+                i(2, "void"),
+                i(3, "methodName"),
+                i(4),
+                i(5),
+            }
+        )
+    ),
 
     s(
         "pr",
