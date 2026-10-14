@@ -1,3 +1,5 @@
+command = "exec $HOME/.local/bin/tmux-start"
+
 # Window
 fullscreen = true
 window-padding-balance = true
