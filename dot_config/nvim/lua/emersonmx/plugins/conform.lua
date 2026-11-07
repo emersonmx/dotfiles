@@ -8,9 +8,7 @@ vim.api.nvim_create_user_command("ToggleAutoFormat", function()
     vim.b.disable_autoformat = value
     vim.g.disable_autoformat = value
     print("Auto format", value and "disabled" or "enabled")
-end, {
-    desc = "Toggle autoformat-on-save",
-})
+end, { desc = "Toggle autoformat-on-save" })
 
 return {
     "stevearc/conform.nvim",
@@ -32,6 +30,7 @@ return {
             json = prettier_formatter,
             jsonc = prettier_formatter,
             lua = { "stylua" },
+            markdown = prettier_formatter,
             python = function(bufnr)
                 if
                     require("conform").get_formatter_info("ruff_format", bufnr).available
