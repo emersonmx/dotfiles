@@ -65,7 +65,6 @@ git clone https://github.com/emersonmx/zsh-plugins.git $HOME/.config/zsh/zsh-plu
   asdf completion zsh > "$ZSH_CACHE_DIR/completions/_asdf"
   ```
 
-
 ### WSL
 
 - [Setup Arch](https://wiki.archlinux.org/title/Install_Arch_Linux_on_WSL)
@@ -243,7 +242,7 @@ yay -S \
     zsh \
     zsh-autosuggestions \
     zsh-completions \
-    zsh-theme-powerlevel10k-git \
+    zsh-theme-powerlevel10k \
     zsh-vi-mode \
     && :
 
