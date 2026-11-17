@@ -1,0 +1,14 @@
+name = "skills"
+directory = "~/code/skills"
+
+[[windows]]
+name = "shell"
+
+[[windows.panes]]
+focus = true
+
+[[windows]]
+name = "git"
+
+[[windows.panes]]
+command = "lazygit"
